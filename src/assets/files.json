@@ -1,0 +1,92 @@
+{
+    "data": 
+    [
+        {
+            "label": "0001 ABARROTES",
+            "data": "0",
+            "key": "0001",
+            "expandedIcon": "pi pi-folder-open",
+            "collapsedIcon": "pi pi-folder",            
+            "children": [{
+                    "label": "0010 COMESTIBLES I",
+                    "data": "1",
+                    "key": "0010",
+                    "expandedIcon": "pi pi-folder-open",
+                    "collapsedIcon": "pi pi-folder",                    
+                    "children": [{"label": "1000 DULCES A GRANEL", "icon": "pi pi-file", "data": "2",
+                                    "key": "1000"}, 
+                                 {"label": "1002 ALIMENTOS PARA MASCOTAS", "icon": "pi pi-file", 
+                                 "key": "1002",
+                                 "data": "2"},
+                                 {"label": "1003 ACEITES", "icon": "pi pi-file", 
+                                 "key": "1003",
+                                 "data": "2"},
+                                 {"label": "1004 ALIMENTOS INFANTILES", "icon": "pi pi-file", 
+                                 "key": "1004",
+                                 "data": "2"},
+                                 {"label": "1005 ARROZ", "icon": "pi pi-file", 
+                                 "key": "1005",
+                                 "data": "2"},
+                                 {"label": "1006 AVENAS", "icon": "pi pi-file", 
+                                 "key": "1006",
+                                 "data": "2"},
+                                 {"label": "1007 AZUCAR Y DERIVAdOS", "icon": "pi pi-file", 
+                                 "key": "1007",
+                                 "data": "2"}
+                                ]
+                },
+                {
+                    "label": "0011 JUGOS Y BEBIDAS",
+                    "data": "0",
+                    "key": "0011",
+                    "expandedIcon": "pi pi-folder-open",
+                    "collapsedIcon": "pi pi-folder",                    
+                    "children": [
+                    {"label": "1100 CHOCOLATES","key": "1100",  "icon": "pi pi-file", "data": "2"},
+                    {"label": "1102 CONDIMENTOS","key": "1102",  "icon": "pi pi-file", "data": "2"},
+                    {"label": "1103 PURE", "key": "1103",  "icon": "pi pi-file", "data": "2"},
+                    {"label": "1104 DULCES", "key": "1104",  "icon": "pi pi-file", "data": "2"},
+                    {"label": "1105 EDULCORANTES", "key": "1105",  "icon": "pi pi-file", "data": "2"}
+                ]
+                }]
+        },
+        {
+            "label": "0002 ALIMENTOS FRESCOS",
+            "data": "0",
+            "expandedIcon": "pi pi-folder-open",
+            "collapsedIcon": "pi pi-folder",
+            "key":"0002",
+            "children": [
+                {"label": "0020 LEGUMBRES Y FRUTAS", "icon": "pi pi-file", "data": "1", "key":"0020"},
+                {"label": "0021 LACTEOS", "icon": "pi pi-file", "data": "1", "key":"0021"},
+                {"label": "0022 CONGELADOS", "icon": "pi pi-file", "data": "1", "key":"0022"}]
+        },
+        {
+            "label": "0003 LIMPIEZA HOGAR",
+            "data": "0",
+            "expandedIcon": "pi pi-folder-open",
+            "collapsedIcon": "pi pi-folder",
+            "key":"0003",
+            "children": [{
+                    "label": "0030 - ASEO Y LIMPIEZA",
+                    "data": "1",
+                    "key":"0030",
+                    "expandedIcon": "pi pi-folder-open",
+                    "collapsedIcon": "pi pi-folder",
+                    "children": [
+                        {"label": "3001 CLOROS", "icon": "pi pi-file", "data": "2","key":"3001"}, 
+                        {"label": "3010 CERA DE PISOS", "icon": "pi pi-file", "data": "2","key":"3010"}
+                    ]
+                },
+                {
+                    "label": "0031 HIGIENE DEL HOGAR",
+                    "data": "1",
+                    "key":"0031",
+                    "expandedIcon": "pi pi-folder-open",
+                    "collapsedIcon": "pi pi-folder",
+                    "children": [{"label": "3101 PAÑALES", "icon": "pi pi-file", "data": "2", "key":"3101"}, 
+                                {"label": "3102 CUIDADO DEL BEBE", "icon": "pi pi-file", "data": "2","key":"3102" }]
+                }]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+.separadorcorp{
+  height: 30px;
+  background-color:#e74c3c
+}
+
+.whitetextcolor{
+  color: white;
+}
+
+.corpfooter{
+  font-size: small;
+  color: white;
+}
+
+
+.hand {cursor: pointer;}

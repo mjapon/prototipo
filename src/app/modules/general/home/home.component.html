@@ -1,0 +1,77 @@
+<div class="container">
+
+  <div class="row mt-4">
+
+    <p-toast></p-toast>
+  <div class="col-md-3">
+    <p class="textcolorcorp">Filtros de búsqueda</p>
+    <p>- Empresas Delivery</p>
+    <p-dropdown [options]="cities" [(ngModel)]="selectedDelivery" optionLabel="name"
+    placeholder="Elija un delivery"></p-dropdown>
+
+    <div class="mt-5">
+      <button class="btn btn-danger" (click)="loadEstructura()">Buscar</button>
+    </div>
+  </div>  
+  <div class="col-md border border-danger">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <div *ngIf="selectedDelivery.code">
+          <p-tree [value]="files1"  selectionMode="single" [(selection)]="selectedFile"
+          (onNodeSelect)="nodeSelect($event)"></p-tree>
+        </div>        
+      </div>
+      <div class="col-md-6">
+        <div class="ms-2" *ngIf="selectedFile">
+          <div class="row">
+            <div class="col-md-6">
+              Descripción:
+            </div>
+            <div class="col-md-6">
+              {{selectedFile.data}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              Imagen:
+            </div>
+            <div class="col-md-6">
+              {{selectedFile.label}}
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-2">        
+          <p-table [value]="articulos" responsiveLayout="scroll" *ngIf="articulos.length>0">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Código Barras</th>
+                    <th>Descripción</th>                  
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{product.codbarra}}</td>
+                    <td>{{product.descripcion}}</td>                  
+                </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p-dialog header="Editar Estructura" [(visible)]="isShowAgregar" [style]="{width: '50vw'}">
+  <p-tree [value]="allStructure" 
+                selectionMode="checkbox" 
+                (onNodeSelect)="allStructreNodeSelect($event)"
+                [(selection)]="selectedFiles2"></p-tree>
+
+  <ng-template pTemplate="footer">      
+    <button class="btn btn-primary" (click)="guardar()">Aceptar</button>
+    <button class="btn btn-primary" (click)="cancelar()">Cancelar</button>
+  </ng-template>
+</p-dialog>
+</div>
