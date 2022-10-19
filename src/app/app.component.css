@@ -14,3 +14,12 @@
 
 
 .hand {cursor: pointer;}
+
+.kbottom {
+  position: absolute;
+  bottom: 0px;
+}
+
+:host {
+  display: contents; height: 100%;  
+}

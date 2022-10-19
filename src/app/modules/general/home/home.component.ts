@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService, TreeNode } from 'primeng/api';
+import { MenuItem, MessageService, TreeNode } from 'primeng/api';
 import { MyMsgService } from '../msgservice';
 import { NodeService } from '../nodeservice';
 
@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   allStructure: TreeNode[] = [];
 
   selectedFile: TreeNode | undefined;
+  selectedNodeCreate: TreeNode | undefined;
+  parentNodeCrear: TreeNode| undefined;
 
   articulos:any = [];
 
@@ -26,6 +28,13 @@ export class HomeComponent implements OnInit {
   selectedFiles2: TreeNode[]=[];
 
   isShowAgregar:boolean=false;
+  isShowCrear:boolean=false;
+  isShowFormCrea:boolean=false;
+
+  codigoNewStructure:string = '';
+  nombreNewStructure:string = '';
+
+  itemsMenu: MenuItem[] = [];
 
   constructor(private nodeService: NodeService,
     private messageService: MessageService,
@@ -45,14 +54,66 @@ export class HomeComponent implements OnInit {
       {name: 'KAO', code: '9'}
     ];
 
+    this.itemsMenu = [
+      {label:'Crear subtipo', icon:'fa fa-plus', command:(event=>this.crearSubTipo(event))}
+    ]
+
     this.nodeService.getFiles().then(files => this.allStructure = files);
     this.nodeService.getLazyFiles().then(delmap => this.deliveryMap = delmap);
 
     this.mymsgservice.source.subscribe(msg=>{
-      if (msg==="showModal")
-      this.showModal();
-
+      if (msg==="showModal"){
+        this.showModal();
+      }
+      else if(msg==="showModalCrear"){
+        this.showModalCrear();
+      }
+      
     });
+
+  }
+
+  crearSubTipo($event:any){
+    this.parentNodeCrear = this.selectedNodeCreate;
+    this.isShowFormCrea = true;
+    this.nombreNewStructure = '';
+    this.codigoNewStructure = '';
+  }
+
+  crearNivel1(){
+    this.parentNodeCrear = undefined;
+    this.isShowFormCrea = true;
+    this.nombreNewStructure = ''; 
+    this.codigoNewStructure = '';   
+  }
+  
+  guardarFormCrear(){    
+    let data = 0;
+    if (this.parentNodeCrear){
+      data = parseInt(this.parentNodeCrear.data)+1;
+    }
+
+    let newNode:TreeNode =     {"label": this.nombreNewStructure, "icon": "", 
+    "data": data.toString(),
+    "key": this.codigoNewStructure};
+    
+    if (this.parentNodeCrear){
+      if (this.parentNodeCrear.children){
+        this.parentNodeCrear.children.push(newNode);
+      }
+      else{
+        this.parentNodeCrear.children = [newNode];
+      }
+    }
+    else{
+      this.allStructure.push(newNode);
+    }
+
+    this.isShowFormCrea = false;
+  }
+
+  cancelarFormCrear(){
+    this.isShowFormCrea = false;
   }
 
   nodeSelect(event:any) {    
@@ -63,6 +124,10 @@ export class HomeComponent implements OnInit {
   }
 
   allStructreNodeSelect(event:any) {
+
+  }
+
+  newStructureNodeSelect(event:any) {
 
   }
 
@@ -95,15 +160,29 @@ export class HomeComponent implements OnInit {
     this.isShowAgregar = true;
   }
 
+  toggleExpand($event:MouseEvent){
+    this.selectedFile!.expanded= !this.selectedFile!.expanded;
+  }
+
   guardar(){
     this.files1 = this.selectedFiles2;
     this.isShowAgregar = false;
-    console.log('Accion guardar');
-    
   }
 
   cancelar(){
     this.isShowAgregar= false;
+  }
+
+  showModalCrear(){
+    this.isShowCrear=true;
+  }
+
+  cancelarCrear(){
+    this.isShowCrear=false;
+  }
+
+  guardarCrear(){
+    this.isShowCrear=false;
   }
 
 }

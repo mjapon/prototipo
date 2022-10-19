@@ -1,43 +1,61 @@
-<div class="container">
-
-  <div class="row mt-4">
-
-    <p-toast></p-toast>
-  <div class="col-md-3">
-    <p class="textcolorcorp">Filtros de búsqueda</p>
-    <p>- Empresas Delivery</p>
-    <p-dropdown [options]="cities" [(ngModel)]="selectedDelivery" optionLabel="name"
-    placeholder="Elija un delivery"></p-dropdown>
-
-    <div class="mt-5">
-      <button class="btn btn-danger" (click)="loadEstructura()">Buscar</button>
+<div class="container" style="height: 100%;">
+  <div class="row mt-4" style="height: 100%;">
+  <div class="col-md-3 " style="height: 100%; border-style: none solid none  none; border-color:#e74c3c">
+    <div class="me-3">
+      <p class="textcolorcorp">Filtros de búsqueda</p>
+      <p>- Empresas Delivery</p>
+      <div class="pb-5">
+        <p-dropdown [options]="cities" [(ngModel)]="selectedDelivery" optionLabel="name"
+        placeholder="Elija un delivery"></p-dropdown>
+      </div>
+      <div class="mt-5 d-flex flex-row-reverse">
+        <button class="btn btn-danger" (click)="loadEstructura()">Buscar</button>
+      </div>
     </div>
   </div>  
-  <div class="col-md border border-danger">
+  <div class="col-md">
     <div class="row g-0">
       <div class="col-md-6">
         <div *ngIf="selectedDelivery.code">
-          <p-tree [value]="files1"  selectionMode="single" [(selection)]="selectedFile"
+          <p-tree [value]="files1" appendTo="body" selectionMode="single" [(selection)]="selectedFile"          
+          (dblclick)="toggleExpand($event)"
           (onNodeSelect)="nodeSelect($event)"></p-tree>
         </div>        
       </div>
       <div class="col-md-6">
         <div class="ms-2" *ngIf="selectedFile">
-          <div class="row">
-            <div class="col-md-6">
-              Descripción:
-            </div>
-            <div class="col-md-6">
-              {{selectedFile.data}}
+          <div class="card mt-1">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  Código:
+                </div>
+                <div class="col-md">
+                  <span class="fw-bold">{{selectedFile.key}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  Descripción:
+                </div>
+                <div class="col-md">
+                  <span class="fw-bold">{{selectedFile.label}}</span>
+                </div>
+              </div>              
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              Imagen:
+          <div>
+            <div class="row mt-1">
+              <div class="col">
+                <div class="card">
+                  
+                <img src="assets/params/images/imgabarrotesvarios.jpg" alt="Img categ" class="img-fluid">
+                
+                </div>
+              </div>
+
             </div>
-            <div class="col-md-6">
-              {{selectedFile.label}}
-            </div>
+            
           </div>
         </div>
         
@@ -66,12 +84,61 @@
 <p-dialog header="Editar Estructura" [(visible)]="isShowAgregar" [style]="{width: '50vw'}">
   <p-tree [value]="allStructure" 
                 selectionMode="checkbox" 
+                [propagateSelectionUp]="false" [propagateSelectionDown]="false"
                 (onNodeSelect)="allStructreNodeSelect($event)"
                 [(selection)]="selectedFiles2"></p-tree>
 
   <ng-template pTemplate="footer">      
-    <button class="btn btn-primary" (click)="guardar()">Aceptar</button>
-    <button class="btn btn-primary" (click)="cancelar()">Cancelar</button>
+    <button class="btn btn-danger" (click)="guardar()">Aceptar <span class="pi pi-save"></span> </button>
+    <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
   </ng-template>
 </p-dialog>
+
+<p-contextMenu #cm [model]="itemsMenu"></p-contextMenu>
+
+<p-dialog header="Crear Estructura" [(visible)]="isShowCrear" [style]="{width: '50vw'}">
+  <div>
+    <button class="btn btn-outline-danger" (click)="crearNivel1()">Crear Nivel 1</button>
+  </div>
+  <p-tree [value]="allStructure" 
+                selectionMode="single" 
+                [propagateSelectionUp]="false" [propagateSelectionDown]="false"
+                (onNodeSelect)="newStructureNodeSelect($event)"
+                [contextMenu]="cm"
+                [(selection)]="selectedNodeCreate"></p-tree>
+
+  <ng-template pTemplate="footer">
+    <button class="btn btn-danger" (click)="cancelarCrear()">Cerrar</button>
+  </ng-template>
+</p-dialog>
+
+
 </div>
+
+
+<p-dialog header="Crear Estructura" [(visible)]="isShowFormCrea" [style]="{width: '30vw'}">
+
+  <div *ngIf="parentNodeCrear">
+    <span>Categoría padre: {{parentNodeCrear.label}}</span>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3"><label for="">Codigo:</label></div>
+    <div class="col-md"> <input type="text" class="form-control" [(ngModel)]="codigoNewStructure"> </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-3"><label for="">Nombre:</label></div>
+    <div class="col-md"> <input type="text" class="form-control" [(ngModel)]="nombreNewStructure"> </div>
+  </div>
+
+  <ng-template pTemplate="footer">      
+    <button class="btn btn-danger" (click)="guardarFormCrear()">Guardar <span class="pi pi-save"></span> </button>
+    <button class="btn btn-danger" (click)="cancelarFormCrear()">Cancelar</button>
+  </ng-template>
+
+</p-dialog>
+
+
+
+<p-toast></p-toast>

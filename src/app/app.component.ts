@@ -37,4 +37,9 @@ export class AppComponent implements OnInit {
     this.mymsgservice.publishMessage('showModal');
   }
 
+  showModalCrear(){
+    console.log("Show modal crear-->");
+    this.mymsgservice.publishMessage('showModalCrear');
+  }
+
 }

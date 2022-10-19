@@ -16,6 +16,8 @@ import { MessageService } from 'primeng/api';
 import {TableModule} from 'primeng/table';
 import { MyMsgService } from './modules/general/msgservice';
 import {DialogModule} from 'primeng/dialog';
+import {ContextMenuModule} from 'primeng/contextmenu';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {DialogModule} from 'primeng/dialog';
     TreeModule,
     ToastModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    ContextMenuModule
   ],
   providers: [NodeService, MessageService,MyMsgService],
   bootstrap: [AppComponent]
