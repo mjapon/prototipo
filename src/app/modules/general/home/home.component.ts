@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   selectedDelivery: any = {};
   
-  files1: TreeNode[] = [];
+  currentDeliveryStructure: TreeNode[] = [];
   allStructure: TreeNode[] = [];
 
   selectedFile: TreeNode | undefined;
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   deliveryMap: any = {};
 
-  selectedFiles2: TreeNode[]=[];
+  selectedStructure: TreeNode[]=[];
 
   isShowAgregar:boolean=false;
   isShowCrear:boolean=false;
@@ -35,6 +35,8 @@ export class HomeComponent implements OnInit {
   nombreNewStructure:string = '';
 
   itemsMenu: MenuItem[] = [];
+
+  codigosArbolDelivery:[]= [];
 
   constructor(private nodeService: NodeService,
     private messageService: MessageService,
@@ -68,9 +70,7 @@ export class HomeComponent implements OnInit {
       else if(msg==="showModalCrear"){
         this.showModalCrear();
       }
-      
     });
-
   }
 
   crearSubTipo($event:any){
@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit {
       data = parseInt(this.parentNodeCrear.data)+1;
     }
 
-    let newNode:TreeNode =     {"label": this.nombreNewStructure, "icon": "", 
+    let newNode:TreeNode = {"label": this.nombreNewStructure, "icon": "", 
     "data": data.toString(),
     "key": this.codigoNewStructure};
     
@@ -123,11 +123,13 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  allStructreNodeSelect(event:any) {
+  newStructureNodeSelect(event:any) {
+    console.log('new structure node select->', event);
 
   }
 
-  newStructureNodeSelect(event:any) {
+  newStructreNodeUnSelect(event:any){
+    console.log('new structure node unselect->', event);
 
   }
 
@@ -139,24 +141,27 @@ export class HomeComponent implements OnInit {
     this.nodeService.getArticulos().then(arts => this.articulos = arts);
   }
 
-  loadEstructura(){
-    this.files1 = [];    
-    let codigos = this.nodeService.getCodigosDelivery(this.deliveryMap,this.selectedDelivery.code);
-    let arboldel:TreeNode[] = []    
+  auxLoadStructure(codigos:[]){
+    this.currentDeliveryStructure = [];    
+    let arboldel:TreeNode[] = [];
     this.nodeService.buildDeliveryTree(this.allStructure,codigos,arboldel);
-    this.files1 =  arboldel;
+    this.currentDeliveryStructure =  arboldel;
     this.selectedFile = undefined;
     this.articulos = [];
   }
 
-  showModal(){
-    let codigos = this.nodeService.getCodigosDelivery(this.deliveryMap,this.selectedDelivery.code);
-    let selected:TreeNode[] = [];
-    codigos.forEach( (codigo:any)=>{
-      this.nodeService.marcarArbol(this.allStructure, codigo, selected);
+  loadEstructura(){
+    this.codigosArbolDelivery = this.nodeService.getCodigosDelivery(this.deliveryMap,this.selectedDelivery.code);
+    this.auxLoadStructure(this.codigosArbolDelivery);
+  }
 
+  showModal(){    
+    let selected:TreeNode[] = [];
+    this.codigosArbolDelivery.forEach( (codigo:any)=>{
+      this.nodeService.marcarArbol(this.allStructure, codigo, selected);
     });
-    this.selectedFiles2 = selected;    
+    this.selectedStructure = selected;
+    console.log('showModal Valor de codigosArbolDelivery ', this.codigosArbolDelivery);
     this.isShowAgregar = true;
   }
 
@@ -165,8 +170,19 @@ export class HomeComponent implements OnInit {
   }
 
   guardar(){
-    this.files1 = this.selectedFiles2;
+    console.log('Guadar Valor de codigosArbolDelivery ', this.codigosArbolDelivery);
+    this.auxLoadStructure(this.codigosArbolDelivery);
     this.isShowAgregar = false;
+  }
+
+  allStructreNodeSelect(event:any) {
+    let keyToAppend = event.node.key;
+    this.nodeService.addItemToArray(this.codigosArbolDelivery,keyToAppend);
+  }
+
+  allStructureNodeUnSelect(event:any){
+    let keyToRemove = event.node.key;
+    this.nodeService.removeItemFromArray(this.codigosArbolDelivery,keyToRemove);
   }
 
   cancelar(){

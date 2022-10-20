@@ -43,6 +43,22 @@ export class NodeService {
       return codigos;
     }
 
+    removeItemFromArray(array:Array<any>, item:any){
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+          array.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    addItemToArray(arreglo:Array<any>, item:any){
+      if (arreglo.indexOf(item)===-1){
+        arreglo.push(item);
+      }
+    } 
+
+
     getChildrenMarked(childrens:TreeNode[], codigos:any):TreeNode[]{
       let childrensmarked:TreeNode[] = [];
       childrens.forEach((item:TreeNode)=>{
@@ -67,7 +83,7 @@ export class NodeService {
       arbol.forEach((item:TreeNode)=>{
           codigos.forEach((codigo:any)=>{
               if (item.key===codigo){
-                let newNode: TreeNode = structuredClone(item);                
+                let newNode: TreeNode = structuredClone(item);
                 if (item.children){
                   newNode.children = undefined;
                   let childrenmarked = this.getChildrenMarked(item.children,codigos);
@@ -99,7 +115,7 @@ export class NodeService {
 
     marcarArbol(arbol:TreeNode[], key:string, selectedNodes:TreeNode[]){      
       arbol.forEach((item:TreeNode)=>{
-        if (item.key === key){
+        if (item.key === key){          
           selectedNodes.push(item);
         }
         if (item.children){

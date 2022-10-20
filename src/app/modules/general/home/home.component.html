@@ -17,7 +17,7 @@
     <div class="row g-0">
       <div class="col-md-6">
         <div *ngIf="selectedDelivery.code">
-          <p-tree [value]="files1" appendTo="body" selectionMode="single" [(selection)]="selectedFile"          
+          <p-tree [value]="currentDeliveryStructure" appendTo="body" selectionMode="single" [(selection)]="selectedFile"          
           (dblclick)="toggleExpand($event)"
           (onNodeSelect)="nodeSelect($event)"></p-tree>
         </div>        
@@ -47,19 +47,15 @@
           <div>
             <div class="row mt-1">
               <div class="col">
-                <div class="card">
-                  
-                <img src="assets/params/images/imgabarrotesvarios.jpg" alt="Img categ" class="img-fluid">
-                
+                <div class="card">                  
+                  <img src="assets/params/images/imgabarrotesvarios.jpg" alt="Img categ" class="img-fluid">                
                 </div>
               </div>
-
-            </div>
-            
+            </div>            
           </div>
         </div>
         
-        <div class="mt-2">        
+        <div class="mt-2">
           <p-table [value]="articulos" responsiveLayout="scroll" *ngIf="articulos.length>0">
             <ng-template pTemplate="header">
                 <tr>
@@ -80,13 +76,13 @@
   </div>
 </div>
 
-
 <p-dialog header="Editar Estructura" [(visible)]="isShowAgregar" [style]="{width: '50vw'}">
   <p-tree [value]="allStructure" 
                 selectionMode="checkbox" 
                 [propagateSelectionUp]="false" [propagateSelectionDown]="false"
                 (onNodeSelect)="allStructreNodeSelect($event)"
-                [(selection)]="selectedFiles2"></p-tree>
+                (onNodeUnselect)="allStructureNodeUnSelect($event)"
+                [(selection)]="selectedStructure"></p-tree>
 
   <ng-template pTemplate="footer">      
     <button class="btn btn-danger" (click)="guardar()">Aceptar <span class="pi pi-save"></span> </button>
@@ -104,6 +100,7 @@
                 selectionMode="single" 
                 [propagateSelectionUp]="false" [propagateSelectionDown]="false"
                 (onNodeSelect)="newStructureNodeSelect($event)"
+                (onNodeUnselect)="newStructreNodeUnSelect($event)"
                 [contextMenu]="cm"
                 [(selection)]="selectedNodeCreate"></p-tree>
 
