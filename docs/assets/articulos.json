@@ -2,12 +2,20 @@
     "data": 
     [
         {
-            "codbarra": "955544444",
-            "descripcion": "La lechera"            
+            "codbarra": "7861053510051",
+            "descripcion": "QUINUAVENA SUPERIOR"            
         },
         {
-            "codbarra": "955523123321",
-            "descripcion": "Vitaleche"            
-        }        
+            "codbarra": "7861053510082",
+            "descripcion": "CEREALES ANDINOS QUINUA FACIL"            
+        },
+        {
+            "codbarra": "7861053510143",
+            "descripcion": "NATURES HEART AVENA EN HOJUELAS"            
+        },
+        {
+            "codbarra": "7861053500410",
+            "descripcion": "ORG SCHULLO AVENA ORGANICA"            
+        }                
     ]
 }

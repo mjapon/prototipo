@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './modules/general/home/home.component';
+import { NivelesComponent } from './modules/general/niveles/niveles.component';
+import { NewartComponent } from './modules/general/newart/newart.component';
+import { StartComponent } from './modules/general/start/start.component';
 import { NotFoundComponent } from './modules/general/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import {DropdownModule} from 'primeng/dropdown';
@@ -19,11 +22,17 @@ import {DialogModule} from 'primeng/dialog';
 import {ContextMenuModule} from 'primeng/contextmenu';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
+    NivelesComponent,
+    NewartComponent,
+    StartComponent
+    
   ],
   imports: [
     BrowserModule,

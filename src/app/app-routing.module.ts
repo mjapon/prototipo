@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { combineLatest } from 'rxjs';
 
 import { HomeComponent } from './modules/general/home/home.component';
+import { NivelesComponent } from './modules/general/niveles/niveles.component';
 import { NotFoundComponent } from './modules/general/not-found/not-found.component';
+import { StartComponent } from './modules/general/start/start.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, },
-
+  { path: '', component: StartComponent, },
+  {
+    path: 'niveles', component:NivelesComponent,
+  },
+  {
+    path: 'home', component:HomeComponent,
+  },
   {
     path: 'about',
     loadChildren: () => import('./modules/general/about/about.module')
