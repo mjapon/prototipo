@@ -1,0 +1,56 @@
+    <div class="row mt-4">
+    <div class="col-md-3">
+      <div class="me-3">
+        <p class="textcolorcorp">Filtros de búsqueda</p>
+        <p class="m-0 p-0">- Delivery</p>
+        <div>
+          <input type="text" class="form-control" [(ngModel)]="delivery.name"  disabled>
+        </div>
+
+        <p class="m-0 p-0">- Codigo Barras</p>
+        <div>
+          <input type="text" class="form-control">
+        </div>
+
+        <p class="m-0 p-0">- Descripción Artículo</p>
+        <div>
+          <input type="text" class="form-control">
+        </div>
+
+        <p class="m-0 p-0">- Código Clasificación</p>
+        <div>
+          <input type="text" class="form-control">
+        </div>
+
+        <p class="m-0 p-0">- Descripción Clasificación</p>
+        <div class="pb-5">
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="mt-5 d-flex flex-row-reverse">
+          <button class="btn btn-danger" (click)="loadArticulos()">Buscar</button>
+        </div>
+      </div>
+    </div>  
+    <div class="col-md">
+
+        <p-table [value]="articulos" responsiveLayout="scroll" *ngIf="articulos.length>0">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Código Barras</th>
+                    <th>Descripción</th>
+                    <th>Acción</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{product.codbarra}}</td>
+                    <td>{{product.descripcion}}</td>                  
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                </tr>
+            </ng-template>
+          </p-table>
+    </div>
+  </div>  

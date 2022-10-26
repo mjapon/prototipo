@@ -1,0 +1,20 @@
+.margin1 {
+ margin-left: 10px;
+}
+
+.margin2 {
+    margin-left: 80px;
+}
+
+.margin3 {
+    margin-left: 160px;
+}
+
+.nivel:hover{
+    background-color: #fdddda;
+}
+
+.levelsel{
+    background-color: #e74c3c;
+    color: white;
+}

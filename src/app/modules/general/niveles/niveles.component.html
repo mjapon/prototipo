@@ -1,0 +1,78 @@
+<div class="container" style="height: 100%;">
+    <div class="row mt-4" style="height: 100%;">
+    <div class="col-md-3 " style="height: 100%; border-style: none solid none  none; border-color:#e74c3c">
+      <div class="me-3">
+        <p class="textcolorcorp">Filtros de búsqueda</p>
+        <p>- Niveles</p>
+        <div class="pb-5">
+          <p-dropdown [options]="niveles" [(ngModel)]="selectedNivel" optionLabel="name"
+          placeholder="Elija un delivery"></p-dropdown>
+        </div>
+        <div class="mt-5 d-flex flex-row-reverse">
+          <button class="btn btn-danger" (click)="loadEstructura()">Buscar</button>
+        </div>
+      </div>
+    </div>  
+    <div class="col-md">
+
+        <div class="row mb-2">
+            <div class="col-md-1">
+               <span class="fw-bold">Nivel 1</span> 
+            </div>
+            <div class="col-md-1">
+                <span *ngIf="selectedNivel.code==='2'||selectedNivel.code==='3'||selectedNivel.code==='0'" class="fw-bold">Nivel 2</span> 
+            </div>
+            <div class="col-md-1">
+                <span *ngIf="selectedNivel.code==='3'||selectedNivel.code==='0'" class="fw-bold">Nivel 3</span> 
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div *ngFor="let item of structure">
+            <span class="hand nivel" [ngClass]="item===levelsel?'levelsel':''" (click)="onLevelClic(item)"> 1.{{item.label}}</span>
+            <div *ngIf="item.children">                
+                <div *ngFor="let itemlv1 of item.children">
+                    <span class="hand nivel margin2" [ngClass]="itemlv1===levelsel?'levelsel':''" (click)="onLevelClic(itemlv1)"> 2.{{itemlv1.label}}</span>
+                    <div *ngIf="itemlv1.children">
+                        <div *ngFor="let itemlv2 of itemlv1.children">
+                            <span class="hand nivel margin3" [ngClass]="itemlv2===levelsel?'levelsel':''" (click)="onLevelClic(itemlv2)"> 3.{{itemlv2.label}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+  
+  
+<p-dialog header="Crear Estructura" [(visible)]="isShowFormCrea" [style]="{width: '30vw'}">
+
+    <div *ngIf="parentNodeCrear">
+      <span>Categoría padre: {{parentNodeCrear.label}}</span>
+    </div>
+  
+    <div class="row mt-2">
+      <div class="col-md-3"><label for="">Nombre:</label></div>
+      <div class="col-md"> <input type="text" class="form-control" [(ngModel)]="form.nombreNewStructure"> </div>
+    </div>
+  
+    <div class="row mt-2">
+      <div class="col-md-3"><label for="">Descripción:</label></div>
+      <div class="col-md"> <input type="text" class="form-control" [(ngModel)]="form.descNewStructure"> </div>
+    </div>
+  
+    <ng-template pTemplate="footer">      
+      <button class="btn btn-danger" (click)="guardar()">Guardar <span class="pi pi-save"></span> </button>
+      <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+    </ng-template>
+  
+  </p-dialog>
+
+<p-toast></p-toast>
