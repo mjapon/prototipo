@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NodeService } from '../nodeservice';
 
 @Component({
@@ -9,21 +9,18 @@ import { NodeService } from '../nodeservice';
 export class NewartComponent implements OnInit {
 
   articulos:any = [];
-  @Input() delivery:any = {};
+  @Input() delivery:any = {};  
 
+  @Output() evSearch = new EventEmitter<any>();
   constructor(private nodeService: NodeService) { }
 
   ngOnInit(): void {
+    
   }
 
-
-
   loadArticulos(){
-
-    console.log('Valor del delivery es', this.delivery);
-    
     this.nodeService.getArticulos().then(arts => this.articulos = arts);
-
+    this.evSearch.emit('')
   }
 
 }

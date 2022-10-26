@@ -23,6 +23,7 @@ export class NivelesComponent implements OnInit {
   isShowFormCrea=false;
   parentNodeCrear:any = null;
   form:any = {nombreNewStructure:'', descNewStructure:''};  
+  levelFromMenu:number = 0;
 
 
   constructor(private mymsgservice:MyMsgService,
@@ -43,6 +44,7 @@ export class NivelesComponent implements OnInit {
 
     this.mymsgservice.source.subscribe(msg=>{      
       if (msg.startsWith("createlevel")){
+        this.levelFromMenu = parseInt(msg.split("-")[1]);
         this.showFormCrea();
       }      
     });
@@ -51,6 +53,9 @@ export class NivelesComponent implements OnInit {
 
 showFormCrea(){
   this.form = {nombreNewStructure:'', descNewStructure:''};  
+  if (this.levelFromMenu ===0){
+    this.parentNodeCrear = null;
+  }
   this.isShowFormCrea = true;
 }
   

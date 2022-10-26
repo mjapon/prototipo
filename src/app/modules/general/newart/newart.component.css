@@ -1,0 +1,8 @@
+.requerido{
+    
+}
+
+.requerido::before{
+    color:red;
+    content: ' * ';
+}

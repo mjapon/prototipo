@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   title = 'angular-bootstrap';
   footerUrl = 'https://www.ganatan.com/';
   footerLink = 'www.ganatan.com';
-  pantalla = 'home';
+  pantalla = 'start';
   level = -1;
 
   constructor(
@@ -33,15 +33,12 @@ export class AppComponent implements OnInit {
       }
     }
 
-    this.mymsgservice.source.subscribe(msg=>{
-      console.log("Llega mensaje:", msg);      
+    this.mymsgservice.source.subscribe(msg=>{      
       if (msg.startsWith("pantalla")){
-        this.pantalla = msg.split("-")[1];
-        console.log('Valor de pantalla es:', this.pantalla);
+        this.pantalla = msg.split("-")[1];        
       }
       else if(msg.startsWith("level")){
-        this.level = parseInt(msg.split("-")[1]);
-        console.log("Valor de level es:", this.level);
+        this.level = parseInt(msg.split("-")[1]);        
       }
     });
   }

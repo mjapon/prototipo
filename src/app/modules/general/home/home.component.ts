@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
 
   codigosArbolDelivery:[]= [];
   isShowCrearArt= false;
+  isShowGuardarArt = false;
 
   constructor(private nodeService: NodeService,
     private messageService: MessageService,
@@ -185,6 +186,10 @@ export class HomeComponent implements OnInit {
   allStructureNodeUnSelect(event:any){
     let keyToRemove = event.node.key;
     this.nodeService.removeItemFromArray(this.codigosArbolDelivery,keyToRemove);
+  }
+
+  onSearch(){
+    this.isShowGuardarArt = true;
   }
 
   cancelar(){

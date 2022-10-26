@@ -52,7 +52,15 @@
             <ng-template pTemplate="header">
                 <tr>
                     <th>Código Barras</th>
-                    <th>Descripción</th>                  
+                    <th>
+                      <div class="d-inline-flex justify-content-between w-100">
+                        <span>Descripción</span>
+                        <button class="ms-3 btn btn-sm btn-danger" (click)="showCrearArticulo()">
+                          Agregar
+                          <span class="pi pi-plus-circle"></span>
+                        </button>
+                      </div>                      
+                    </th>                  
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-product>
@@ -62,7 +70,7 @@
                 </tr>
             </ng-template>
           </p-table>
-          <button class="btn btn-danger" (click)="showCrearArticulo()">Agregar</button>
+          
         </div>
       </div>
     </div>
@@ -79,7 +87,7 @@
 
   <ng-template pTemplate="footer">      
     <button class="btn btn-danger" (click)="guardar()">Aceptar <span class="pi pi-save"></span> </button>
-    <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+    <button class="btn btn-danger" (click)="cancelar()">Cancelar <span class="pi pi-times"></span> </button>
   </ng-template>
 </p-dialog>
 
@@ -131,11 +139,11 @@
 
 <p-dialog header="Agregar artículo" [(visible)]="isShowCrearArt" [style]="{width: '70vw'}">
   <div>
-    <app-newart [delivery]="selectedDelivery"></app-newart>
+    <app-newart [delivery]="selectedDelivery" (evSearch)="onSearch()"></app-newart>
   </div>
   <ng-template pTemplate="footer">      
-    <button class="btn btn-danger" (click)="guardarArticulos()">Guardar <span class="pi pi-save"></span> </button>
-    <button class="btn btn-danger" (click)="cancelarArticulos()">Cancelar</button>
+    <button class="btn btn-danger" *ngIf="isShowGuardarArt" (click)="guardarArticulos()">Guardar <span class="pi pi-save"></span> </button>
+    <button class="btn btn-danger" (click)="cancelarArticulos()">Cancelar <span class="pi pi-times"></span> </button>
   </ng-template>
 </p-dialog>
 

@@ -2,32 +2,32 @@
     <div class="col-md-3">
       <div class="me-3">
         <p class="textcolorcorp">Filtros de búsqueda</p>
-        <p class="m-0 p-0">- Delivery</p>
+        <p class="m-0 p-0">- <span class="requerido">Delivery</span> </p>
         <div>
           <input type="text" class="form-control" [(ngModel)]="delivery.name"  disabled>
         </div>
 
-        <p class="m-0 p-0">- Codigo Barras</p>
+        <p class="m-0 p-0 mt-1">- <span class="requerido">Código Barras:</span> </p>
         <div>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control form-control-sm">
         </div>
 
-        <p class="m-0 p-0">- Descripción Artículo</p>
+        <p class="m-0 p-0 mt-1">- Descripción Artículo:</p>
         <div>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control form-control-sm">
         </div>
 
-        <p class="m-0 p-0">- Código Clasificación</p>
+        <p class="m-0 p-0 mt-1">- Código Clasificación:</p>
         <div>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control form-control-sm">
         </div>
 
-        <p class="m-0 p-0">- Descripción Clasificación</p>
+        <p class="m-0 p-0 mt-1">- Descripción Clasificación:</p>
         <div class="pb-5">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control form-control-sm">
         </div>
 
-        <div class="mt-5 d-flex flex-row-reverse">
+        <div class="mt-2 d-flex flex-row-reverse">
           <button class="btn btn-danger" (click)="loadArticulos()">Buscar</button>
         </div>
       </div>
