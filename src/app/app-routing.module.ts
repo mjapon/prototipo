@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { combineLatest } from 'rxjs';
+import { FeaturesComponent } from './modules/general/features/features.component';
 
 import { HomeComponent } from './modules/general/home/home.component';
 import { NivelesComponent } from './modules/general/niveles/niveles.component';
 import { NotFoundComponent } from './modules/general/not-found/not-found.component';
+import { SearchComponent } from './modules/general/searchproduct/searchproduct.component';
 import { StartComponent } from './modules/general/start/start.component';
 
 const routes: Routes = [
@@ -40,6 +42,12 @@ const routes: Routes = [
     path: 'bootstrap',
     loadChildren: () => import('./modules/application/example-bootstrap/tutorial.module')
       .then(mod => mod.TutorialModule)
+  },
+  {
+    path: 'gestion', component: SearchComponent
+  },
+  {
+    path: 'feature/:codbarra', component: FeaturesComponent
   },
 
   { path: '**', component: NotFoundComponent }

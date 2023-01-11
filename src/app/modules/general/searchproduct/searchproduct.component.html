@@ -1,0 +1,106 @@
+<div class="container mt-3">
+
+    <div class="alldiv">
+        <section class="barra border p-3 ">
+
+            <div class="me-3">
+                <p class="textcolorcorp">Filtros de búsqueda</p>
+                <!--
+                <p class="m-0 p-0">- <span class="requerido">Delivery</span> </p>
+                <div>
+                  <input type="text" class="form-control" [(ngModel)]="delivery.name"  disabled>
+                </div>
+                -->
+
+                <p class="m-0 p-0 mt-1">- <span class="requerido">Código Barras:</span> </p>
+                <div>
+                    <input type="text" class="form-control form-control-sm">
+                </div>
+
+
+                <p class="m-0 p-0 mt-2">- Descripción Artículo:</p>
+                <div>
+                    <input type="text" class="form-control form-control-sm">
+                </div>
+                <!--
+                <p class="m-0 p-0 mt-1">- Código Clasificación:</p>
+                <div>
+                  <input type="text" class="form-control form-control-sm">
+                </div>
+        
+                <p class="m-0 p-0 mt-1">- Descripción Clasificación:</p>
+                <div class="pb-5">
+                  <input type="text" class="form-control form-control-sm">
+                </div>
+                -->
+
+                <div class="mt-2 d-flex flex-row-reverse">
+                    <button class="btn btn-danger" (click)="loadArticulos()">Buscar</button>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="main border">
+
+
+            <p-table [value]="articulos" responsiveLayout="scroll" *ngIf="articulos.length>0">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nro</th>
+                        <th>Código Barras</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>{{articulos.indexOf(product)+1}}</td>
+                        <td>{{product.codbarra}}</td>
+                        <td>{{product.descripcion}}</td>
+                        <td class="d-flex">
+                            <button class="btn btn-sm btn-outline-primary" (click)="gotoEdit(product)">
+                                <i class="fa fa-eye"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary" (click)="showEdit(product)">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+
+            <p-dialog header="Detalle artículo" [(visible)]="isShowModalView" [style]="{width: '70vw'}">
+                <div>
+                    <app-feature [codbarra]="artsel.codbarra"></app-feature>
+                </div>
+                <ng-template pTemplate="footer">
+                    <button class="btn btn-danger" (click)="closeView()">Cerrar   <span class="pi pi-times"></span>
+                    </button>
+                </ng-template>
+            </p-dialog>
+
+            <p-dialog header="Detalle artículo" [(visible)]="isShowModalEdit" [style]="{width: '70vw'}">
+                <div>
+                    <app-feature-edit [codbarra]="artsel.codbarra"></app-feature-edit>
+                </div>
+                <ng-template pTemplate="footer">
+                    <button class="btn btn-danger" (click)="closeEdit()">Guardar   <span class="pi pi-save"></span></button>
+                    <button class="btn btn-outline-secondary" (click)="closeEdit()">Cerrar   <span class="pi pi-times"></span>
+                    </button>
+                </ng-template>
+            </p-dialog>
+
+
+            
+
+
+
+        </section>
+
+    </div>
+
+
+
+</div>

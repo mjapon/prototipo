@@ -3,18 +3,22 @@
     [
         {
             "codbarra": "7861053510051",
+            "nomecommerce":"QUINUAVENA SUPERIOR Ecommerce",
             "descripcion": "QUINUAVENA SUPERIOR"            
         },
         {
             "codbarra": "7861053510082",
+            "nomecommerce":"CEREALES ANDINOS QUINUA FACIL Ecommerce",
             "descripcion": "CEREALES ANDINOS QUINUA FACIL"            
         },
         {
             "codbarra": "7861053510143",
+            "nomecommerce":"NATURES HEART AVENA EN HOJUELAS Ecommerce",
             "descripcion": "NATURES HEART AVENA EN HOJUELAS"            
         },
         {
             "codbarra": "7861053500410",
+            "nomecommerce":"ORG SCHULLO AVENA ORGANICA Ecommerce",
             "descripcion": "ORG SCHULLO AVENA ORGANICA"            
         }                
     ]

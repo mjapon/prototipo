@@ -20,6 +20,9 @@ import {TableModule} from 'primeng/table';
 import { MyMsgService } from './modules/general/msgservice';
 import {DialogModule} from 'primeng/dialog';
 import {ContextMenuModule} from 'primeng/contextmenu';
+import { SearchComponent } from './modules/general/searchproduct/searchproduct.component';
+import { FeaturesComponent } from './modules/general/features/features.component';
+import { FeatureEditComponent } from './modules/general/featureedit/featureedit.component';
 
 
 
@@ -31,7 +34,10 @@ import {ContextMenuModule} from 'primeng/contextmenu';
     NotFoundComponent,
     NivelesComponent,
     NewartComponent,
-    StartComponent
+    StartComponent,
+    SearchComponent,
+    FeaturesComponent,
+    FeatureEditComponent
     
   ],
   imports: [

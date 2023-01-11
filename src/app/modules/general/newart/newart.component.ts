@@ -8,17 +8,17 @@ import { NodeService } from '../nodeservice';
 })
 export class NewartComponent implements OnInit {
 
-  articulos:any = [];
-  @Input() delivery:any = {};  
+  articulos: any = [];
+  @Input() delivery: any = {};
 
   @Output() evSearch = new EventEmitter<any>();
   constructor(private nodeService: NodeService) { }
 
   ngOnInit(): void {
-    
+
   }
 
-  loadArticulos(){
+  loadArticulos() {
     this.nodeService.getArticulos().then(arts => this.articulos = arts);
     this.evSearch.emit('')
   }

@@ -1,0 +1,14 @@
+.barra{
+    width: 30%;
+
+}
+.main{
+    width: 70%;
+
+}
+
+.alldiv{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}

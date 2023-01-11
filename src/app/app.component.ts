@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MyMsgService } from './modules/general/msgservice';
+import { AlertsComponent } from './modules/application/example-bootstrap/alerts/items.component';
 
 @Component({
   selector: 'app-root',
@@ -40,6 +41,8 @@ export class AppComponent implements OnInit {
       else if(msg.startsWith("level")){
         this.level = parseInt(msg.split("-")[1]);        
       }
+      console.log("Valor de pantalla es:", this.pantalla);
+      
     });
   }
 
@@ -57,4 +60,13 @@ export class AppComponent implements OnInit {
     let messgae= 'createlevel-'+nivel;
     this.mymsgservice.publishMessage(messgae);
   }
+
+  gotoFeatures(){
+    alert('go to features');
+
+  }
+  gotoCatalogos(){
+    alert('goto catalogos');
+  }
+
 }

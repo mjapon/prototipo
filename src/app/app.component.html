@@ -31,10 +31,24 @@
           </div>
 
           <div *ngIf="pantalla==='niveles'&&level>=1">
-            <a  class="hand m-2" title="Agregar" (click)="crearNivel(2)">
+            <a  class="hand m-2" title="Nuevo" (click)="crearNivel(2)">
               Crear Nivel 3             
             </a>
           </div>
+          
+          <div *ngIf="pantalla==='articulos'">
+            <a  class="hand btn btn-sm btn-outline-danger" title="Agregar" (click)="gotoFeatures()">
+              <i class="fa fa-plus"></i> Nuevo
+            </a>
+          </div>
+
+          <div *ngIf="pantalla==='articulos'">
+            <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="gotoCatalogos()">
+              Catalogos
+            </a>
+          </div>
+
+
 
           <!--
           <div *ngIf="pantalla==='home'">
@@ -53,7 +67,7 @@
 <div class="container">
   <div class="row">
     <div class="separadorcorp whitetextcolor">
-      Gestión Estructura de Artículos
+      Gestión Características
     </div>  
   </div>
 </div>

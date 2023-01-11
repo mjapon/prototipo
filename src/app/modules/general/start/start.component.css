@@ -1,0 +1,23 @@
+.caja{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /*
+    display: flex;
+    justify-content: center;*/
+
+}
+
+.ico{
+    font-size: 7rem;
+}
+
+.center{
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+}
