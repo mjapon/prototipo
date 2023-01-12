@@ -71,4 +71,8 @@ export class AppComponent implements OnInit {
     this.mymsgservice.publishMessage('showNewCatalogo');
   }
 
+  nothing() {
+
+  }
+
 }

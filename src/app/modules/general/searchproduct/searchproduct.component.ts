@@ -39,6 +39,11 @@ export class SearchComponent implements OnInit {
                 console.log("Show new feature--->");
                 this.isShowModalNewFeature = true;
             }
+
+            else if (msg === "showNewCatalogo") {
+                console.log("Show new catalogo--->");
+                this.gotoCatalogos();
+            }
         });
     }
 
@@ -66,6 +71,10 @@ export class SearchComponent implements OnInit {
 
     closeNewFeature() {
         this.isShowModalNewFeature = false;
+    }
+
+    gotoCatalogos() {
+        this.router.navigate(['catalogos']);
     }
 
 }

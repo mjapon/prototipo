@@ -41,12 +41,20 @@
               <i class="fa fa-plus"></i> Nuevo
             </a>
           </div>
-
+          
+          
           <div *ngIf="pantalla==='articulos'">
-            <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="gotoCatalogos()">
-              Catalogos
+            <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="nothing()">
+              <i class="fa fa-upload"></i> Carga Masiva
             </a>
           </div>
+
+          <div *ngIf="pantalla==='articulos'">
+            <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="nothing()">
+              <i class="fa fa-download"></i> Descarga Plantilla
+            </a>
+          </div>
+          
 
           <div *ngIf="pantalla==='catalogos'">
             <a  class="hand btn btn-sm btn-outline-danger" title="Agregar" (click)="gotoCatalogos()">
