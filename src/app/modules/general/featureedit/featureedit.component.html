@@ -4,11 +4,9 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-5">
-
                         <div class="border">
                             <img src="assets/params/images/imgabarrotesvarios.jpg" alt="Img categ" class="img-fluid">
                         </div>
-
                     </div>
                     <div class="col-md-7">
                         <div class="row">
@@ -19,7 +17,6 @@
                                 <span class="fw-bold">{{articulo.codbarra}}</span>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-4">
                                 Nombre Ecommerce:
@@ -28,7 +25,6 @@
                                 <span class="fw-bold">{{articulo.nomecommerce}}</span>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-4">
                                 Descripción Ecommerce:
@@ -39,8 +35,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <table class="table table-bordered">
                     <thead>
                         <tr>                            
@@ -94,18 +88,13 @@
                         <tr>
                             <th scope="col">TAG</th>
                             <td class="table-danger">
-                                <input type="text" class="form-control" value=""/>
+                                <div class="p-fluid">
+                                    <p-multiSelect [options]="tags" [(ngModel)]="selectedTags" defaultLabel="Seleccione las etiquetas" optionLabel="name" selectedItemsLabel="{0} items selected"></p-multiSelect>
+                                </div>                                
                             </td>
                         </tr>
-                            
-                            
-                            
-                            
-                        
-
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>

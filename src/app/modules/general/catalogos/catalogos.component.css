@@ -1,0 +1,19 @@
+.barra{
+    width: 30%;
+
+}
+.main{
+    width: 70%;
+
+}
+
+.alldiv{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.celda{
+    padding: 0px 10px;
+    margin: 0px;
+}

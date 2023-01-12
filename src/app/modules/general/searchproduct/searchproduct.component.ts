@@ -19,6 +19,8 @@ export class SearchComponent implements OnInit {
 
     isShowModalView = false;
     isShowModalEdit = false;
+    isShowModalNewFeature = false;
+
 
     constructor(private nodeService: NodeService,
         private mymsgservice: MyMsgService,
@@ -31,6 +33,13 @@ export class SearchComponent implements OnInit {
         setTimeout(() => {
             this.mymsgservice.publishMessage('pantalla-articulos');
         }, 500);
+
+        this.mymsgservice.source.subscribe(msg => {
+            if (msg === "showNewFeature") {
+                console.log("Show new feature--->");
+                this.isShowModalNewFeature = true;
+            }
+        });
     }
 
     loadArticulos() {
@@ -53,6 +62,10 @@ export class SearchComponent implements OnInit {
 
     closeEdit() {
         this.isShowModalEdit = false;
+    }
+
+    closeNewFeature() {
+        this.isShowModalNewFeature = false;
     }
 
 }

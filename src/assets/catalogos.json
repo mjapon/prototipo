@@ -1,0 +1,42 @@
+{
+    "data": 
+    [
+        {
+            "codigo": 1,
+            "nombre":"Viajes"            
+        },
+        {
+            "codigo": 2,
+            "nombre":"Navidad"            
+        },
+        {
+            "codigo": 3,
+            "nombre":"Hogar"            
+        },
+        {
+            "codigo": 4,
+            "nombre":"Ropa"            
+        },
+        {
+            "codigo": 5,
+            "nombre":"Deporte"            
+        },
+        {
+            "codigo": 6,
+            "nombre":"Moda"            
+        },
+        {
+            "codigo": 7,
+            "nombre":"Salud"            
+        },
+        {
+            "codigo": 8,
+            "nombre":"Ciencia"            
+        },
+        {
+            "codigo": 9,
+            "nombre":"Deporte"            
+        }
+        
+    ]
+}

@@ -9,6 +9,7 @@ import { StartComponent } from './modules/general/start/start.component';
 import { NotFoundComponent } from './modules/general/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import {DropdownModule} from 'primeng/dropdown';
+import {MultiSelectModule} from 'primeng/multiselect';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {TreeModule} from 'primeng/tree';
@@ -23,6 +24,8 @@ import {ContextMenuModule} from 'primeng/contextmenu';
 import { SearchComponent } from './modules/general/searchproduct/searchproduct.component';
 import { FeaturesComponent } from './modules/general/features/features.component';
 import { FeatureEditComponent } from './modules/general/featureedit/featureedit.component';
+import { NewFeatureComponent } from './modules/general/newfeature/newfeature.component';
+import { CatalogosComponent } from './modules/general/catalogos/catalogos.component';
 
 
 
@@ -37,8 +40,9 @@ import { FeatureEditComponent } from './modules/general/featureedit/featureedit.
     StartComponent,
     SearchComponent,
     FeaturesComponent,
-    FeatureEditComponent
-    
+    FeatureEditComponent,
+    NewFeatureComponent,
+    CatalogosComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ import { FeatureEditComponent } from './modules/general/featureedit/featureedit.
     ToastModule,
     TableModule,
     DialogModule,
-    ContextMenuModule
+    ContextMenuModule,
+    MultiSelectModule
   ],
   providers: [NodeService, MessageService,MyMsgService],
   bootstrap: [AppComponent]

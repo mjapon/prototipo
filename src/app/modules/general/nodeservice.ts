@@ -44,6 +44,11 @@ export class NodeService {
     return response;
   }
 
+  getCatalogos() {
+    return this.http.get<any>('assets/catalogos.json')
+      .toPromise()
+      .then(res => <Articulo[]>res.data);
+  }
 
   getCodigosDelivery(deliverymap: any, codigo: string) {
     let codigos = [];
@@ -52,7 +57,7 @@ export class NodeService {
         codigos = deliverymap[key];
       }
     }
-    
+
     return codigos;
   }
 

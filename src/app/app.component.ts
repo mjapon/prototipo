@@ -16,13 +16,15 @@ export class AppComponent implements OnInit {
   pantalla = 'start';
   level = -1;
 
+  titulo = "Gestión Características";
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
-    private mymsgservice:MyMsgService) {
+    private mymsgservice: MyMsgService) {
   }
 
   ngOnInit(): void {
-    
+
     if (isPlatformBrowser(this.platformId)) {
       const navMain = document.getElementById('navbarCollapse');
       if (navMain) {
@@ -34,39 +36,39 @@ export class AppComponent implements OnInit {
       }
     }
 
-    this.mymsgservice.source.subscribe(msg=>{      
-      if (msg.startsWith("pantalla")){
-        this.pantalla = msg.split("-")[1];        
+    this.mymsgservice.source.subscribe(msg => {
+      if (msg.startsWith("pantalla")) {
+        this.pantalla = msg.split("-")[1];
       }
-      else if(msg.startsWith("level")){
-        this.level = parseInt(msg.split("-")[1]);        
+      else if (msg.startsWith("level")) {
+        this.level = parseInt(msg.split("-")[1]);
       }
       console.log("Valor de pantalla es:", this.pantalla);
-      
+
     });
   }
 
-  showModalAgregar(){
+  showModalAgregar() {
     console.log("Show modal agregar-->");
     this.mymsgservice.publishMessage('showModal');
   }
 
-  showModalCrear(){
+  showModalCrear() {
     console.log("Show modal crear-->");
     this.mymsgservice.publishMessage('showModalCrear');
   }
 
-  crearNivel(nivel:number){
-    let messgae= 'createlevel-'+nivel;
+  crearNivel(nivel: number) {
+    const messgae = 'createlevel-' + nivel;
     this.mymsgservice.publishMessage(messgae);
   }
 
-  gotoFeatures(){
-    alert('go to features');
-
+  gotoFeatures() {
+    this.mymsgservice.publishMessage('showNewFeature');
   }
-  gotoCatalogos(){
-    alert('goto catalogos');
+
+  gotoCatalogos() {
+    this.mymsgservice.publishMessage('showNewCatalogo');
   }
 
 }

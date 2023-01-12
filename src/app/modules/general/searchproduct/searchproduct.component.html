@@ -91,10 +91,16 @@
                     </button>
                 </ng-template>
             </p-dialog>
-
-
             
-
+            <p-dialog header="Nueva Característica" [(visible)]="isShowModalNewFeature" [style]="{width: '50vw'}">
+                <div>
+                    <app-newfeature> </app-newfeature>
+                </div>
+                <ng-template pTemplate="footer">
+                    <button class="btn btn-danger" (click)="closeNewFeature()">Guardar   <span class="pi pi-save"></span></button>
+                    <button class="btn btn-outline-secondary" (click)="closeNewFeature()">Cerrar   <span class="pi pi-times"></span></button>
+                </ng-template>
+            </p-dialog>
 
 
         </section>

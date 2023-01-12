@@ -6,26 +6,25 @@ import { Router } from '@angular/router';
   templateUrl: './start.component.html',
   styleUrls: ['./start.component.css']
 })
-export class StartComponent implements OnInit {
+export class StartComponent {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-
-  }
-
-  gotoBusqueda(){
+  gotoBusqueda() {
     this.router.navigate(['gestion', {}]);
   }
 
-  goto(level:number){
-    if (level===1){
+  goto(level: number) {
+    if (level === 1) {
       this.router.navigate(['niveles'], {});
     }
-    else{
+    else {
       this.router.navigate(['home'], {});
     }
+  }
 
+  gotoCatalogos() {
+    this.router.navigate(['catalogos'], {});
   }
 
 

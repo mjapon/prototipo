@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { combineLatest } from 'rxjs';
+import { CatalogosComponent } from './modules/general/catalogos/catalogos.component';
 import { FeaturesComponent } from './modules/general/features/features.component';
 
 import { HomeComponent } from './modules/general/home/home.component';
@@ -48,6 +49,9 @@ const routes: Routes = [
   },
   {
     path: 'feature/:codbarra', component: FeaturesComponent
+  },
+  {
+    path: 'catalogos', component: CatalogosComponent
   },
 
   { path: '**', component: NotFoundComponent }

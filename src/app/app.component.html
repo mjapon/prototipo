@@ -48,7 +48,11 @@
             </a>
           </div>
 
-
+          <div *ngIf="pantalla==='catalogos'">
+            <a  class="hand btn btn-sm btn-outline-danger" title="Agregar" (click)="gotoCatalogos()">
+              <i class="fa fa-plus"></i> Nuevo
+            </a>
+          </div>
 
           <!--
           <div *ngIf="pantalla==='home'">

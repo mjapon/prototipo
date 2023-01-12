@@ -1,0 +1,120 @@
+<div class="container mt-3">
+    <p-toast></p-toast>
+
+    <div class="alldiv">
+        <section class="barra border p-3 ">
+
+            <div class="me-3">
+                <p class="textcolorcorp">Filtros de búsqueda</p>               
+
+                <p class="m-0 p-0 mt-1">- <span class="requerido">Tipo Catálogo:</span> </p>
+                <div>
+                    <input type="text" class="form-control form-control-sm" value="tags" disabled>
+                </div>
+
+
+                <p class="m-0 p-0 mt-2"> Nombre:</p>
+                <div>
+                    <input type="text" class="form-control form-control-sm">
+                </div>
+                
+
+                <div class="mt-2 d-flex flex-row-reverse">
+                    <button class="btn btn-danger" (click)="loadCatalogos()">Buscar</button>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="main border">
+
+            <p-table [value]="catalogos" responsiveLayout="scroll" *ngIf="catalogos.length>0">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nro</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-catalogo>
+                    <tr>
+                        <td class="celda">{{catalogo.codigo}}</td>
+                        <td class="celda">{{catalogo.nombre}}</td>                        
+                        <td class="celda d-flex">
+                            <button class="btn btn-sm btn-outline-primary" (click)="eliminar(catalogo)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary" (click)="editar(catalogo)">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+
+            <p-dialog header="Nuevo Catálogo" [(visible)]="isShowModalNew" [style]="{width: '50vw'}">
+                <div>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for=""> Tipo Catálogo: </label>
+                        </div>
+                        <div class="col-md">
+                            <input type="text" class="form-control" value="Tags" disabled>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for=""> Nombre: </label>
+                        </div>
+                        <div class="col-md">
+                            <input type="text" class="form-control" [(ngModel)] = "newcatalogo.nombre">
+                        </div>
+                    </div>                    
+
+                </div>
+                <ng-template pTemplate="footer">
+                    <button class="btn btn-danger" (click)="saveNew()">Guardar   <span class="pi pi-save"></span></button>
+                    <button class="btn btn-danger" (click)="closeNew()">Cerrar   <span class="pi pi-times"></span>
+                    </button>
+                </ng-template>
+            </p-dialog>
+
+            <p-dialog header="Editar Catálogo" [(visible)]="isShowModalEdit" [style]="{width: '50vw'}">
+                <div>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for=""> Tipo Catálogo: </label>
+                        </div>
+                        <div class="col-md">
+                            <input type="text" class="form-control" value="Tags" disabled>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for=""> Nombre: </label>
+                        </div>
+                        <div class="col-md">
+                            <input type="text" class="form-control" [(ngModel)] = "catalogosel.nombre">
+                        </div>
+                    </div>
+
+                </div>
+                <ng-template pTemplate="footer">
+                    <button class="btn btn-danger" (click)="closeEdit()">Guardar   <span class="pi pi-save"></span></button>
+                    <button class="btn btn-outline-secondary" (click)="closeEdit()">Cerrar   <span class="pi pi-times"></span>
+                    </button>
+                </ng-template>
+            </p-dialog>          
+            
+
+
+        </section>
+
+    </div>
+
+
+
+</div>
