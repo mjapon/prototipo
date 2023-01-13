@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {DropdownModule} from 'primeng/dropdown';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FileUploadModule } from 'primeng/fileupload';
 import { FormsModule } from '@angular/forms';
 import {TreeModule} from 'primeng/tree';
 import {ToastModule} from 'primeng/toast';
@@ -57,7 +58,8 @@ import { CatalogosComponent } from './modules/general/catalogos/catalogos.compon
     TableModule,
     DialogModule,
     ContextMenuModule,
-    MultiSelectModule
+    MultiSelectModule,
+    FileUploadModule 
   ],
   providers: [NodeService, MessageService,MyMsgService],
   bootstrap: [AppComponent]

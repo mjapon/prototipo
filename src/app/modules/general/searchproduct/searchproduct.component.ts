@@ -4,6 +4,12 @@ import { MessageService } from "primeng/api";
 import { MyMsgService } from "../msgservice";
 import { NodeService } from "../nodeservice";
 
+interface Tag {
+    name: string,
+    code: string
+}
+
+
 @Component({
     selector: 'app-searchproduct',
     templateUrl: './searchproduct.component.html',
@@ -16,17 +22,46 @@ export class SearchComponent implements OnInit {
     @Output() evSearch = new EventEmitter<any>();
 
     artsel: any = {};
+    city: string = "Agregar";
+
+    uploadedFiles: any[] = [];
+    uploadSetting:any = {multiple:false, maxFileSize:1000000};
 
     isShowModalView = false;
     isShowModalEdit = false;
     isShowModalNewFeature = false;
+    isShowModalCarga = false;
 
+
+    tags: Tag[];
+    selectedTags: Tag[]|null = null;
 
     constructor(private nodeService: NodeService,
         private mymsgservice: MyMsgService,
         private router: Router,
         private messageService: MessageService) {
 
+        this.tags = [{
+            name:"Tipti", code:"1"
+        },
+        {
+            name:"Rappi", code:"2"
+        },
+        {
+            name:"Catalogo-digital-megamaxi", code:"3"
+        },
+        {
+            name:"Catalogo-digital-aki", code:"4"
+        },
+        {
+            name:"Ecommoblar", code:"5"
+        },
+        {
+            name:"Gira", code:"6"
+        },
+        {
+            name:"Pronaca", code:"7"
+        }];
     }
 
     ngOnInit(): void {
@@ -36,13 +71,14 @@ export class SearchComponent implements OnInit {
 
         this.mymsgservice.source.subscribe(msg => {
             if (msg === "showNewFeature") {
-                console.log("Show new feature--->");
                 this.isShowModalNewFeature = true;
             }
-
             else if (msg === "showNewCatalogo") {
-                console.log("Show new catalogo--->");
                 this.gotoCatalogos();
+            }
+            else if (msg === "showCargaPlantilla") {
+                console.log("Show carga plantilla");
+                this.showCargaArticulos();
             }
         });
     }
@@ -75,6 +111,22 @@ export class SearchComponent implements OnInit {
 
     gotoCatalogos() {
         this.router.navigate(['catalogos']);
+    }
+
+    showCargaArticulos() {
+        this.isShowModalCarga = true;
+    }
+
+    closeCarga() {
+        this.isShowModalCarga = false;
+    }
+
+    onUpload(event:any) {
+        for (const file of event.files) {
+            this.uploadedFiles.push(file);
+        }
+
+        this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: '' });
     }
 
 }

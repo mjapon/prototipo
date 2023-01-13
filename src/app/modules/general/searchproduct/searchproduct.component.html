@@ -76,7 +76,7 @@
                     <app-feature [codbarra]="artsel.codbarra"></app-feature>
                 </div>
                 <ng-template pTemplate="footer">
-                    <button class="btn btn-danger" (click)="closeView()">Cerrar   <span class="pi pi-times"></span>
+                    <button class="btn btn-danger" (click)="closeView()">Cerrar <span class="pi pi-times"></span>
                     </button>
                 </ng-template>
             </p-dialog>
@@ -86,22 +86,85 @@
                     <app-feature-edit [codbarra]="artsel.codbarra"></app-feature-edit>
                 </div>
                 <ng-template pTemplate="footer">
-                    <button class="btn btn-danger" (click)="closeEdit()">Guardar   <span class="pi pi-save"></span></button>
-                    <button class="btn btn-outline-secondary" (click)="closeEdit()">Cerrar   <span class="pi pi-times"></span>
+                    <button class="btn btn-success" (click)="closeEdit()">Guardar <span
+                            class="pi pi-save"></span></button>
+                    <button class="btn btn-danger" (click)="closeEdit()">Cerrar <span class="pi pi-times"></span>
                     </button>
                 </ng-template>
             </p-dialog>
-            
+
             <p-dialog header="Nueva Característica" [(visible)]="isShowModalNewFeature" [style]="{width: '50vw'}">
                 <div>
                     <app-newfeature> </app-newfeature>
                 </div>
                 <ng-template pTemplate="footer">
-                    <button class="btn btn-danger" (click)="closeNewFeature()">Guardar   <span class="pi pi-save"></span></button>
-                    <button class="btn btn-outline-secondary" (click)="closeNewFeature()">Cerrar   <span class="pi pi-times"></span></button>
+                    <button class="btn btn-success" (click)="closeNewFeature()">Guardar <span
+                            class="pi pi-save"></span></button>
+                    <button class="btn btn-danger" (click)="closeNewFeature()">Cerrar <span
+                            class="pi pi-times"></span></button>
                 </ng-template>
             </p-dialog>
 
+            <p-dialog header="Cargar artículos" [(visible)]="isShowModalCarga" [style]="{width: '50vw'}">
+                <div>
+
+                    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+                        [multiple]="uploadSetting.multiple" accept="image/*" [maxFileSize]="uploadSetting.maxFileSize">
+                        <ng-template pTemplate="content">
+                            <ul *ngIf="uploadedFiles.length">
+                                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                            </ul>
+                        </ng-template>
+                    </p-fileUpload>
+                    <div class="w-100">
+                        <div class="d-flex">
+                            <div class="card w-50">
+                                <div class="card-header">
+                                    Tipo de Carga
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Agregar
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Reemplazar
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Inactivar
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card w-50">
+                                <div class="card-header">
+                                    Empresas Delivery
+                                </div>
+                                <div class="card-body">
+                                    <p-multiSelect [options]="tags" [(ngModel)]="selectedTags" defaultLabel="Seleccione delivery" optionLabel="name" selectedItemsLabel="{0} items selected"></p-multiSelect>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ng-template pTemplate="footer">
+                    <button class="btn btn-success" (click)="closeCarga()">Guardar <span
+                            class="pi pi-save"></span></button>
+                    <button class="btn btn-danger" (click)="closeCarga()">Cancelar <span
+                            class="pi pi-times"></span></button>
+                </ng-template>
+
+            </p-dialog>
 
         </section>
 

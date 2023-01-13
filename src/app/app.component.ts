@@ -44,6 +44,9 @@ export class AppComponent implements OnInit {
         this.level = parseInt(msg.split("-")[1]);
       }
       console.log("Valor de pantalla es:", this.pantalla);
+      if (this.pantalla === "catalogos") {
+        this.titulo = "Administración de características";
+      }
 
     });
   }
@@ -72,7 +75,7 @@ export class AppComponent implements OnInit {
   }
 
   nothing() {
-
+    this.mymsgservice.publishMessage('showCargaPlantilla');
   }
 
 }
