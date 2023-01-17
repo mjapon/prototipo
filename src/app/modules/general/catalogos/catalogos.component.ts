@@ -17,6 +17,9 @@ export class CatalogosComponent implements OnInit {
     catalogosel: any = {};
     newcatalogo: any = { codigo: 1, nombre: '' };
 
+    options: Array<any> = [];
+    selectedoption: any;
+
     constructor(private mymsgservice: MyMsgService,
         private nodeService: NodeService,
         private messageService: MessageService) {
@@ -34,6 +37,11 @@ export class CatalogosComponent implements OnInit {
                 this.isShowModalNew = true;
             }
         });
+        this.options= [
+            {name:'Tag', code:1},
+            {name:'Feature', code:2}
+        ]
+        this.selectedoption = this.options[0];
     }
 
     loadCatalogos() {

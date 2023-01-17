@@ -93,6 +93,14 @@
                                 </div>                                
                             </td>
                         </tr>
+                        <tr>
+                            <th scope="col">DIVISIÓN</th>
+                            <td class="table-danger">
+                                <div class="p-fluid">
+                                    <p-multiSelect [options]="divisiones" [(ngModel)]="selectedDivision" defaultLabel="Seleccione" optionLabel="name" selectedItemsLabel="{0} items selected"></p-multiSelect>
+                                </div>                                
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

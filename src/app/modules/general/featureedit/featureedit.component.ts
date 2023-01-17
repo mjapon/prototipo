@@ -19,7 +19,9 @@ export class FeatureEditComponent implements OnChanges {
 
     tags: Tag[];
     selectedTags: Tag[]|null = null;
-
+    
+    divisiones: Tag[];
+    selectedDivision: Tag[]|null = null;
 
     @Input() codbarra: string = "";
 
@@ -30,6 +32,11 @@ export class FeatureEditComponent implements OnChanges {
             {name: 'Hogar', code: '3'},
             {name: 'Ropa', code: '4'},
             {name: 'Deporte', code: '5'}
+        ];
+        this.divisiones = [
+            {name: 'Division1', code: '1'},
+            {name: 'Division2', code: '2'},
+            {name: 'Division3', code: '3'}
         ];
 
     }
