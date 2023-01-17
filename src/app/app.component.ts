@@ -74,8 +74,12 @@ export class AppComponent implements OnInit {
     this.mymsgservice.publishMessage('showNewCatalogo');
   }
 
-  nothing() {
+  showCarga() {
     this.mymsgservice.publishMessage('showCargaPlantilla');
+  }
+
+  nothing() {
+
   }
 
 }
