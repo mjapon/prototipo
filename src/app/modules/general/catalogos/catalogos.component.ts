@@ -38,8 +38,10 @@ export class CatalogosComponent implements OnInit {
             }
         });
         this.options= [
-            {name:'Tag', code:1},
-            {name:'Feature', code:2}
+            {name:'Tags', code:1},
+            {name:'Categoriás', code:2},
+            {name:'Subcategorías', code:3},
+            {name:'Divisiones', code:4}
         ]
         this.selectedoption = this.options[0];
     }
