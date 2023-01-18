@@ -3,5 +3,5 @@
 }
 .requerido::before{    
     color: red;
-    content: '*';
+    content: '* ';
 }
