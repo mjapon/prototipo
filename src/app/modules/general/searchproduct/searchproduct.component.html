@@ -107,52 +107,32 @@
 
             <p-dialog header="Cargar artículos" [(visible)]="isShowModalCarga" [style]="{width: '50vw'}">
                 <div>
-
-                    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
-                        [multiple]="uploadSetting.multiple" accept="image/*" [maxFileSize]="uploadSetting.maxFileSize">
-                        <ng-template pTemplate="content">
-                            <ul *ngIf="uploadedFiles.length">
-                                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                            </ul>
-                        </ng-template>
-                    </p-fileUpload>
-                    <div class="w-100">
-                        <div class="d-flex">
-                            <div class="card w-50">
-                                <div class="card-header">
-                                    Tipo de Carga
-                                </div>
-                                <div class="card-body">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault2" checked>
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            Agregar
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Reemplazar
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Inactivar
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card w-50">
-                                <div class="card-header">
-                                    Empresas Delivery
-                                </div>
-                                <div class="card-body">
-                                    <p-multiSelect [options]="tags" [(ngModel)]="selectedTags" defaultLabel="Seleccione delivery" optionLabel="name" selectedItemsLabel="{0} items selected"></p-multiSelect>
-                                </div>
+                    <div class="card ">
+                        <div class="card-header">
+                            Seleccionar archivo
+                        </div>
+                        <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+                            [multiple]="uploadSetting.multiple" accept="image/*"
+                            [maxFileSize]="uploadSetting.maxFileSize">
+                            <ng-template pTemplate="content">
+                                <ul *ngIf="uploadedFiles.length">
+                                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes
+                                    </li>
+                                </ul>
+                            </ng-template>
+                        </p-fileUpload>
+                    </div>
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            Tipo de carga
+                        </div>
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Agregar
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -163,13 +143,7 @@
                     <button class="btn btn-danger" (click)="closeCarga()">Cancelar <span
                             class="pi pi-times"></span></button>
                 </ng-template>
-
             </p-dialog>
-
         </section>
-
     </div>
-
-
-
 </div>
