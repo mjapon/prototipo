@@ -1,0 +1,112 @@
+{
+    "data": [
+        {
+            "codigo": 5,
+            "nombre": "ECOMMERCE COLECCION"
+        },
+        {
+            "codigo": 6,
+            "nombre": "ECOMMERCE COLOR"
+        },
+        {
+            "codigo": 7,
+            "nombre": "ECOMMERCE EDAD"
+        },
+        {
+            "codigo": 8,
+            "nombre": "ECOMMERCE ARMADO"
+        },
+        {
+            "codigo": 9,
+            "nombre": "ECOMMERCE DESCRIPCION"
+        },
+        {
+            "codigo": 10,
+            "nombre": "ECOMMERCE GENERO"
+        },
+        {
+            "codigo": 11,
+            "nombre": "ECOMMERCE COLOR HEX"
+        },
+        {
+            "codigo": 12,
+            "nombre": "ECOMMERCE NOMBRE"
+        },
+        {
+            "codigo": 13,
+            "nombre": "ECOMMERCE ALTO"
+        },
+        {
+            "codigo": 14,
+            "nombre": "ECOMMERCE ANCHO"
+        },
+        {
+            "codigo": 15,
+            "nombre": "ECOMMERCE PROFUNDIDAD"
+        },
+        {
+            "codigo": 16,
+            "nombre": "ECOMMERCE PESO"
+        },
+        {
+            "codigo": 17,
+            "nombre": "ECOMMERCE CATEGORIA"
+        },
+        {
+            "codigo": 18,
+            "nombre": "ECOMMERCE SUBCATEGORIA"
+        },
+        {
+            "codigo": 19,
+            "nombre": "ECOMMERCE NOMBRE SIMPLE"
+        },
+        {
+            "codigo": 20,
+            "nombre": "ECOMMERCE CARACTERISTICA PRINCIPAL"
+        },
+        {
+            "codigo": 21,
+            "nombre": "ECOMMERCE MARCA"
+        },
+        {
+            "codigo": 22,
+            "nombre": "ECOMMERCE PRESENTACION"
+        },
+        {
+            "codigo": 23,
+            "nombre": "ECOMMERCE CANTIDAD"
+        },
+        {
+            "codigo": 24,
+            "nombre": "ECOMMERCE UNIDAD MEDIDA"
+        },
+        {
+            "codigo": 25,
+            "nombre": "ECOMMERCE TAG"
+        },
+        {
+            "codigo": 28,
+            "nombre": "ECOMMERCE PESO DELIVERY"
+        },
+        {
+            "codigo": 29,
+            "nombre": "ECOMMERCE RIN"
+        },
+        {
+            "codigo": 30,
+            "nombre": "ECOMMERCE TALLA"
+        },
+        {
+            "codigo": 31,
+            "nombre": "ECOMMERCE GENERO"
+        },
+        {
+            "codigo": 32,
+            "nombre": "ECOMMERCE AGRUPADOR ARTICULO"
+        },
+        {
+            "codigo": 33,
+            "nombre": "ECOMMERCE DIVISION"
+        }
+    ]
+}

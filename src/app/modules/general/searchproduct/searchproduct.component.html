@@ -34,6 +34,26 @@
                 </div>
                 -->
 
+                <p class="m-0 p-0 mt-2">- Marca:</p>
+                <div>
+                    <input type="text" class="form-control form-control-sm">
+                </div>
+
+                <p class="m-0 p-0 mt-2">- Tamaño:</p>
+                <div>
+                    <input type="text" class="form-control form-control-sm">
+                </div>
+
+                <p class="m-0 p-0 mt-2">- Descripción:</p>
+                <div>
+                    <input type="text" class="form-control form-control-sm">
+                </div>
+
+                <p class="m-0 p-0 mt-2">- Presentación:</p>
+                <div>
+                    <input type="text" class="form-control form-control-sm">
+                </div>
+
                 <div class="mt-2 d-flex flex-row-reverse">
                     <button class="btn btn-danger" (click)="loadArticulos()">Buscar</button>
                 </div>
@@ -43,13 +63,42 @@
         </section>
         <section class="main border">
 
-
-            <p-table [value]="articulos" responsiveLayout="scroll" *ngIf="articulos.length>0">
+            <p-table [value]="articulos" responsiveLayout="scroll" *ngIf="articulos.length>0" [paginator]="true"
+                [rows]="10" paginatorPosition="both">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Nro</th>
                         <th>Código Barras</th>
                         <th>Descripción</th>
+
+                        <th>COLECCION</th>
+                        <th>COLOR</th>
+                        <th>EDAD</th>
+                        <th>ARMADO</th>
+                        <th>DESCRIPCION</th>
+                        <th>GENERO</th>
+                        <th>COLOR HEX</th>
+                        <th>NOMBRE</th>
+                        <th>ALTO</th>
+                        <th>ANCHO</th>
+                        <th>PROFUNDIDAD</th>
+                        <th>PESO</th>
+                        <th>CATEGORIA</th>
+                        <th>SUBCATEGORIA</th>
+                        <th>NOMBRE SIMPLE</th>
+                        <th>CARACTERISTICA PRINCIPAL</th>
+                        <th>MARCA</th>
+                        <th>PRESENTACION</th>
+                        <th>CANTIDAD</th>
+                        <th>UNIDAD MEDIDA</th>
+                        <th>TAG</th>
+                        <th>PESO DELIVERY</th>
+                        <th>RIN</th>
+                        <th>TALLA</th>
+                        <th>GENERO</th>
+                        <th>AGRUPADOR ARTICULO</th>
+                        <th>DIVISION</th>
+
                         <th>Acciones</th>
                     </tr>
                 </ng-template>
@@ -58,6 +107,35 @@
                         <td>{{articulos.indexOf(product)+1}}</td>
                         <td>{{product.codbarra}}</td>
                         <td>{{product.descripcion}}</td>
+
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        
                         <td class="d-flex">
                             <button class="btn btn-sm btn-outline-primary" (click)="gotoEdit(product)">
                                 <i class="fa fa-eye"></i>

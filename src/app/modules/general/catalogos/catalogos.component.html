@@ -5,14 +5,13 @@
         <section class="barra border p-3 ">
             <div class="me-3">
                 <p class="textcolorcorp">Filtros de búsqueda</p>
+                <!--
                 <p class="m-0 p-0 mt-1">- <span class="requerido">Tipo Catálogo:</span> </p>
                 <div class="p-fluid">
                     <p-dropdown [options]="options" [(ngModel)]="selectedoption" optionLabel="name"
-                            placeholder="Elija una opcion"></p-dropdown>
-                    <!--Agregar el combo   
-                    <input type="text" class="form-control form-control-sm" value="tags" disabled>
-                    -->
+                            placeholder="Elija una opcion"></p-dropdown>                    
                 </div>
+                -->
 
                 <p class="m-0 p-0 mt-2"> Nombre:</p>
                 <div>
@@ -28,7 +27,8 @@
         </section>
         <section class="main border">
 
-            <p-table [value]="catalogos" responsiveLayout="scroll" *ngIf="catalogos.length>0">
+            <p-table [value]="catalogos" responsiveLayout="scroll" *ngIf="catalogos.length>0" [paginator]="true"
+                [rows]="5" paginatorPosition="both">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Nro</th>
@@ -39,13 +39,16 @@
                 <ng-template pTemplate="body" let-catalogo>
                     <tr>
                         <td class="celda">{{catalogo.codigo}}</td>
-                        <td class="celda">{{catalogo.nombre}}</td>                        
+                        <td class="celda">{{catalogo.nombre}}</td>
                         <td class="celda d-flex">
-                            <button class="btn btn-sm btn-outline-primary" (click)="eliminar(catalogo)">
+                            <!--<button class="btn btn-sm btn-outline-primary" (click)="eliminar(catalogo)">
                                 <i class="fa fa-trash"></i>
                             </button>
                             <button class="btn btn-sm btn-outline-primary" (click)="editar(catalogo)">
                                 <i class="fa fa-edit"></i>
+                            </button>-->
+                            <button class="btn btn-sm btn-outline-primary" (click)="verFeature(catalogo)">
+                                <i class="fa fa-eye"></i>
                             </button>
                         </td>
                     </tr>
@@ -55,7 +58,7 @@
 
             <p-dialog header="Nuevo Catálogo" [(visible)]="isShowModalNew" [style]="{width: '50vw'}">
                 <div>
-                    
+
                     <div class="row">
                         <div class="col-md-3">
                             <label for=""> Tipo Catálogo: </label>
@@ -69,21 +72,53 @@
                             <label for=""> Nombre: </label>
                         </div>
                         <div class="col-md">
-                            <input type="text" class="form-control" [(ngModel)] = "newcatalogo.nombre">
+                            <input type="text" class="form-control" [(ngModel)]="newcatalogo.nombre">
                         </div>
-                    </div>                    
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for=""> Temporal: </label>
+                        </div>
+                        <div class="col-md">
+                            <select class="form-select" aria-label="Default select example" [(ngModel)]="tipotemp">
+                                <option value="1" selected>No</option>
+                                <option value="2">Si</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div *ngIf="isCatalogoTemp()" class="mt-2">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span>Fecha Desde:</span>
+                            </div>
+                            <div class="col-md">
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span>Fecha Hasta:</span>
+                            </div>
+                            <div class="col-md">
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
                 <ng-template pTemplate="footer">
-                    <button class="btn btn-danger" (click)="saveNew()">Guardar   <span class="pi pi-save"></span></button>
-                    <button class="btn btn-danger" (click)="closeNew()">Cerrar   <span class="pi pi-times"></span>
+                    <button class="btn btn-danger" (click)="saveNew()">Guardar <span class="pi pi-save"></span></button>
+                    <button class="btn btn-danger" (click)="closeNew()">Cerrar <span class="pi pi-times"></span>
                     </button>
                 </ng-template>
             </p-dialog>
 
             <p-dialog header="Editar Catálogo" [(visible)]="isShowModalEdit" [style]="{width: '50vw'}">
                 <div>
-                    
+
                     <div class="row">
                         <div class="col-md-3">
                             <label for=""> Tipo Catálogo: </label>
@@ -97,24 +132,44 @@
                             <label for=""> Nombre: </label>
                         </div>
                         <div class="col-md">
-                            <input type="text" class="form-control" [(ngModel)] = "catalogosel.nombre">
+                            <input type="text" class="form-control" [(ngModel)]="catalogosel.nombre">
                         </div>
                     </div>
 
                 </div>
                 <ng-template pTemplate="footer">
-                    <button class="btn btn-danger" (click)="closeEdit()">Guardar   <span class="pi pi-save"></span></button>
-                    <button class="btn btn-outline-secondary" (click)="closeEdit()">Cerrar   <span class="pi pi-times"></span>
+                    <button class="btn btn-danger" (click)="closeEdit()">Guardar <span
+                            class="pi pi-save"></span></button>
+                    <button class="btn btn-outline-secondary" (click)="closeEdit()">Cerrar <span
+                            class="pi pi-times"></span>
                     </button>
                 </ng-template>
-            </p-dialog>          
+            </p-dialog>
             
-
-
         </section>
-
     </div>
 
+    <p-dialog header="Nueva Característica" [(visible)]="isShowModalNewFeature" [style]="{width: '50vw'}">
+        <div>
+            <app-newfeature> </app-newfeature>
+        </div>
+        <ng-template pTemplate="footer">
+            <button class="btn btn-success" (click)="closeNewFeature()">Guardar <span
+                    class="pi pi-save"></span></button>
+            <button class="btn btn-danger" (click)="closeNewFeature()">Cerrar <span class="pi pi-times"></span></button>
+        </ng-template>
+    </p-dialog>
 
+
+    <p-dialog header="Detalles Característica" [(visible)]="isShowModalViewFeature" [style]="{width: '50vw'}">
+        <div>
+            <app-viewfeature></app-viewfeature>
+        </div>
+        <ng-template pTemplate="footer">                    
+            <button class="btn btn-outline-secondary" (click)="closeViewFeature()">Cerrar <span
+                    class="pi pi-times"></span>
+            </button>
+        </ng-template>
+    </p-dialog>
 
 </div>

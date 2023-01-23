@@ -27,6 +27,8 @@ import { FeaturesComponent } from './modules/general/features/features.component
 import { FeatureEditComponent } from './modules/general/featureedit/featureedit.component';
 import { NewFeatureComponent } from './modules/general/newfeature/newfeature.component';
 import { CatalogosComponent } from './modules/general/catalogos/catalogos.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { ViewFeatureComponent } from './modules/general/viewfeature/viewfeature.component';
 
 
 
@@ -43,7 +45,8 @@ import { CatalogosComponent } from './modules/general/catalogos/catalogos.compon
     FeaturesComponent,
     FeatureEditComponent,
     NewFeatureComponent,
-    CatalogosComponent
+    CatalogosComponent,
+    ViewFeatureComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { CatalogosComponent } from './modules/general/catalogos/catalogos.compon
     DialogModule,
     ContextMenuModule,
     MultiSelectModule,
-    FileUploadModule 
+    FileUploadModule,
+    PaginatorModule
   ],
   providers: [NodeService, MessageService,MyMsgService],
   bootstrap: [AppComponent]

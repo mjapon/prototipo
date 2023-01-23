@@ -5,8 +5,7 @@
         </div>
         <div class="col-md">
             <div class="d-flex">
-                <span>ECOMMERCE</span>
-                <input type="text" class="ms-2 form-control">
+                <input type="text" [disabled]="true" class="ms-2 form-control" [(ngModel)]="feature.nombre">
             </div>
         </div>
     </div>
@@ -15,13 +14,7 @@
             <label for="" class="requerido"> Tipo:</label>
         </div>
         <div class="col-md">
-            <select class="form-select" aria-label="Default select example" [(ngModel)]="tiposel">
-                <!--<option selected>Elija el tipo</option>-->
-                <option value="1" selected>Texto</option>
-                <option value="2">Número</option>
-                <option value="3">Lista</option>
-                <option value="4">Catálogo</option>
-            </select>
+            <input type="text" [disabled]="true" class="ms-2 form-control" [(ngModel)]="feature.tipo">
         </div>
     </div>
     <div class="row my-1">
@@ -30,7 +23,7 @@
         </div>
         <div class="col-md">
             <div class="d-flex">
-                <input type="number" class="form-control" value="300">
+                <input type="text" [disabled]="true" class="ms-2 form-control" [(ngModel)]="feature.caracteres">
                 <span class="ms-2">caracteres</span>
             </div>
         </div>
@@ -40,7 +33,7 @@
             <label for="" class="requerido"> Número máximo de registros:</label>
         </div>
         <div class="col-md">
-            <input type="number" class="form-control" value="5">
+            <input type="number" [disabled]="true" class="form-control" value="5">
         </div>
     </div>
 
@@ -49,7 +42,7 @@
             <label for="" class="requerido"> Orden:</label>
         </div>
         <div class="col-md">
-            <input type="number" class="form-control" value="1">
+            <input type="number" [disabled]="true" class="form-control" value="1">
         </div>
     </div>
 
@@ -58,17 +51,7 @@
             <label for="" class="requerido"> Condición:</label>
         </div>
         <div class="col-md">
-            <input type="text" class="form-control" value=" ">
-        </div>
-    </div>
-
-    <div class="row my-1" *ngIf="esCatalogo()">
-        <div class="col-md-4">
-            <label for="" class="requerido"> Catálogos:</label>
-        </div>
-        <div class="col-md p-fluid">
-            <p-multiSelect [options]="catalogos" [(ngModel)]="selectedCatalogo" defaultLabel="Seleccione"
-                optionLabel="nombre" selectedItemsLabel="{0} items selected"></p-multiSelect>
+            <input type="text" [disabled]="true" class="form-control" value=" ">
         </div>
     </div>
 

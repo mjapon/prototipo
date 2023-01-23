@@ -19,6 +19,9 @@ export class CatalogosComponent implements OnInit {
 
     options: Array<any> = [];
     selectedoption: any;
+    tipotemp = "1";
+    isShowModalNewFeature = false;
+    isShowModalViewFeature = false;
 
     constructor(private mymsgservice: MyMsgService,
         private nodeService: NodeService,
@@ -36,20 +39,30 @@ export class CatalogosComponent implements OnInit {
                 console.log("Show new catalogo--->");
                 this.isShowModalNew = true;
             }
+            if (msg === "showNewFeature") {
+                this.isShowModalNewFeature = true;
+            }
+            console.log("Valor de mensaje:", msg, this.isShowModalNewFeature);
+
         });
-        this.options= [
-            {name:'Tags', code:1},
-            {name:'Categoriás', code:2},
-            {name:'Subcategorías', code:3},
-            {name:'Divisiones', code:4}
+        this.options = [
+            { name: 'Tags', code: 1 },
+            { name: 'Categoriás', code: 2 },
+            { name: 'Subcategorías', code: 3 },
+            { name: 'Divisiones', code: 4 }
         ]
         this.selectedoption = this.options[0];
     }
 
     loadCatalogos() {
-        this.nodeService.getCatalogos().then(catalogos => {
+        this.nodeService.getFeatures().then(catalogos => {
             this.catalogos = catalogos;
         });
+    }
+    verFeature(feaure: any) {
+        this.isShowModalViewFeature = true;
+        console.log(this.isShowModalViewFeature);
+        
     }
 
     eliminar(catalogo: any) {
@@ -76,6 +89,18 @@ export class CatalogosComponent implements OnInit {
 
     saveNew() {
         this.isShowModalNew = false;
+    }
+
+    isCatalogoTemp() {
+        return parseInt(this.tipotemp) === 2;
+    }
+
+    closeNewFeature() {
+        this.isShowModalNewFeature = false;
+    }
+
+    closeViewFeature() {
+        this.isShowModalViewFeature = false;
     }
 
 }

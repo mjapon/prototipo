@@ -50,6 +50,18 @@ export class NodeService {
       .then(res => <Articulo[]>res.data);
   }
 
+  getCatalogosGen() {
+    return this.http.get<any>('assets/catalogosgen.json')
+      .toPromise()
+      .then(res => <Articulo[]>res.data);
+  }
+
+  getFeatures() {
+    return this.http.get<any>('assets/features.json')
+      .toPromise()
+      .then(res => <Articulo[]>res.data);
+  }
+
   getCodigosDelivery(deliverymap: any, codigo: string) {
     let codigos = [];
     for (const key in deliverymap) {
