@@ -10,6 +10,7 @@ export class NewFeatureEditComponent {
     @Input()
     feature: any = {};
 
+    tipoObligatorioSel: string = "1";
 
     constructor() {
 

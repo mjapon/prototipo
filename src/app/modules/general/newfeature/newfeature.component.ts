@@ -9,6 +9,7 @@ import { NodeService } from "../nodeservice";
 export class NewFeatureComponent {
 
     tiposel: string = "1";
+    tipoObligatorioSel: string = "1";
     catalogos: Array<any> = [];
     selectedCatalogo: any;
 
