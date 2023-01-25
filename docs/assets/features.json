@@ -7,7 +7,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 6,
@@ -16,7 +17,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "No"
         },
         {
             "codigo": 7,
@@ -25,7 +27,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 8,
@@ -34,7 +37,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 9,
@@ -43,7 +47,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 10,
@@ -52,7 +57,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 11,
@@ -61,7 +67,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 12,
@@ -70,7 +77,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 13,
@@ -79,7 +87,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 14,
@@ -88,7 +97,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 15,
@@ -97,7 +107,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 16,
@@ -106,7 +117,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 17,
@@ -115,7 +127,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 18,
@@ -124,7 +137,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 19,
@@ -133,7 +147,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 20,
@@ -142,7 +157,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 21,
@@ -151,7 +167,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 22,
@@ -160,7 +177,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 23,
@@ -169,7 +187,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 24,
@@ -178,7 +197,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 25,
@@ -187,7 +207,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 28,
@@ -196,7 +217,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 29,
@@ -205,7 +227,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 30,
@@ -214,7 +237,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 31,
@@ -223,7 +247,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 32,
@@ -232,7 +257,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         },
         {
             "codigo": 33,
@@ -241,7 +267,8 @@
 			"caracteres": 50,
 			"nreg": 5,
 			"orden": 1,
-			"condicion": ""
+			"condicion": "",
+			"obligatorio": "Si"
         }
     ]
 }
