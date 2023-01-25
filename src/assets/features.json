@@ -2,111 +2,246 @@
     "data": [
         {
             "codigo": 5,
-            "nombre": "ECOMMERCE COLECCION"
+            "nombre": "ECOMMERCE COLECCION",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 6,
-            "nombre": "ECOMMERCE COLOR"
+            "nombre": "ECOMMERCE COLOR",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 7,
-            "nombre": "ECOMMERCE EDAD"
+            "nombre": "ECOMMERCE EDAD",
+			"tipo": "Número",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 8,
-            "nombre": "ECOMMERCE ARMADO"
+            "nombre": "ECOMMERCE ARMADO",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 9,
-            "nombre": "ECOMMERCE DESCRIPCION"
+            "nombre": "ECOMMERCE DESCRIPCION",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 10,
-            "nombre": "ECOMMERCE GENERO"
+            "nombre": "ECOMMERCE GENERO",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 11,
-            "nombre": "ECOMMERCE COLOR HEX"
+            "nombre": "ECOMMERCE COLOR HEX",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 12,
-            "nombre": "ECOMMERCE NOMBRE"
+            "nombre": "ECOMMERCE NOMBRE",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 13,
-            "nombre": "ECOMMERCE ALTO"
+            "nombre": "ECOMMERCE ALTO",
+			"tipo": "Número",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 14,
-            "nombre": "ECOMMERCE ANCHO"
+            "nombre": "ECOMMERCE ANCHO",
+			"tipo": "Número",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 15,
-            "nombre": "ECOMMERCE PROFUNDIDAD"
+            "nombre": "ECOMMERCE PROFUNDIDAD",
+			"tipo": "Número",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 16,
-            "nombre": "ECOMMERCE PESO"
+            "nombre": "ECOMMERCE PESO",
+			"tipo": "Número",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 17,
-            "nombre": "ECOMMERCE CATEGORIA"
+            "nombre": "ECOMMERCE CATEGORIA",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 18,
-            "nombre": "ECOMMERCE SUBCATEGORIA"
+            "nombre": "ECOMMERCE SUBCATEGORIA",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 19,
-            "nombre": "ECOMMERCE NOMBRE SIMPLE"
+            "nombre": "ECOMMERCE NOMBRE SIMPLE",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 20,
-            "nombre": "ECOMMERCE CARACTERISTICA PRINCIPAL"
+            "nombre": "ECOMMERCE CARACTERISTICA PRINCIPAL",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 21,
-            "nombre": "ECOMMERCE MARCA"
+            "nombre": "ECOMMERCE MARCA",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 22,
-            "nombre": "ECOMMERCE PRESENTACION"
+            "nombre": "ECOMMERCE PRESENTACION",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 23,
-            "nombre": "ECOMMERCE CANTIDAD"
+            "nombre": "ECOMMERCE CANTIDAD",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 24,
-            "nombre": "ECOMMERCE UNIDAD MEDIDA"
+            "nombre": "ECOMMERCE UNIDAD MEDIDA",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 25,
-            "nombre": "ECOMMERCE TAG"
+            "nombre": "ECOMMERCE TAG",
+			"tipo": "Lista",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 28,
-            "nombre": "ECOMMERCE PESO DELIVERY"
+            "nombre": "ECOMMERCE PESO DELIVERY",
+			"tipo": "Numero",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 29,
-            "nombre": "ECOMMERCE RIN"
+            "nombre": "ECOMMERCE RIN",
+			"tipo": "Numero",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 30,
-            "nombre": "ECOMMERCE TALLA"
+            "nombre": "ECOMMERCE TALLA",
+			"tipo": "Numero",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 31,
-            "nombre": "ECOMMERCE GENERO"
+            "nombre": "ECOMMERCE GENERO",
+			"tipo": "Text",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 32,
-            "nombre": "ECOMMERCE AGRUPADOR ARTICULO"
+            "nombre": "ECOMMERCE AGRUPADOR ARTICULO",
+			"tipo": "Catalogo",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         },
         {
             "codigo": 33,
-            "nombre": "ECOMMERCE DIVISION"
+            "nombre": "ECOMMERCE DIVISION",
+			"tipo": "Lista",
+			"caracteres": 50,
+			"nreg": 5,
+			"orden": 1,
+			"condicion": ""
         }
     ]
 }

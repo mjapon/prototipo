@@ -1,17 +1,17 @@
 <div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <label for="" class="requerido"> Nombre: </label>
         </div>
         <div class="col-md">
             <div class="d-flex">
-                <span>ECOMMERCE</span>
+                <span>ECOMMERCE</span> <span class="ms-2">-</span>
                 <input type="text" class="ms-2 form-control">
             </div>
         </div>
     </div>
     <div class="row my-1">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <label for="" class="requerido"> Tipo:</label>
         </div>
         <div class="col-md">
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="row my-1">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <label for="" class="requerido"> Longitud Máxima:</label>
         </div>
         <div class="col-md">
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="row my-1">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <label for="" class="requerido"> Número máximo de registros:</label>
         </div>
         <div class="col-md">
@@ -45,7 +45,7 @@
     </div>
 
     <div class="row my-1">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <label for="" class="requerido"> Orden:</label>
         </div>
         <div class="col-md">
@@ -54,8 +54,8 @@
     </div>
 
     <div class="row my-1">
-        <div class="col-md-4">
-            <label for="" class="requerido"> Condición:</label>
+        <div class="col-md-5">
+            <label for="" class="requerido"> Instrucciones:</label>
         </div>
         <div class="col-md">
             <input type="text" class="form-control" value=" ">
@@ -63,13 +63,37 @@
     </div>
 
     <div class="row my-1" *ngIf="esCatalogo()">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <label for="" class="requerido"> Catálogos:</label>
         </div>
-        <div class="col-md p-fluid">
-            <p-multiSelect [options]="catalogos" [(ngModel)]="selectedCatalogo" defaultLabel="Seleccione"
-                optionLabel="nombre" selectedItemsLabel="{0} items selected"></p-multiSelect>
+        <div class="col-md d-flex">
+            <div class="p-fluid" style="width: 90%;">
+                <p-multiSelect [options]="catalogos" appendTo="body" [(ngModel)]="selectedCatalogo"
+                defaultLabel="Seleccione" optionLabel="nombre" selectedItemsLabel="{0} items selected"></p-multiSelect>
+            </div>
+            <button class="btn btn-outline-primary" (click)="showFormNewCatalogo()"> <span class="fa fa-plus"></span> </button>
+            
         </div>
     </div>
+    
+    <p-dialog header="Nuevo Catálogo" [(visible)]="isShowModalNew" [style]="{width: '30vw'}">
+        <div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for=""> Nombre: </label>
+                </div>
+                <div class="col-md">
+                    <input type="text" class="form-control" [(ngModel)]="newcatalogo.nombre">
+                </div>
+            </div>
+        </div>
+        <ng-template pTemplate="footer">
+            <button class="btn btn-danger" (click)="saveNew()">Guardar <span class="pi pi-save"></span></button>
+            <button class="btn btn-danger" (click)="closeNew()">Cerrar <span class="pi pi-times"></span>
+            </button>
+        </ng-template>
+    </p-dialog>
+
+
 
 </div>

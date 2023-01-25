@@ -12,3 +12,16 @@
     display: flex;
     flex-direction: row;
 }
+
+.main{
+    color: green;    
+}
+
+.max{
+    color: orange;
+
+}
+
+.eco{
+    color:blue;
+}

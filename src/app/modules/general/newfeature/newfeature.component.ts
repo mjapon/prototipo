@@ -12,12 +12,17 @@ export class NewFeatureComponent {
     catalogos: Array<any> = [];
     selectedCatalogo: any;
 
+    isShowModalNew = false;
+
+    newcatalogo: any = { codigo: 1, nombre: '' };
+
     constructor(private nodeService: NodeService) {
-
         this.loadCatalogos();
-
     }
 
+    clearNewCatalogo() {
+        this.newcatalogo = { codigo: 1, nombre: '' };
+    }
 
     loadCatalogos() {
         this.nodeService.getCatalogosGen().then(catalogos => {
@@ -30,4 +35,21 @@ export class NewFeatureComponent {
         return parseInt(this.tiposel) === 4;
     }
 
+    showFormNewCatalogo() {
+        this.clearNewCatalogo();
+        this.isShowModalNew = true;
+    }
+
+    closeNew() {
+        this.isShowModalNew = false;
+    }
+    saveNew() {
+        if (this.newcatalogo.nombre.length > 0) {
+            this.catalogos.push(this.newcatalogo);
+            this.isShowModalNew = false;
+        }
+        else {
+            //alert("Ingrese el nombre del catálogo");
+        }
+    }
 }

@@ -47,9 +47,14 @@
                             <button class="btn btn-sm btn-outline-primary" (click)="editar(catalogo)">
                                 <i class="fa fa-edit"></i>
                             </button>-->
-                            <button class="btn btn-sm btn-outline-primary" (click)="verFeature(catalogo)">
+                            <button class="btn btn-sm btn-outline-danger" (click)="verFeature(catalogo)">
                                 <i class="fa fa-eye"></i>
                             </button>
+
+                            <button class="btn btn-sm btn-outline-danger" (click)="editarFeature(catalogo)">
+                                <i class="fa fa-edit"></i>
+                            </button>
+
                         </td>
                     </tr>
                 </ng-template>
@@ -75,7 +80,8 @@
                             <input type="text" class="form-control" [(ngModel)]="newcatalogo.nombre">
                         </div>
                     </div>
-
+                    
+                    <!--
                     <div class="row">
                         <div class="col-md-3">
                             <label for=""> Temporal: </label>
@@ -106,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-
+                    -->
 
                 </div>
                 <ng-template pTemplate="footer">
@@ -163,7 +169,7 @@
 
     <p-dialog header="Detalles Característica" [(visible)]="isShowModalViewFeature" [style]="{width: '50vw'}">
         <div>
-            <app-viewfeature></app-viewfeature>
+            <app-viewfeature [feature]="selectedFeature"></app-viewfeature>
         </div>
         <ng-template pTemplate="footer">                    
             <button class="btn btn-outline-secondary" (click)="closeViewFeature()">Cerrar <span
@@ -171,5 +177,19 @@
             </button>
         </ng-template>
     </p-dialog>
+
+    <p-dialog header="Editar Característica" [(visible)]="isShowModalEditFeature" [style]="{width: '50vw'}">
+        <div>
+            <app-newfeatureedit [feature]="selectedFeature"></app-newfeatureedit>
+        </div>
+        <ng-template pTemplate="footer">                    
+            <button class="btn btn-success" (click)="closeEditFeature()">Guardar <span
+                class="pi pi-save"></span></button>
+            <button class="btn btn-outline-secondary" (click)="closeEditFeature()">Cerrar <span
+                    class="pi pi-times"></span>
+            </button>
+        </ng-template>
+    </p-dialog>
+
 
 </div>

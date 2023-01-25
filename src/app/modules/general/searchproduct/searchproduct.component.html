@@ -5,142 +5,197 @@
 
             <div class="me-3">
                 <p class="textcolorcorp">Filtros de búsqueda</p>
-                <!--
-                <p class="m-0 p-0">- <span class="requerido">Delivery</span> </p>
-                <div>
-                  <input type="text" class="form-control" [(ngModel)]="delivery.name"  disabled>
-                </div>
-                -->
-
-                <p class="m-0 p-0 mt-1">- <span class="requerido">Código Barras:</span> </p>
-                <div>
-                    <input type="text" class="form-control form-control-sm">
+                <div class="border p-2">
+                    <p class="m-0 p-0 mt-1">- <span class="requerido">Código Barras:</span> </p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
                 </div>
 
+                <div class="border p-2" style="height: 280px; overflow: auto;">
+                    <div>
+                        <span class="fs-6 fw-lighter">Características Ecommerce:</span>
+                    </div>
 
-                <p class="m-0 p-0 mt-2">- Descripción Artículo:</p>
-                <div>
-                    <input type="text" class="form-control form-control-sm">
-                </div>
-                <!--
-                <p class="m-0 p-0 mt-1">- Código Clasificación:</p>
-                <div>
-                  <input type="text" class="form-control form-control-sm">
-                </div>
-        
-                <p class="m-0 p-0 mt-1">- Descripción Clasificación:</p>
-                <div class="pb-5">
-                  <input type="text" class="form-control form-control-sm">
-                </div>
-                -->
+                    <p class="m-0 p-0 mt-2">- Colección:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
 
-                <p class="m-0 p-0 mt-2">- Marca:</p>
-                <div>
-                    <input type="text" class="form-control form-control-sm">
+                    <p class="m-0 p-0 mt-2">- Color:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Edad:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Armado:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Descripción:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Alto:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Ancho:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Profundidad:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Rin:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Talla:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Peso:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+
+                    <p class="m-0 p-0 mt-2">- Tag:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+                    <p class="m-0 p-0 mt-2">- División:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
                 </div>
 
-                <p class="m-0 p-0 mt-2">- Tamaño:</p>
-                <div>
-                    <input type="text" class="form-control form-control-sm">
+                <div class="border p-2" style="height: 280px; overflow: auto;">
+                    <div>
+                        <span class="fs-6 fw-lighter">Características MAX:</span>
+                    </div>
+                    <p class="m-0 p-0 mt-2">- Marca:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+                    <p class="m-0 p-0 mt-2">- Clasificación:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+                    <p class="m-0 p-0 mt-2">- Presentación:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
+                    <p class="m-0 p-0 mt-2">- Clase Artículo:</p>
+                    <div>
+                        <input type="text" class="form-control form-control-sm">
+                    </div>
                 </div>
-
-                <p class="m-0 p-0 mt-2">- Descripción:</p>
-                <div>
-                    <input type="text" class="form-control form-control-sm">
-                </div>
-
-                <p class="m-0 p-0 mt-2">- Presentación:</p>
-                <div>
-                    <input type="text" class="form-control form-control-sm">
-                </div>
-
                 <div class="mt-2 d-flex flex-row-reverse">
                     <button class="btn btn-danger" (click)="loadArticulos()">Buscar</button>
                 </div>
             </div>
-
-
         </section>
         <section class="main border">
 
             <p-table [value]="articulos" responsiveLayout="scroll" *ngIf="articulos.length>0" [paginator]="true"
-                [rows]="10" paginatorPosition="both">
+                [rows]="8" paginatorPosition="both">
                 <ng-template pTemplate="header">
                     <tr>
-                        <th>Nro</th>
-                        <th>Código Barras</th>
-                        <th>Descripción</th>
+                        <th><span class="main">Nro </span> </th>
+                        <th><span class="main">Código Barras</span></th>
+                        <!--<th>Descripción</th>-->
+                        <th><span class="max">COLECCION</span></th>
+                        <th><span class="max">COLOR</span></th>
+                        <th><span class="max">EDAD</span></th>
+                        <th><span class="max">ARMADO</span></th>
+                        <th><span class="max">DESCRIPCION</span></th>
+                        <th><span class="max">GENERO</span></th>
+                        <th><span class="max">COLOR HEX</span></th>
+                        <th><span class="max">NOMBRE</span></th>
+                        <th><span class="max">ALTO</span></th>
+                        <th><span class="max">ANCHO</span></th>
+                        <th><span class="max">PROFUNDIDAD</span></th>
+                        <th><span class="max">PESO</span></th>
+                        <th><span class="max">CATEGORIA</span></th>
+                        <th><span class="max">SUBCATEGORIA</span></th>
+                        <th><span class="max">NOMBRE SIMPLE</span></th>
+                        <th><span class="max">CARACTERISTICA PRINCIPAL</span></th>
+                        <th><span class="max">MARCA</span></th>
+                        <th><span class="max">PRESENTACION</span></th>
+                        <th><span class="max">CANTIDAD</span></th>
+                        <th><span class="max">UNIDAD MEDIDA</span></th>
+                        <th><span class="max">TAG</span></th>
+                        <th><span class="max">PESO DELIVERY</span></th>
+                        <th><span class="max">RIN</span></th>
+                        <th><span class="max">TALLA</span></th>
+                        <th><span class="max">GENERO</span></th>
+                        <th><span class="max">AGRUPADOR ARTICULO</span></th>
+                        <th><span class="max">DIVISION</span></th>
+                        <th><span class="eco">MARCA</span></th>
+                        <th><span class="eco">CLASIFICACIÓN</span></th>
+                        <th><span class="eco">PRESENTACIÓN</span></th>
+                        <th><span class="eco">CLASE ARTÍCULO</span></th>
+                        <th><span class="eco">FECHA ACTUALIZACIÓN</span></th>
 
-                        <th>COLECCION</th>
-                        <th>COLOR</th>
-                        <th>EDAD</th>
-                        <th>ARMADO</th>
-                        <th>DESCRIPCION</th>
-                        <th>GENERO</th>
-                        <th>COLOR HEX</th>
-                        <th>NOMBRE</th>
-                        <th>ALTO</th>
-                        <th>ANCHO</th>
-                        <th>PROFUNDIDAD</th>
-                        <th>PESO</th>
-                        <th>CATEGORIA</th>
-                        <th>SUBCATEGORIA</th>
-                        <th>NOMBRE SIMPLE</th>
-                        <th>CARACTERISTICA PRINCIPAL</th>
-                        <th>MARCA</th>
-                        <th>PRESENTACION</th>
-                        <th>CANTIDAD</th>
-                        <th>UNIDAD MEDIDA</th>
-                        <th>TAG</th>
-                        <th>PESO DELIVERY</th>
-                        <th>RIN</th>
-                        <th>TALLA</th>
-                        <th>GENERO</th>
-                        <th>AGRUPADOR ARTICULO</th>
-                        <th>DIVISION</th>
-
-                        <th>Acciones</th>
+                        <th></th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-product>
                     <tr>
-                        <td>{{articulos.indexOf(product)+1}}</td>
-                        <td>{{product.codbarra}}</td>
-                        <td>{{product.descripcion}}</td>
+                        <td><span class="main">{{articulos.indexOf(product)+1}}</span></td>
+                        <td><span class="main">{{product.codbarra}}</span></td>
+                        <!--<td>{{product.descripcion}}</td>-->
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
 
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        
                         <td class="d-flex">
-                            <button class="btn btn-sm btn-outline-primary" (click)="gotoEdit(product)">
+                            <button class="btn btn-sm btn-outline-danger" (click)="gotoEdit(product)">
                                 <i class="fa fa-eye"></i>
                             </button>
-                            <button class="btn btn-sm btn-outline-primary" (click)="showEdit(product)">
+                            <button class="btn btn-sm btn-outline-danger" (click)="showEdit(product)">
                                 <i class="fa fa-edit"></i>
                             </button>
                         </td>
@@ -149,7 +204,7 @@
             </p-table>
 
 
-            <p-dialog header="Detalle artículo" [(visible)]="isShowModalView" [style]="{width: '70vw'}">
+            <p-dialog header="Detalle artículo" [(visible)]="isShowModalView" [style]="{width: '80vw'}">
                 <div>
                     <app-feature [codbarra]="artsel.codbarra"></app-feature>
                 </div>
@@ -159,7 +214,7 @@
                 </ng-template>
             </p-dialog>
 
-            <p-dialog header="Detalle artículo" [(visible)]="isShowModalEdit" [style]="{width: '70vw'}">
+            <p-dialog header="Detalle artículo" [(visible)]="isShowModalEdit" [style]="{width: '80vw'}">
                 <div>
                     <app-feature-edit [codbarra]="artsel.codbarra"></app-feature-edit>
                 </div>

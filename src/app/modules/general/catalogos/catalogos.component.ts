@@ -22,6 +22,8 @@ export class CatalogosComponent implements OnInit {
     tipotemp = "1";
     isShowModalNewFeature = false;
     isShowModalViewFeature = false;
+    isShowModalEditFeature = false;
+    selectedFeature: any = {};
 
     constructor(private mymsgservice: MyMsgService,
         private nodeService: NodeService,
@@ -60,9 +62,13 @@ export class CatalogosComponent implements OnInit {
         });
     }
     verFeature(feaure: any) {
+        this.selectedFeature = feaure;
         this.isShowModalViewFeature = true;
-        console.log(this.isShowModalViewFeature);
-        
+    }
+
+    editarFeature(feaure: any) {
+        this.selectedFeature = feaure;
+        this.isShowModalEditFeature = true;
     }
 
     eliminar(catalogo: any) {
@@ -102,5 +108,10 @@ export class CatalogosComponent implements OnInit {
     closeViewFeature() {
         this.isShowModalViewFeature = false;
     }
+
+    closeEditFeature() {
+        this.isShowModalEditFeature = false;
+    }
+
 
 }

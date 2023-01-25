@@ -29,6 +29,7 @@ import { NewFeatureComponent } from './modules/general/newfeature/newfeature.com
 import { CatalogosComponent } from './modules/general/catalogos/catalogos.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { ViewFeatureComponent } from './modules/general/viewfeature/viewfeature.component';
+import { NewFeatureEditComponent } from './modules/general/newfeatureedit/newfeatureedit.component';
 
 
 
@@ -46,7 +47,8 @@ import { ViewFeatureComponent } from './modules/general/viewfeature/viewfeature.
     FeatureEditComponent,
     NewFeatureComponent,
     CatalogosComponent,
-    ViewFeatureComponent
+    ViewFeatureComponent,
+    NewFeatureEditComponent
   ],
   imports: [
     BrowserModule,

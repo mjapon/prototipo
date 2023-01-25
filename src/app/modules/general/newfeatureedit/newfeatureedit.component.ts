@@ -1,11 +1,11 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-    selector: 'app-viewfeature',
-    templateUrl: './viewfeature.component.html',
-    styleUrls: ['./viewfeature.component.css']
+    selector: 'app-newfeatureedit',
+    templateUrl: './newfeatureedit.component.html',
+    styleUrls: ['./newfeatureedit.component.css']
 })
-export class ViewFeatureComponent {
+export class NewFeatureEditComponent {
     
     @Input()
     feature: any = {};
