@@ -1,0 +1,67 @@
+<div>
+  <div class="row my-1">
+    <div class="col-md-4">
+      <label for="" class="requerido"> Código:</label>
+    </div>
+    <div class="col-md">
+      <div class="d-flex">
+        <input
+          type="text"
+          [disabled]="true"
+          class="ms-2 form-control"
+          [(ngModel)]="ctg.customCode"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-1">
+    <div class="col-md-4">
+      <label for="" class="requerido"> Nombre: </label>
+    </div>
+    <div class="col-md">
+      <div class="d-flex">
+        <input
+          type="text"
+          [disabled]="true"
+          class="ms-2 form-control"
+          [(ngModel)]="ctg.nombre"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-1">
+    <div class="col-md-4">
+      <label for="" class="requerido"> Tipo:</label>
+    </div>
+    <div class="col-md">
+      <div class="d-flex">
+        <input
+          type="text"
+          [disabled]="true"
+          class="ms-2 form-control"
+          [(ngModel)]="ctg.tipo"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-1">
+    <div class="col-md-4">
+      <label for="" class="requerido"> Estado:</label>
+    </div>
+    <div class="col-md">
+      <div class="d-flex">
+        <select
+          class="form-select ms-2"
+          aria-label="Default select example"
+          [(ngModel)]="tipoestadosel"
+        >
+          <option value="1" selected>Activo</option>
+          <option value="0">Inactivo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

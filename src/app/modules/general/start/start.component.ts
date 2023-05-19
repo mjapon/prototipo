@@ -27,5 +27,10 @@ export class StartComponent {
     this.router.navigate(['catalogos'], {});
   }
 
+  gotoAdminCatalogos() {
+
+    this.router.navigate(['admctgs'], {});
+  }
+
 
 }

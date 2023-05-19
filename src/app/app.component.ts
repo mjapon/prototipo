@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MyMsgService } from './modules/general/msgservice';
-import { AlertsComponent } from './modules/application/example-bootstrap/alerts/items.component';
 
 @Component({
   selector: 'app-root',
@@ -47,6 +46,9 @@ export class AppComponent implements OnInit {
       if (this.pantalla === "catalogos") {
         this.titulo = "Administración de características";
       }
+      else if (this.pantalla === "adminctg") {
+        this.titulo = "Administración de tipos de catálogos";
+      }
 
     });
   }
@@ -76,6 +78,10 @@ export class AppComponent implements OnInit {
 
   showCarga() {
     this.mymsgservice.publishMessage('showCargaPlantilla');
+  }
+
+  showCargaCtgs() {
+    this.mymsgservice.publishMessage('showCargaCtgs');
   }
 
   nothing() {

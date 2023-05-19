@@ -1,0 +1,51 @@
+<div>
+  <div class="card mt-1">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="border">
+            <img [src]="ctg.imagen" alt="Img categ" class="img-fluid" />
+          </div>
+
+          <p-fileUpload mode="basic" chooseLabel="Subir Imagen" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*"></p-fileUpload>
+
+        </div>
+        <div class="col-md-7">
+          <div class="row">
+            <div class="col-md-4">Nombre:</div>
+            <div class="col-md">
+              <span class="fw-bold">{{ ctg.nombre }}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <span style="color:red">*</span>
+              <span>Orden:</span>  </div>
+            <div class="col-md">
+              <input
+                type="text"
+                [disabled]="false"
+                class="ms-2 form-control"
+                [(ngModel)]="ctg.orden"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <span style="color:red">*</span>
+              <span>Estado:</span></div>
+            <div class="col-md">
+              <select
+                class="form-select ms-2"
+                aria-label="Default select example"
+                [(ngModel)]="tipoestadosel">
+                <option value="1" selected>Activo</option>
+                <option value="0">Inactivo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

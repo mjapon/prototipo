@@ -56,6 +56,12 @@ export class NodeService {
       .then(res => <Articulo[]>res.data);
   }
 
+  getCtgs() {
+    return this.http.get<any>('assets/ctgs.json')
+      .toPromise()
+      .then(res => <Articulo[]>res.data);
+  }
+
   getFeatures() {
     return this.http.get<any>('assets/features.json')
       .toPromise()

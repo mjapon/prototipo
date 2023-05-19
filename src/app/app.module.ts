@@ -30,6 +30,13 @@ import { CatalogosComponent } from './modules/general/catalogos/catalogos.compon
 import { PaginatorModule } from 'primeng/paginator';
 import { ViewFeatureComponent } from './modules/general/viewfeature/viewfeature.component';
 import { NewFeatureEditComponent } from './modules/general/newfeatureedit/newfeatureedit.component';
+import { AdminCtgComponent } from './modules/general/ctgs/admctgos/adminctg.component';
+import { ViewCtgComponent } from './modules/general/ctgs/viewctg/viewctg.component';
+import { EditCtgComponent } from './modules/general/ctgs/editctg/editctg.component';
+import { CtgDetailComponent } from './modules/general/ctgs/ctgdetail/ctgdetail.component';
+import { CtgDetailViewComponent } from './modules/general/ctgs/ctgdetailview/ctgdetailview.component';
+import { CtgDetailEditComponent } from './modules/general/ctgs/ctgdetailedit/ctgdetailedit.component';
+import { CtgDetailNewComponent } from './modules/general/ctgs/ctgdetailnew/ctgdetailnew.component';
 
 
 
@@ -48,7 +55,14 @@ import { NewFeatureEditComponent } from './modules/general/newfeatureedit/newfea
     NewFeatureComponent,
     CatalogosComponent,
     ViewFeatureComponent,
-    NewFeatureEditComponent
+    NewFeatureEditComponent,
+    AdminCtgComponent,
+    ViewCtgComponent,
+    EditCtgComponent,
+    CtgDetailComponent,
+    CtgDetailViewComponent,
+    CtgDetailEditComponent,
+    CtgDetailNewComponent
   ],
   imports: [
     BrowserModule,

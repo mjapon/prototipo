@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row w-100">
       <div class="col-md-3">
-        <span class="h3 textcolorcorp ">CAPED</span>  
+        <span class="h3 textcolorcorp ">CAPED</span>
       </div>
       <div class="col-md">
         <div class="d-flex flex-row">
@@ -11,7 +11,7 @@
               <img src="assets/params/images/home.png" alt="Inicio">
             </a>
           </div>
-          
+
           <div *ngIf="pantalla==='home'">
             <a  class="hand" title="Agregar" (click)="showModalAgregar()">
               <img src="assets/params/images/plusicon.png" alt="Agregar">
@@ -20,29 +20,29 @@
 
           <div *ngIf="pantalla==='niveles'">
             <a  class="hand m-2" title="Agregar" (click)="crearNivel(0)">
-              Crear              
+              Crear
             </a>
           </div>
 
           <div *ngIf="pantalla==='niveles'&&level>=0">
             <a  class="hand m-2" title="Agregar" (click)="crearNivel(1)">
-              Crear Nivel 2             
+              Crear Nivel 2
             </a>
           </div>
 
           <div *ngIf="pantalla==='niveles'&&level>=1">
             <a  class="hand m-2" title="Nuevo" (click)="crearNivel(2)">
-              Crear Nivel 3             
+              Crear Nivel 3
             </a>
           </div>
-          
+
           <div *ngIf="pantalla==='catalogos'">
             <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="gotoFeatures()">
               <i class="fa fa-plus"></i> Nuevo
             </a>
           </div>
-          
-          
+
+
           <div *ngIf="pantalla==='articulos'">
             <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="showCarga()">
               <i class="fa fa-upload"></i> Carga Masiva
@@ -59,6 +59,19 @@
               <i class="fa-solid fa-file-excel"></i> Descarga Listado
             </a>
           </div>
+
+          <div *ngIf="pantalla==='adminctg'">
+            <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="showCargaCtgs()">
+              <i class="fa fa-upload"></i> Carga Masiva
+            </a>
+          </div>
+          <div *ngIf="pantalla==='adminctg'">
+            <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="nothing()">
+              <i class="fa-solid fa-file-excel"></i> Descarga Listado
+            </a>
+          </div>
+
+
           <!--
           <div *ngIf="pantalla==='catalogos'">
             <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="gotoCatalogos()">
@@ -68,8 +81,8 @@
           -->
         </div>
       </div>
-      
-    </div>    
+
+    </div>
   </div>
 </header>
 
@@ -77,7 +90,7 @@
   <div class="row">
     <div class="separadorcorp whitetextcolor">
       {{titulo}}
-    </div>  
+    </div>
   </div>
 </div>
 
@@ -99,7 +112,7 @@
       </div>
       <div class="col-md">
         Versión: 1.0.0
-      </div>      
-    </div>  
+      </div>
+    </div>
   </div>
 </footer>

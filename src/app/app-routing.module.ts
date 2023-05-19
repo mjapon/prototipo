@@ -9,6 +9,7 @@ import { NivelesComponent } from './modules/general/niveles/niveles.component';
 import { NotFoundComponent } from './modules/general/not-found/not-found.component';
 import { SearchComponent } from './modules/general/searchproduct/searchproduct.component';
 import { StartComponent } from './modules/general/start/start.component';
+import { AdminCtgComponent } from './modules/general/ctgs/admctgos/adminctg.component';
 
 const routes: Routes = [
   { path: '', component: StartComponent, },
@@ -33,7 +34,7 @@ const routes: Routes = [
     loadChildren: () => import('./modules/general/signup/signup.module')
       .then(mod => mod.SignupModule)
   },
-  
+
   {
     path: 'contact',
     loadChildren: () => import('./modules/general/contact/contact.module')
@@ -52,6 +53,9 @@ const routes: Routes = [
   },
   {
     path: 'catalogos', component: CatalogosComponent
+  },
+  {
+    path: 'admctgs', component: AdminCtgComponent
   },
 
   { path: '**', component: NotFoundComponent }

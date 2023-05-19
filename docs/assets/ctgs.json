@@ -1,0 +1,410 @@
+{
+  "data": [
+    {
+      "codigo": 1,
+      "customCode": "FEA_003",
+      "nombre": "DIVISION",
+      "tipo": "Funcionalidad",
+      "ctgs": [
+        {
+          "nombre": "HIGIENE Y CUIDADO PERSONAL",
+          "orden": 1,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "HOGAR",
+          "orden": 2,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "JUGOS Y BEBIDAS",
+          "orden": 3,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "JUGUETES",
+          "orden": 4,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "KIOSKO",
+          "orden": 5,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "LÁCTEOS",
+          "orden": 6,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "LECHES Y SUSTITUTOS",
+          "orden": 7,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "LICORES",
+          "orden": 8,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "MANTENIMIENTO DEL HOGAR",
+          "orden": 9,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "MASCOTAS",
+          "orden": 10,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "MODA",
+          "orden": 11,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "MUEBLES Y DECORACIÓN",
+          "orden": 12,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "NAVIDAD Y AÑO NUEVO",
+          "orden": 13,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "PANADERÍA",
+          "orden": 14,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "PASTELERÍA Y REPOSTERÍA",
+          "orden": 15,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "PATIO Y JARDÍN",
+          "orden": 16,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        }
+      ]
+    },
+    {
+      "codigo": 2,
+      "customCode": "FEA_004",
+      "nombre": "CATEGORIA",
+      "tipo": "Funcionalidad",
+      "ctgs": [
+        {
+          "nombre": "AÑO NUEVO",
+          "orden": 1,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "ACABADOS Y SUJECIÓN",
+          "orden": 2,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052025104-9.jpg"
+        },
+        {
+          "nombre": "ACCESORIOS DE BAÑO",
+          "orden": 3,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ACCESORIOS DE LAVANDERÍA",
+          "orden": 4,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ACCESORIOS DE LIMPIEZA E HIGIENE",
+          "orden": 5,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ACCESORIOS DE TECNOLOGÍA",
+          "orden": 6,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ACCESORIOS EXTERNOS",
+          "orden": 7,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ACCESORIOS INTERNOS",
+          "orden": 8,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ACCESORIOS PARA MASCOTAS",
+          "orden": 9,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ACEITES Y GRASAS",
+          "orden": 10,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ADEREZOS",
+          "orden": 11,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ADHESIVAS",
+          "orden": 12,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ADITIVOS Y LUBRICANTES",
+          "orden": 13,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "AGUA",
+          "orden": 14,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "AJÍES",
+          "orden": 15,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "AJJÍES",
+          "orden": 16,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ALFOMBRAS Y TAPETES",
+          "orden": 17,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ALIMENTO PARA MASCOTAS",
+          "orden": 18,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ALIMENTOS INFANTILES",
+          "orden": 19,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        },
+        {
+          "nombre": "ALIMENTOS PARA MASCOTAS",
+          "orden": 20,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/4716518416788-1.jpg"
+        }
+      ]
+    },
+    {
+      "codigo": 3,
+      "customCode": "FEA_005",
+      "nombre": "SUBCATEGORIA",
+      "tipo": "Funcionalidad",
+      "ctgs": [
+        {
+          "nombre": "ARMABLES",
+          "orden": 1,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "ARROZ",
+          "orden": 2,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "ATUNES Y MARISCOS ENLATADOS",
+          "orden": 3,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "AUDIO & ELECTRO",
+          "orden": 4,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "AUTOS",
+          "orden": 5,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "AVENAS, TAPIOCAS Y MAICENAS",
+          "orden": 6,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "AVENTURA",
+          "orden": 7,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "AVES Y OTROS",
+          "orden": 8,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "AZÚCAR Y PANELA",
+          "orden": 9,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "BARBACOA",
+          "orden": 10,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "BARRAS DE CEREAL Y GRANOLAS",
+          "orden": 11,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "BARRAS Y CEREALES",
+          "orden": 12,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "BEBIDAS DE CEREAL",
+          "orden": 13,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        },
+        {
+          "nombre": "BEBIDAS DEPORTIVAS (ISOTONICAS+WHEY)",
+          "orden": 14,
+          "imagen": "https://storage.googleapis.com/cf-max/items/igm/1000x1000/193052037855-9.jpg"
+        }
+      ]
+    },
+    {
+      "codigo": 4,
+      "customCode": "FEA_001",
+      "nombre": "SEPARATORS",
+      "tipo": "Parametrización",
+      "ctgs": [
+        {
+          "nombre": ",",
+          "orden": 1
+        },
+        {
+          "nombre": "//",
+          "orden": 1
+        }
+      ]
+    },
+    {
+      "codigo": 5,
+      "customCode": "FEA_002",
+      "nombre": "VALIDATIONS",
+      "tipo": "Parametrización",
+      "ctgs": [
+        {
+          "nombre": "Tipo Oración",
+          "orden": 1
+        },
+        {
+          "nombre": "Mayúsculas",
+          "orden": 1
+        },
+        {
+          "nombre": "Numérico",
+          "orden": 1
+        },
+        {
+          "nombre": "Alfanumérico",
+          "orden": 1
+        },
+        {
+          "nombre": "Edad",
+          "orden": 1
+        },
+        {
+          "nombre": "Rin",
+          "orden": 1
+        },
+        {
+          "nombre": "Género",
+          "orden": 1
+        },
+        {
+          "nombre": "Complejidad",
+          "orden": 1
+        }
+      ]
+    },
+    {
+      "codigo": 6,
+      "customCode": "FEA_006",
+      "nombre": "ARTICULO NUEVO",
+      "tipo": "Parametrización",
+      "ctgs": [
+        {
+          "nombre": "19",
+          "orden": 1
+        },
+        {
+          "nombre": "20",
+          "orden": 1
+        },
+        {
+          "nombre": "21",
+          "orden": 1
+        },
+        {
+          "nombre": "22",
+          "orden": 1
+        },
+        {
+          "nombre": "23",
+          "orden": 1
+        },
+        {
+          "nombre": "24",
+          "orden": 1
+        },
+        {
+          "nombre": "25",
+          "orden": 1
+        },
+        {
+          "nombre": "9",
+          "orden": 1
+        }
+      ]
+    },
+    {
+      "codigo": 7,
+      "customCode": "FEA_007",
+      "nombre": "NOMBRE ECOMMERCE",
+      "tipo": "Parametrización",
+      "ctgs": [
+        {
+          "nombre": "19",
+          "orden": 1
+        },
+        {
+          "nombre": "20",
+          "orden": 1
+        },
+        {
+          "nombre": "21",
+          "orden": 1
+        },
+        {
+          "nombre": "22",
+          "orden": 1
+        }
+      ]
+    },
+    {
+      "codigo": 8,
+      "customCode": "FEA_000",
+      "nombre": "USUARIOS AUTORIZADOS CREAR/ELIMINAR CATALOGOS",
+      "tipo": "Parametrización",
+      "ctgs": [
+        {
+          "nombre": "smxadmin",
+          "orden": 1
+        }
+      ]
+    }
+  ]
+}

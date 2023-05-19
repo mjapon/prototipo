@@ -1,0 +1,235 @@
+<div class="container mt-3">
+  <p-toast></p-toast>
+
+  <div class="alldiv">
+    <section class="barra border p-3">
+      <div class="me-3">
+        <p class="textcolorcorp">Filtros de búsqueda</p>
+        <!--
+              <p class="m-0 p-0 mt-1">- <span class="requerido">Tipo Catálogo:</span> </p>
+              <div class="p-fluid">
+                  <p-dropdown [options]="options" [(ngModel)]="selectedoption" optionLabel="name"
+                          placeholder="Elija una opcion"></p-dropdown>
+              </div>
+              -->
+
+        <p class="m-0 p-0 mt-2">Nombre:</p>
+        <div>
+          <input type="text" class="form-control form-control-sm" />
+        </div>
+
+        <div class="mt-2 d-flex flex-row-reverse">
+          <button class="btn btn-danger" (click)="loadCatalogos()">
+            Buscar
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="main border">
+      <p-table
+        [value]="catalogos"
+        responsiveLayout="scroll"
+        *ngIf="catalogos.length > 0"
+        [paginator]="true"
+        [rows]="5"
+        paginatorPosition="both"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nro</th>
+            <th>Codigo</th>
+            <th>Tipo</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-catalogo>
+          <tr>
+            <td class="celda">{{ catalogo.codigo }}</td>
+            <td class="celda">{{ catalogo.customCode }}</td>
+            <td class="celda">{{ catalogo.tipo }}</td>
+            <td class="celda">{{ catalogo.nombre }}</td>
+            <td class="celda d-flex">
+              <button
+                class="btn btn-sm btn-outline-danger"
+                (click)="showCatalogue(catalogo)"
+              >
+                <i class="fa fa-eye"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-outline-danger"
+                (click)="editCatalogue(catalogo)"
+              >
+                <i class="fa fa-edit"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-outline-danger"
+                (click)="showCtgDetail(catalogo)"
+              >
+                <i class="fa fa-bars"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+      <!--
+      <p-dialog
+        header="Nuevo Tipo Catálogo"
+        [(visible)]="isShModalNew"
+        [style]="{ width: '50vw' }"
+      >
+        <div>
+          <div class="row">
+            <div class="col-md-3">
+              <label for=""> Tipo Catálogo: </label>
+            </div>
+            <div class="col-md">
+              <input type="text" class="form-control" value="Tags" disabled />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <label for=""> Nombre: </label>
+            </div>
+            <div class="col-md">
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="newcatalogo.nombre"
+              />
+            </div>
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <button class="btn btn-success" (click)="saveNew()">
+            Guardar <span class="pi pi-save"></span>
+          </button>
+          <button class="btn btn-danger" (click)="closeNew()">
+            Cerrar <span class="pi pi-times"></span>
+          </button>
+        </ng-template>
+      </p-dialog>
+    -->
+
+      <p-dialog
+        header="Editar Tipo Catálogo"
+        [(visible)]="isShModalEdit"
+        [style]="{ width: '50vw' }"
+      >
+        <div>
+          <app-editctg [ctg]="catalogosel"></app-editctg>
+        </div>
+        <ng-template pTemplate="footer">
+          <button class="btn btn-success" (click)="closeEdit()">
+            Actualizar <span class="pi pi-save"></span>
+          </button>
+          <button class="btn btn-danger" (click)="closeEdit()">
+            Cerrar <span class="pi pi-times"></span>
+          </button>
+        </ng-template>
+      </p-dialog>
+    </section>
+  </div>
+
+  <p-dialog
+    header="Detalles Tipo Catálogo"
+    [(visible)]="isShModalView"
+    [style]="{ width: '50vw' }"
+  >
+    <div>
+      <app-viewctg [ctg]="catalogosel"></app-viewctg>
+    </div>
+    <ng-template pTemplate="footer">
+      <button class="btn btn-danger" (click)="closeViewFeature()">
+        Cerrar <span class="pi pi-times"></span>
+      </button>
+    </ng-template>
+  </p-dialog>
+
+  <p-dialog
+    header="Catálogos: {{ catalogosel.nombre }}"
+    [(visible)]="isShModalCtg"
+    [style]="{ width: '80vw' }">
+    <div>
+      <app-ctgdetail [ctg]="catalogosel" [loadCtgs]="reloadCtgsInDetail"></app-ctgdetail>
+    </div>
+    <ng-template pTemplate="footer">
+      <button class="btn btn-success" (click)="descargaCtgs()">
+        Descarga Listado <i class="fa-solid fa-file-excel"></i>
+      </button>
+      <button class="btn btn-success" (click)="showNew()">
+        Crear <span class="pi pi-plus"></span>
+      </button>
+      <button class="btn btn-danger" (click)="closeViewCtgsDetail()">
+        Cerrar <span class="pi pi-times"></span>
+      </button>
+    </ng-template>
+  </p-dialog>
+
+
+  <p-dialog header="Crear Catálogo" [(visible)]="isShModalNew" [style]="{width: '50vw'}">
+    <div>
+      <app-ctgdetailnew></app-ctgdetailnew>
+    </div>
+    <ng-template pTemplate="footer">
+      <button class="btn btn-success" (click)="closeNew()">
+        Guardar <span class="pi pi-save"></span>
+      </button>
+      <button class="btn btn-danger" (click)="closeNew()">
+        Cerrar <span class="pi pi-times"></span>
+      </button>
+    </ng-template>
+
+  </p-dialog>
+
+
+
+  <p-dialog header="Cargar artículos" [(visible)]="isShowModalCarga" [style]="{width: '50vw'}">
+    <div>
+        <div class="card ">
+            <div class="card-header">
+                Seleccionar archivo
+            </div>
+            <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+                [multiple]="uploadSetting.multiple" accept="image/*"
+                [maxFileSize]="uploadSetting.maxFileSize">
+                <ng-template pTemplate="content">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes
+                        </li>
+                    </ul>
+                </ng-template>
+            </p-fileUpload>
+        </div>
+        <div class="card mt-2">
+            <div class="card-header">
+                Tipo de carga
+            </div>
+            <div class="card-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                        id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Nombres
+                    </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault"
+                      id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                      Imágenes
+                  </label>
+              </div>
+            </div>
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <button class="btn btn-success" (click)="closeCarga()">Guardar <span
+                class="pi pi-save"></span></button>
+        <button class="btn btn-danger" (click)="closeCarga()">Cancelar <span
+                class="pi pi-times"></span></button>
+    </ng-template>
+</p-dialog>
+
+</div>
