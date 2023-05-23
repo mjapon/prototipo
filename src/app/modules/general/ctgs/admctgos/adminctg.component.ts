@@ -19,7 +19,9 @@ export class AdminCtgComponent implements OnInit {
   newcatalogo: any = { codigo: 1, nombre: '' };
 
   options: Array<any> = [];
+  estados: Array<any> = [];
   selectedoption: any;
+  selectedStatus: any;
   tipotemp = "1";
   isShModalView = false;
 
@@ -58,12 +60,19 @@ export class AdminCtgComponent implements OnInit {
 
     });
     this.options = [
-      { name: 'Tags', code: 1 },
-      { name: 'Categoriás', code: 2 },
-      { name: 'Subcategorías', code: 3 },
-      { name: 'Divisiones', code: 4 }
+      { name: 'Todos', code: 0 },
+      { name: 'Funcionalidad', code: 1 },
+      { name: 'Parametrización', code: 2 }
     ]
     this.selectedoption = this.options[0];
+
+    this.estados = [
+      { name: 'Todos', code: 0 },
+      { name: 'Activos', code: 1 },
+      { name: 'Inactivos', code: 2 },
+    ]
+
+    this.selectedStatus = this.estados[0];
   }
 
   onUpload(event: any) {

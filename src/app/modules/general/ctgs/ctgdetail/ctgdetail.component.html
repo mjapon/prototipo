@@ -2,10 +2,10 @@
   <p-toast></p-toast>
 
   <div class="alldiv">
-      <section class="barra border p-3 ">
-          <div class="me-3">
-              <p class="textcolorcorp">Filtros de búsqueda</p>
-              <!--
+    <section class="barra border p-3">
+      <div class="me-3">
+        <p class="textcolorcorp">Filtros de búsqueda</p>
+        <!--
               <p class="m-0 p-0 mt-1">- <span class="requerido">Tipo Catálogo:</span> </p>
               <div class="p-fluid">
                   <p-dropdown [options]="options" [(ngModel)]="selectedoption" optionLabel="name"
@@ -13,67 +13,98 @@
               </div>
               -->
 
-              <p class="m-0 p-0 mt-2"> Nombre:</p>
-              <div>
-                  <input type="text" class="form-control form-control-sm">
+        <p class="m-0 p-0 mt-2">Nombre:</p>
+        <div>
+          <input type="text" class="form-control form-control-sm" />
+        </div>
+
+        <div class="mt-2 d-flex flex-row-reverse">
+          <button class="btn btn-danger" (click)="loadCatalogos()">
+            Buscar
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="main border">
+      <p-table
+        [value]="catalogos"
+        responsiveLayout="scroll"
+        *ngIf="catalogos.length > 0"
+        [paginator]="true"
+        [rows]="5"
+        paginatorPosition="top"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nro</th>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Orden</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-catalogo>
+          <tr>
+            <td class="celda">{{ catalogos.indexOf(catalogo) + 1 }}</td>
+            <td class="celda">
+              <img
+                *ngIf="catalogo.imagen"
+                [src]="catalogo.imagen"
+                [alt]="catalogo.name"
+                width="70"
+                class="shadow-4, hand"
+                (click) = "showGalleria(catalogo)"
+              />
+            </td>
+            <td class="celda">{{ catalogo.nombre }}</td>
+            <td class="celda">{{ catalogo.orden }}</td>
+            <td class="celda">Activo</td>
+            <td class="celda">
+              <div class="d-flex">
+                <button
+                  class="btn btn-sm btn-outline-danger"
+                  (click)="showCatalogue(catalogo)"
+                >
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-danger"
+                  (click)="editCatalogue(catalogo)"
+                >
+                  <i class="fa fa-edit"></i>
+                </button>
               </div>
-
-              <div class="mt-2 d-flex flex-row-reverse">
-                  <button class="btn btn-danger" (click)="loadCatalogos()">Buscar</button>
-              </div>
-          </div>
-
-
-      </section>
-      <section class="main border">
-
-          <p-table [value]="catalogos" responsiveLayout="scroll" *ngIf="catalogos.length>0" [paginator]="true"
-              [rows]="5" paginatorPosition="both">
-              <ng-template pTemplate="header">
-                  <tr>
-                      <th>Nro</th>
-                      <th>Nombre</th>
-                      <th>Orden</th>
-                      <th>Estado</th>
-                      <th>Acción</th>
-                  </tr>
-              </ng-template>
-              <ng-template pTemplate="body" let-catalogo>
-                  <tr>
-                      <td class="celda">{{catalogos.indexOf(catalogo)+1}}</td>
-                      <td class="celda">{{catalogo.nombre}}</td>
-                      <td class="celda">{{catalogo.orden}}</td>
-                      <td class="celda">Activo</td>
-                      <td class="celda d-flex">
-                          <button class="btn btn-sm btn-outline-danger" (click)="showCatalogue(catalogo)">
-                              <i class="fa fa-eye"></i>
-                          </button>
-                          <button class="btn btn-sm btn-outline-danger" (click)="editCatalogue(catalogo)">
-                              <i class="fa fa-edit"></i>
-                          </button>
-                      </td>
-                  </tr>
-              </ng-template>
-          </p-table>
-      </section>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </section>
   </div>
 
-  <p-dialog header="Detalles Catálogo" [(visible)]="isShowModalView" [style]="{width: '60vw'}">
+  <p-dialog
+    header="Detalles Catálogo"
+    [(visible)]="isShowModalView"
+    [style]="{ width: '60vw' }"
+  >
     <div>
       <app-ctgdetailview [ctg]="catalogosel"></app-ctgdetailview>
     </div>
     <ng-template pTemplate="footer">
-        <button class="btn btn-danger" (click)="closeViewFeature()">Cerrar <span
-                class="pi pi-times"></span>
-        </button>
+      <button class="btn btn-danger" (click)="closeViewFeature()">
+        Cerrar <span class="pi pi-times"></span>
+      </button>
     </ng-template>
   </p-dialog>
 
-  <p-dialog header="Editar Catálogo" [(visible)]="isShowModalEdit" [style]="{width: '60vw'}">
+  <p-dialog
+    header="Editar Catálogo"
+    [(visible)]="isShowModalEdit"
+    [style]="{ width: '60vw' }"
+  >
     <div>
       <app-ctgdetailedit [ctg]="catalogosel"></app-ctgdetailedit>
     </div>
-
 
     <ng-template pTemplate="footer">
       <button class="btn btn-success" (click)="closeEdit()">
@@ -83,9 +114,27 @@
         Cerrar <span class="pi pi-times"></span>
       </button>
     </ng-template>
-
   </p-dialog>
 
-
-
+  <p-galleria
+    [value]="images"
+    [(visible)]="displayImage"
+    [responsiveOptions]="responsiveOptions"
+    [containerStyle]="{ 'max-width': '50%' }"
+    [numVisible]="9"
+    [circular]="true"
+    [fullScreen]="true"
+    [showItemNavigators]="true"
+    [showThumbnails]="true"
+    [baseZIndex]="100000"
+  >
+    <ng-template pTemplate="item" let-item>
+      <img [src]="item.imagen" style="width: 100%; display: block" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+      <div class="p-grid p-nogutter p-justify-center">
+        <img [src]="item.imagen" class="imgthumbailsize" />
+      </div>
+    </ng-template>
+  </p-galleria>
 </div>

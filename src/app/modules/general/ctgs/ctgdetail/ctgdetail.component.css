@@ -17,3 +17,14 @@
   padding: 0px 10px;
   margin: 0px;
 }
+
+
+.imgthumbailsize{
+  width: 20%;
+  height: 30%;
+  display: block;
+}
+
+.hand{
+  cursor: pointer;
+}

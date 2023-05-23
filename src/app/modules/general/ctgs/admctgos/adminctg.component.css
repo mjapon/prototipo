@@ -17,3 +17,13 @@
   padding: 0px 10px;
   margin: 0px;
 }
+
+.enlace{
+  color: #990000;
+}
+
+.enlace:hover{
+  cursor:pointer;
+  text-decoration:underline;
+}
+

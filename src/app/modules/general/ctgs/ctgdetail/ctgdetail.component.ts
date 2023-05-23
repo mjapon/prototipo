@@ -20,6 +20,10 @@ export class CtgDetailComponent implements OnChanges {
   isShowModalNew = false;
   isShowModalEdit = false;
   isShowModalView = false;
+  images:Array<any> = [];
+  displayImage = false;
+
+  responsiveOptions: any[] = [];
 
   constructor() {
 
@@ -31,10 +35,26 @@ export class CtgDetailComponent implements OnChanges {
       this.loadCatalogos();
     }
 
+    this.responsiveOptions = [
+      {
+        breakpoint: '1024px',
+        numVisible: 5
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 3
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1
+      }
+    ];
   }
 
   loadCatalogos() {
     this.catalogos = this.ctg.ctgs;
+    console.log("catagloso:", this.catalogos);
+
   }
 
   showCatalogue(ctg: any) {
@@ -66,4 +86,9 @@ export class CtgDetailComponent implements OnChanges {
     this.isShowModalView = false;
   }
 
+  showGalleria(ctg: any) {
+    this.images = [];
+    this.images.push(ctg);
+    this.displayImage = true;
+  }
 }

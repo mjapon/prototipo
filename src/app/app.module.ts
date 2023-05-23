@@ -37,6 +37,7 @@ import { CtgDetailComponent } from './modules/general/ctgs/ctgdetail/ctgdetail.c
 import { CtgDetailViewComponent } from './modules/general/ctgs/ctgdetailview/ctgdetailview.component';
 import { CtgDetailEditComponent } from './modules/general/ctgs/ctgdetailedit/ctgdetailedit.component';
 import { CtgDetailNewComponent } from './modules/general/ctgs/ctgdetailnew/ctgdetailnew.component';
+import {GalleriaModule} from 'primeng/galleria';
 
 
 
@@ -79,7 +80,8 @@ import { CtgDetailNewComponent } from './modules/general/ctgs/ctgdetailnew/ctgde
     ContextMenuModule,
     MultiSelectModule,
     FileUploadModule,
-    PaginatorModule
+    PaginatorModule,
+    GalleriaModule
   ],
   providers: [NodeService, MessageService,MyMsgService],
   bootstrap: [AppComponent]
