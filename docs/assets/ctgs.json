@@ -337,35 +337,35 @@
       "tipo": "Parametrización",
       "ctgs": [
         {
-          "nombre": "19",
+          "nombre": "NOMBRE SIMPLE",
           "orden": 1
         },
         {
-          "nombre": "20",
+          "nombre": "CARACTERISTICA PRINCIPAL",
           "orden": 1
         },
         {
-          "nombre": "21",
+          "nombre": "MARCA",
           "orden": 1
         },
         {
-          "nombre": "22",
+          "nombre": "PRESENTACION",
           "orden": 1
         },
         {
-          "nombre": "23",
+          "nombre": "CANTIDAD",
           "orden": 1
         },
         {
-          "nombre": "24",
+          "nombre": "UNIDAD MEDIDA",
           "orden": 1
         },
         {
-          "nombre": "25",
+          "nombre": "TAG",
           "orden": 1
         },
         {
-          "nombre": "9",
+          "nombre": "DESCRIPCION",
           "orden": 1
         }
       ]
@@ -377,19 +377,19 @@
       "tipo": "Parametrización",
       "ctgs": [
         {
-          "nombre": "19",
+          "nombre": "NOMBRE SIMPLE",
           "orden": 1
         },
         {
-          "nombre": "20",
+          "nombre": "CARACTERISTICA PRINCIPAL",
           "orden": 1
         },
         {
-          "nombre": "21",
+          "nombre": "MARCA",
           "orden": 1
         },
         {
-          "nombre": "22",
+          "nombre": "PRESENTACION",
           "orden": 1
         }
       ]

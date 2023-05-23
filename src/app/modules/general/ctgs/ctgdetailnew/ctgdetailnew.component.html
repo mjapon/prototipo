@@ -2,7 +2,7 @@
   <div class="card mt-1">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5" *ngIf="ctgtype.tipo==='Funcionalidad'">
           <p-fileUpload mode="basic" chooseLabel="Subir Imagen" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*"></p-fileUpload>
         </div>
         <div class="col-md-7">

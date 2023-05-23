@@ -22,8 +22,10 @@ export class AdminCtgComponent implements OnInit {
   estados: Array<any> = [];
   selectedoption: any;
   selectedStatus: any;
+  selectedCtg: any;
   tipotemp = "1";
   isShModalView = false;
+  tiposCtgs: Array<any> = [];
 
   reloadCtgsInDetail = false;
 
@@ -70,9 +72,17 @@ export class AdminCtgComponent implements OnInit {
       { name: 'Todos', code: 0 },
       { name: 'Activos', code: 1 },
       { name: 'Inactivos', code: 2 },
-    ]
+    ];
 
     this.selectedStatus = this.estados[0];
+
+    this.tiposCtgs = [
+      { name: 'División', code: 0 },
+      { name: 'Categoría', code: 1 },
+      { name: 'Subcategoría', code: 2 },
+    ];
+
+    this.selectedCtg =  this.tiposCtgs[0];
   }
 
   onUpload(event: any) {

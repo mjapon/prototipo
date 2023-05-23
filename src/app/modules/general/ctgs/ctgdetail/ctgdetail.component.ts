@@ -20,6 +20,7 @@ export class CtgDetailComponent implements OnChanges {
   isShowModalNew = false;
   isShowModalEdit = false;
   isShowModalView = false;
+
   images:Array<any> = [];
   displayImage = false;
 

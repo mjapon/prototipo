@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: 'app-ctgdetailnew',
@@ -8,6 +8,10 @@ export class CtgDetailNewComponent {
 
   form: any = {};
   tipoestadosel:string = "1";
+
+  @Input()
+  ctgtype:any = {};
+
   constructor() {
 
   }

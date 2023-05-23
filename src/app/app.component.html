@@ -60,16 +60,30 @@
             </a>
           </div>
 
+
           <div *ngIf="pantalla==='adminctg'">
             <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="showCargaCtgs()">
               <i class="fa fa-upload"></i> Carga Masiva
             </a>
           </div>
-          <div *ngIf="pantalla==='adminctg'">
+          <!--<div *ngIf="pantalla==='adminctg'">
             <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="nothing()">
               <i class="fa-solid fa-file-excel"></i> Descarga Listado
             </a>
+          </div>-->
+
+          <div class="btn-group" role="group">
+            <button type="button" class="btn ms-2 btn-sm btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa fa-download"></i> Descarga
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item hand" (click)="nothing()">
+                <i class="fa-solid fa-file-excel"></i> Descargar Listado </a></li>
+              <li><a class="dropdown-item hand" (click)="nothing()">
+                <i class="fa-solid fa fa-download"></i> Descargar Plantilla</a></li>
+            </ul>
           </div>
+
 
 
           <!--

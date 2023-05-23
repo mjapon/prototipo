@@ -9,6 +9,9 @@ export class CtgDetailEditComponent {
   @Input()
   ctg:any = {};
 
+  @Input()
+  ctgtype:any = {};
+
   tipoestadosel:string = "1";
 
   constructor() {

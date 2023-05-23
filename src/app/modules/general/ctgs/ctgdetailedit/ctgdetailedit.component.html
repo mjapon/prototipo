@@ -2,8 +2,8 @@
   <div class="card mt-1">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-5">
-          <div class="border">
+        <div class="col-md-5" *ngIf="ctgtype.tipo==='Funcionalidad'">
+          <div class="border" *ngIf="ctg.imagen">
             <img [src]="ctg.imagen" alt="Img categ" class="img-fluid" />
           </div>
 
@@ -14,7 +14,11 @@
           <div class="row">
             <div class="col-md-4">Nombre:</div>
             <div class="col-md">
-              <span class="fw-bold">{{ ctg.nombre }}</span>
+              <input
+                type="text"
+                [disabled]="true"
+                class="ms-2 form-control"
+                [(ngModel)]="ctg.nombre"/>
             </div>
           </div>
           <div class="row">

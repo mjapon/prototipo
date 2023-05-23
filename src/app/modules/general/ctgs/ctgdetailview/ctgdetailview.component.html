@@ -2,9 +2,9 @@
   <div class="card mt-1">
     <div class="card-body">
       <div class="row">
-        <div class="col-md-5">
-          <div class="border">
-            <img [src]="ctg.imagen" alt="Img categ" class="img-fluid" />
+        <div class="col-md-5" *ngIf="ctgtype.tipo==='Funcionalidad'">
+          <div class="border" *ngIf="ctg.imagen">
+            <img [src]="ctg.imagen" alt="Img categ" class="img-fluid hand" (click)="showGalleria()"/>
           </div>
         </div>
         <div class="col-md-7">
@@ -45,4 +45,28 @@
       </div>
     </div>
   </div>
+
+  <p-galleria
+  [value]="images"
+  [(visible)]="displayImage"
+  [responsiveOptions]="responsiveOptions"
+  [containerStyle]="{ 'max-width': '50%' }"
+  [numVisible]="9"
+  [circular]="false"
+  [fullScreen]="true"
+  [showItemNavigators]="false"
+  [showThumbnails]="false"
+  [baseZIndex]="100000"
+>
+  <ng-template pTemplate="item" let-item>
+    <img [src]="item.imagen" style="width: 100%; display: block" />
+  </ng-template>
+  <ng-template pTemplate="thumbnail" let-item>
+    <div class="p-grid p-nogutter p-justify-center">
+      <img [src]="item.imagen" class="imgthumbailsize" />
+    </div>
+  </ng-template>
+</p-galleria>
+
+
 </div>

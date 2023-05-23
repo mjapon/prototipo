@@ -37,7 +37,7 @@
         <ng-template pTemplate="header">
           <tr>
             <th>Nro</th>
-            <th>Imagen</th>
+            <th *ngIf="ctg.tipo==='Funcionalidad'">Imagen</th>
             <th>Nombre</th>
             <th>Orden</th>
             <th>Estado</th>
@@ -47,7 +47,7 @@
         <ng-template pTemplate="body" let-catalogo>
           <tr>
             <td class="celda">{{ catalogos.indexOf(catalogo) + 1 }}</td>
-            <td class="celda">
+            <td class="celda" *ngIf="ctg.tipo==='Funcionalidad'">
               <img
                 *ngIf="catalogo.imagen"
                 [src]="catalogo.imagen"
@@ -88,7 +88,7 @@
     [style]="{ width: '60vw' }"
   >
     <div>
-      <app-ctgdetailview [ctg]="catalogosel"></app-ctgdetailview>
+      <app-ctgdetailview [ctg]="catalogosel" [ctgtype]="ctg"></app-ctgdetailview>
     </div>
     <ng-template pTemplate="footer">
       <button class="btn btn-danger" (click)="closeViewFeature()">
@@ -103,7 +103,7 @@
     [style]="{ width: '60vw' }"
   >
     <div>
-      <app-ctgdetailedit [ctg]="catalogosel"></app-ctgdetailedit>
+      <app-ctgdetailedit [ctg]="catalogosel" [ctgtype]="ctg"></app-ctgdetailedit>
     </div>
 
     <ng-template pTemplate="footer">
@@ -122,10 +122,10 @@
     [responsiveOptions]="responsiveOptions"
     [containerStyle]="{ 'max-width': '50%' }"
     [numVisible]="9"
-    [circular]="true"
+    [circular]="false"
     [fullScreen]="true"
-    [showItemNavigators]="true"
-    [showThumbnails]="true"
+    [showItemNavigators]="false"
+    [showThumbnails]="false"
     [baseZIndex]="100000"
   >
     <ng-template pTemplate="item" let-item>
