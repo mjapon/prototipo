@@ -49,3 +49,12 @@
 .inactive{
   color: rgb(175, 172, 172);
 }
+
+
+.p-dialog-header{
+  background: red !important;
+}
+
+.bgcolor{
+  background-color: coral;
+}
