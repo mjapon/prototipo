@@ -1,0 +1,229 @@
+<div class="container mt-3">
+  <p-toast></p-toast>
+
+  <div class="alldiv">
+    <section class="barra border p-3">
+      <div class="me-3">
+        <p class="textcolorcorp">Filtros de búsqueda</p>
+        <p class="mt-1">- <span class="requerido">Empresas Delivery:</span></p>
+        <div class="p-fluid">
+          <p-dropdown
+            [options]="deliveries"
+            [(ngModel)]="selectedDelivery"
+            optionLabel="nombre"
+            placeholder="Seleccionar"
+          ></p-dropdown>
+        </div>
+
+        <p class="mt-1 bloquefiltro">- <span class="requerido">Área:</span></p>
+        <div class="p-fluid">
+          <p-dropdown
+            [options]="areas"
+            [(ngModel)]="selectedLocal"
+            optionLabel="codigo"
+            [filter]="true"
+            placeholder="Elija una opcion"
+          >
+            <ng-template let-area pTemplate="item">
+              <div class="flex align-items-center gap-2">
+                <div>{{ area.codigo }}</div>
+                <span>-</span>
+                <div>{{ area.formato }}</div>
+                <span>-</span>
+                <div>{{ area.nombre }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+
+        <p class="mt-2 bloquefiltro">
+          <span class="requerido">Resumen: </span>
+        </p>
+        <div>
+          <div class="flex">
+            <div *ngFor="let category of tiposBusqueda" class="flexitem">
+              <p-radioButton
+                [inputId]="category.code"
+                name="category"
+                [value]="category"
+                [(ngModel)]="selectedTipo"
+              ></p-radioButton>
+              <label [for]="category.key" class="ml-2">{{
+                category.name
+              }}</label>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-2 bloquefiltro">Código de barras:</p>
+        <div>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            [disabled]="selectedTipo.code === '1'"
+          />
+        </div>
+
+        <div class="mt-2 d-flex flex-row-reverse bloquefiltro">
+          <button class="btn btn-danger" (click)="doSearch()">Buscar</button>
+        </div>
+      </div>
+    </section>
+    <section class="main ps-2">
+      <ul
+        class="nav nav-tabs border-top-0 border-start-0 border-end-0 border border-danger"
+      >
+        <li
+          class="nav-item"
+          [ngClass]="{
+            'border border-danger rounded-top border-bottom-0':
+              selectedTab === 1
+          }"
+          (click)="selectedTab = 1"
+        >
+          <a
+            class="nav-link hand"
+            [ngClass]="{ active: selectedTab === 1 }"
+            aria-current="page"
+            >Respuesta Completa</a
+          >
+        </li>
+        <li
+          class="nav-item"
+          [ngClass]="{
+            'border border-danger rounded-top border-bottom-0':
+              selectedTab === 2
+          }"
+          (click)="selectedTab = 2"
+        >
+          <a class="nav-link hand" [ngClass]="{ active: selectedTab === 2 }"
+            >Tabla de datos</a
+          >
+        </li>
+      </ul>
+      <div class="w-100 border-top-0 border border-danger rounded-bottom">
+        <div class="p-2">
+          <div *ngIf="selectedTab === 1">
+            <div
+              class="py-3 inactive"
+              *ngIf="!itemFinded"
+              style="height: 200px"
+            >
+              Realice la búsqueda de un artículo
+            </div>
+            <div *ngIf="itemFinded">
+              <pre><div>
+                {{itemFinded | json}}
+              </div></pre>
+            </div>
+          </div>
+          <div *ngIf="selectedTab === 2">
+            <p-table
+              [value]="tablaItem"
+              responsiveLayout="scroll"
+              *ngIf="tablaItem && tablaItem.length > 0"
+              [paginator]="true"
+              [rows]="5"
+              paginatorPosition="top"
+            >
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>Nro</th>
+                  <th>Clave</th>
+                  <th>Descripcion</th>
+                  <th>Valor</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-catalogo>
+                <tr>
+                  <td class="celda">{{ catalogo.codigo }}</td>
+                  <td class="celda">
+                    <span>
+                      {{ catalogo.nro }}
+                    </span>
+                  </td>
+                  <td class="celda">{{ catalogo.clave }}</td>
+                  <td class="celda"></td>
+                  <td class="celda">{{ catalogo.valor }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <p-dialog
+    header="Información Resumen"
+    [(visible)]="isShowModalResumen"
+    [style]="{ width: '50vw' }"
+  >
+    <div>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <span>Empresa Delivery:</span>
+            </div>
+            <div class="col-md">
+                {{selectedDelivery?.nombre}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <span>Nombre del local:</span>
+            </div>
+            <div class="col-md">
+              {{selectedLocal?.nombre}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <span>Código de local:</span>
+            </div>
+            <div class="col-md">
+                {{selectedLocal?.codigo}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <span>Código de referencia:</span>
+            </div>
+            <div class="col-md">
+                {{selectedLocal?.codref}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <span>Formato de negocio:</span>
+            </div>
+            <div class="col-md">
+              {{selectedLocal?.formato}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <span class="fw-bolder ">Total items enviados:</span>
+            </div>
+            <div class="col-md">
+               <span class="fw-bolder">2560</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <ng-template pTemplate="footer">
+      <button class="btn btn-danger" (click)="closeResumen()">
+        Cerrar <span class="pi pi-times"></span>
+      </button>
+    </ng-template>
+  </p-dialog>
+</div>

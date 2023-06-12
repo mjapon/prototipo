@@ -68,6 +68,38 @@ export class NodeService {
       .then(res => <Articulo[]>res.data);
   }
 
+  getDeliveries() {
+    return this.http.get<any>('assets/deliveries.json')
+      .toPromise()
+      .then(res => <[]>res.deliveries);
+  }
+
+  getItemSoporte() {
+    return this.http.get<any>('assets/deliveries.json')
+      .toPromise()
+      .then(res => res.itemsoporte);
+  }
+
+  getItemSoporteTabla(itemSoporte: any) {
+    const properties = Object.getOwnPropertyNames(itemSoporte);
+    const items: Array<any> = [];
+    properties.forEach(prop =>
+      items.push({
+        'nro': properties.indexOf(prop) + 1,
+        'clave': prop,
+        'valor': itemSoporte[prop]
+      })
+    )
+
+    return items;
+  }
+
+  getLocales() {
+    return this.http.get<any>('assets/deliveries.json')
+      .toPromise()
+      .then(res => <[]>res.locales);
+  }
+
   getCodigosDelivery(deliverymap: any, codigo: string) {
     let codigos = [];
     for (const key in deliverymap) {

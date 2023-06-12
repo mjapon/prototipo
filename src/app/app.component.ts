@@ -49,6 +49,9 @@ export class AppComponent implements OnInit {
       else if (this.pantalla === "adminctg") {
         this.titulo = "Administración de tipos de catálogos";
       }
+      else if (this.pantalla === "soporte") {
+        this.titulo = "Soporte de artículos";
+      }
 
     });
   }

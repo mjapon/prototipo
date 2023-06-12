@@ -1,0 +1,300 @@
+{
+  "deliveries": [
+    {
+      "codigo": 1,
+      "nombre": "Tipti"
+    },
+    {
+      "codigo": 2,
+      "nombre": "Jugueton"
+    },
+    {
+      "codigo": 3,
+      "nombre": "Catalogo digital aki"
+    },
+    {
+      "codigo": 4,
+      "nombre": "Ecommoblart"
+    },
+    {
+      "codigo": 5,
+      "nombre": "Gira"
+    },
+    {
+      "codigo": 6,
+      "nombre": "Tiptimoblart"
+    }
+  ],
+  "locales": [
+    {
+      "codigo": 101,
+      "nombre": "MULTICENTRO",
+      "formato": "SUP","codref":101
+    },
+    {
+      "codigo": 102,
+      "nombre": "AMERICA",
+      "formato": "SUP","codref":102
+    },
+    {
+      "codigo": 103,
+      "nombre": "IÑAQUITO",
+      "formato": "SUP","codref":103
+    },
+    {
+      "codigo": 104,
+      "nombre": "SUR",
+      "formato": "SUP","codref":104
+    },
+    {
+      "codigo": 105,
+      "nombre": "BICENTENARIO PLAZA",
+      "formato": "SUP","codref":105
+    },
+    {
+      "codigo": 106,
+      "nombre": "BOSQUE",
+      "formato": "SUP","codref":106
+    },
+    {
+      "codigo": 107,
+      "nombre": "PLAZA NORTE",
+      "formato": "SUP","codref":107
+    },
+    {
+      "codigo": 108,
+      "nombre": "PLAZA VALLE",
+      "formato": "SUP","codref":108
+    },
+    {
+      "codigo": 109,
+      "nombre": "ATAHUALPA",
+      "formato": "SUP","codref":109
+    },
+    {
+      "codigo": 111,
+      "nombre": "ST. DOMINGO",
+      "formato": "SUP","codref":111
+    },
+    {
+      "codigo": 112,
+      "nombre": "TUMBACO",
+      "formato": "SUP","codref":112
+    },
+    {
+      "codigo": 113,
+      "nombre": "CARCELEN",
+      "formato": "SUP","codref":113
+    },
+    {
+      "codigo": 114,
+      "nombre": "ELOY ALFARO",
+      "formato": "SUP","codref":114
+    },
+    {
+      "codigo": 117,
+      "nombre": "CUMBAYA",
+      "formato": "SUP","codref":117
+    },
+    {
+      "codigo": 119,
+      "nombre": "EL JARDIN",
+      "formato": "SUP","codref":119
+    },
+    {
+      "codigo": 120,
+      "nombre": "QUITUMBE",
+      "formato": "SUP","codref":120
+    },
+    {
+      "codigo": 121,
+      "nombre": "12 DE OCTUBRE",
+      "formato": "SUP","codref":121
+    },
+    {
+      "codigo": 141,
+      "nombre": "CARAPUNGO",
+      "formato": "GAK","codref":141
+    },
+    {
+      "codigo": 142,
+      "nombre": "GUAJALO",
+      "formato": "AKI","codref":142
+    },
+    {
+      "codigo": 143,
+      "nombre": "COTOCOLLAO",
+      "formato": "AKI","codref":143
+    },
+    {
+      "codigo": 144,
+      "nombre": "SOLANDA",
+      "formato": "AKI","codref":144
+    },
+    {
+      "codigo": 146,
+      "nombre": "CAYAMBE",
+      "formato": "GAK","codref":146
+    },
+    {
+      "codigo": 147,
+      "nombre": "LATACUNGA SUR",
+      "formato": "AKI","codref":147
+    },
+    {
+      "codigo": 148,
+      "nombre": "LATACUNGA NORTE",
+      "formato": "AKI","codref":148
+    },
+    {
+      "codigo": 149,
+      "nombre": "EL EJIDO",
+      "formato": "AKI","codref":149
+    },
+    {
+      "codigo": 150,
+      "nombre": "RIOBAMBA CENTRO",
+      "formato": "AKI","codref":150
+    },
+    {
+      "codigo": 151,
+      "nombre": "IBARRA CENTRO",
+      "formato": "AKI","codref":151
+    },
+    {
+      "codigo": 152,
+      "nombre": "AMBATO SUR",
+      "formato": "AKI","codref":152
+    },
+    {
+      "codigo": 153,
+      "nombre": "AZOGUES",
+      "formato": "AKI","codref":153
+    },
+    {
+      "codigo": 155,
+      "nombre": "SANTO DOMINGO",
+      "formato": "AKI","codref":155
+    },
+    {
+      "codigo": 156,
+      "nombre": "CONOCOTO",
+      "formato": "AKI","codref":156
+    },
+    {
+      "codigo": 157,
+      "nombre": "GUAMANI",
+      "formato": "AKI","codref":157
+    },
+    {
+      "codigo": 158,
+      "nombre": "CALDERON",
+      "formato": "AKI","codref":158
+    },
+    {
+      "codigo": 159,
+      "nombre": "SANGOLQUI",
+      "formato": "AKI","codref":159
+    },
+    {
+      "codigo": 160,
+      "nombre": "GRANADOS",
+      "formato": "GAK","codref":160
+    },
+    {
+      "codigo": 161,
+      "nombre": "MOLINEROS",
+      "formato": "GAK","codref":161
+    },
+    {
+      "codigo": 162,
+      "nombre": "GUARANDA",
+      "formato": "AKI","codref":162
+    },
+    {
+      "codigo": 164,
+      "nombre": "SOLANDA",
+      "formato": "GAK","codref":164
+    },
+    {
+      "codigo": 165,
+      "nombre": "SANTO DOMINGO",
+      "formato": "GAK","codref":165
+    },
+    {
+      "codigo": 166,
+      "nombre": "EL LABRADOR",
+      "formato": "SAK","codref":166
+    },
+    {
+      "codigo": 173,
+      "nombre": "INCA",
+      "formato": "SSA","codref":173
+    },
+    {
+      "codigo": 174,
+      "nombre": "CUMBAYA",
+      "formato": "SSA","codref":174
+    },
+    {
+      "codigo": 175,
+      "nombre": "ATAHUALPA",
+      "formato": "SSA","codref":175
+    }
+  ],
+  "itemsoporte": {
+    "itemCode": "257018",
+    "barcode": "7501001165277",
+    "posBarcode": "750100116527",
+    "armedCode": "7501001165277",
+    "description": "PANTENE SH.2EN1 LISOS Y SEDOSOS 400ML",
+    "divisionCode": "0004",
+    "division": "CUIDADO PERSONAL",
+    "departmentCode": "0041",
+    "department": "HIGIENE PERSONAL",
+    "categoryCode": "4138",
+    "category": "SHAMPOOS",
+    "subclassificationCode": "0110",
+    "subclassification": "COSMETICO",
+    "notDiscountable": false,
+    "itemClass": "TEMPORADA",
+    "itemClassCode": "T",
+    "itemClassFromDate": 1673326800000,
+    "itemClassToDate": 1674882000000,
+    "brand": "PANTENE",
+    "brandCode": 843,
+    "brandType": "PRV",
+    "stock": 3168,
+    "stockDistributionCenter": 12000,
+    "bulkSale": false,
+    "valueAddedTax": true,
+    "percentageTax": 12,
+    "offerStartDate": null,
+    "offerEndDate": null,
+    "offerPercentage": null,
+    "offerPriceWithTax": null,
+    "offerPriceWithoutTax": null,
+    "affiliatePriceWithTax": 7.39,
+    "affiliatePriceWithoutTax": 6.6,
+    "nonAffiliatePriceWithTax": 7.76,
+    "nonAffiliatePriceWithoutTax": 6.93,
+    "presentation": "400.00 ml",
+    "classification": "NO APLICA",
+    "sispeReservedQuantity": null,
+    "sispeReservedModificationDate": null,
+    "providers": [
+      {
+        "providerCode": "05198",
+        "providerName": "INDUSTRIAS ALES C.A.",
+        "jdeCode": 5198,
+        "byDefault": "1"
+      }
+    ],
+    "clientCategoryLevel2Name": null,
+    "clientCategoryLevel3Code": null,
+    "clientCategoryLevel3Name": null,
+    "classificationCode": null,
+    "classificationName": null
+  }
+
+}

@@ -38,8 +38,8 @@ import { CtgDetailViewComponent } from './modules/general/ctgs/ctgdetailview/ctg
 import { CtgDetailEditComponent } from './modules/general/ctgs/ctgdetailedit/ctgdetailedit.component';
 import { CtgDetailNewComponent } from './modules/general/ctgs/ctgdetailnew/ctgdetailnew.component';
 import {GalleriaModule} from 'primeng/galleria';
-
-
+import { SoporteComponent } from './modules/general/soporte/soporte.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 
 @NgModule({
@@ -63,7 +63,8 @@ import {GalleriaModule} from 'primeng/galleria';
     CtgDetailComponent,
     CtgDetailViewComponent,
     CtgDetailEditComponent,
-    CtgDetailNewComponent
+    CtgDetailNewComponent,
+    SoporteComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +82,8 @@ import {GalleriaModule} from 'primeng/galleria';
     MultiSelectModule,
     FileUploadModule,
     PaginatorModule,
-    GalleriaModule
+    GalleriaModule,
+    RadioButtonModule
   ],
   providers: [NodeService, MessageService,MyMsgService],
   bootstrap: [AppComponent]

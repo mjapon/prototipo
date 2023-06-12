@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { combineLatest } from 'rxjs';
 import { CatalogosComponent } from './modules/general/catalogos/catalogos.component';
 import { FeaturesComponent } from './modules/general/features/features.component';
 
@@ -10,6 +9,7 @@ import { NotFoundComponent } from './modules/general/not-found/not-found.compone
 import { SearchComponent } from './modules/general/searchproduct/searchproduct.component';
 import { StartComponent } from './modules/general/start/start.component';
 import { AdminCtgComponent } from './modules/general/ctgs/admctgos/adminctg.component';
+import { SoporteComponent } from './modules/general/soporte/soporte.component';
 
 const routes: Routes = [
   { path: '', component: StartComponent, },
@@ -57,6 +57,10 @@ const routes: Routes = [
   {
     path: 'admctgs', component: AdminCtgComponent
   },
+  {
+    path: 'soporte', component: SoporteComponent
+  },
+
 
   { path: '**', component: NotFoundComponent }
 ];

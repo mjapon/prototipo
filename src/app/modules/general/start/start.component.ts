@@ -32,5 +32,8 @@ export class StartComponent {
     this.router.navigate(['admctgs'], {});
   }
 
+  gotoSoporte() {
+    this.router.navigate(['soporte'], {});
+  }
 
 }
