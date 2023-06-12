@@ -29,217 +29,217 @@
     {
       "codigo": 101,
       "nombre": "MULTICENTRO",
-      "formato": "SUP","codref":101
+      "formato": "SUP","codref":101,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 102,
       "nombre": "AMERICA",
-      "formato": "SUP","codref":102
+      "formato": "SUP","codref":102,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 103,
       "nombre": "IÑAQUITO",
-      "formato": "SUP","codref":103
+      "formato": "SUP","codref":103,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 104,
       "nombre": "SUR",
-      "formato": "SUP","codref":104
+      "formato": "SUP","codref":104,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 105,
       "nombre": "BICENTENARIO PLAZA",
-      "formato": "SUP","codref":105
+      "formato": "SUP","codref":105,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 106,
       "nombre": "BOSQUE",
-      "formato": "SUP","codref":106
+      "formato": "SUP","codref":106,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 107,
       "nombre": "PLAZA NORTE",
-      "formato": "SUP","codref":107
+      "formato": "SUP","codref":107,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 108,
       "nombre": "PLAZA VALLE",
-      "formato": "SUP","codref":108
+      "formato": "SUP","codref":108,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 109,
       "nombre": "ATAHUALPA",
-      "formato": "SUP","codref":109
+      "formato": "SUP","codref":109,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 111,
       "nombre": "ST. DOMINGO",
-      "formato": "SUP","codref":111
+      "formato": "SUP","codref":111,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 112,
       "nombre": "TUMBACO",
-      "formato": "SUP","codref":112
+      "formato": "SUP","codref":112,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 113,
       "nombre": "CARCELEN",
-      "formato": "SUP","codref":113
+      "formato": "SUP","codref":113,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 114,
       "nombre": "ELOY ALFARO",
-      "formato": "SUP","codref":114
+      "formato": "SUP","codref":114,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 117,
       "nombre": "CUMBAYA",
-      "formato": "SUP","codref":117
+      "formato": "SUP","codref":117,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 119,
       "nombre": "EL JARDIN",
-      "formato": "SUP","codref":119
+      "formato": "SUP","codref":119,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 120,
       "nombre": "QUITUMBE",
-      "formato": "SUP","codref":120
+      "formato": "SUP","codref":120,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 121,
       "nombre": "12 DE OCTUBRE",
-      "formato": "SUP","codref":121
+      "formato": "SUP","codref":121,"formatoLarge": "SUPERMAXI"
     },
     {
       "codigo": 141,
       "nombre": "CARAPUNGO",
-      "formato": "GAK","codref":141
+      "formato": "GAK","codref":141,"formatoLarge": "GRAN AKI"
     },
     {
       "codigo": 142,
       "nombre": "GUAJALO",
-      "formato": "AKI","codref":142
+      "formato": "AKI","codref":142,"formatoLarge": "AKI"
     },
     {
       "codigo": 143,
       "nombre": "COTOCOLLAO",
-      "formato": "AKI","codref":143
+      "formato": "AKI","codref":143,"formatoLarge": "AKI"
     },
     {
       "codigo": 144,
       "nombre": "SOLANDA",
-      "formato": "AKI","codref":144
+      "formato": "AKI","codref":144,"formatoLarge": "AKI"
     },
     {
       "codigo": 146,
       "nombre": "CAYAMBE",
-      "formato": "GAK","codref":146
+      "formato": "GAK","codref":146,"formatoLarge": "GRAN AKI"
     },
     {
       "codigo": 147,
       "nombre": "LATACUNGA SUR",
-      "formato": "AKI","codref":147
+      "formato": "AKI","codref":147,"formatoLarge": "AKI"
     },
     {
       "codigo": 148,
       "nombre": "LATACUNGA NORTE",
-      "formato": "AKI","codref":148
+      "formato": "AKI","codref":148,"formatoLarge": "AKI"
     },
     {
       "codigo": 149,
       "nombre": "EL EJIDO",
-      "formato": "AKI","codref":149
+      "formato": "AKI","codref":149,"formatoLarge": "AKI"
     },
     {
       "codigo": 150,
       "nombre": "RIOBAMBA CENTRO",
-      "formato": "AKI","codref":150
+      "formato": "AKI","codref":150,"formatoLarge": "AKI"
     },
     {
       "codigo": 151,
       "nombre": "IBARRA CENTRO",
-      "formato": "AKI","codref":151
+      "formato": "AKI","codref":151,"formatoLarge": "AKI"
     },
     {
       "codigo": 152,
       "nombre": "AMBATO SUR",
-      "formato": "AKI","codref":152
+      "formato": "AKI","codref":152,"formatoLarge": "AKI"
     },
     {
       "codigo": 153,
       "nombre": "AZOGUES",
-      "formato": "AKI","codref":153
+      "formato": "AKI","codref":153,"formatoLarge": "AKI"
     },
     {
       "codigo": 155,
       "nombre": "SANTO DOMINGO",
-      "formato": "AKI","codref":155
+      "formato": "AKI","codref":155,"formatoLarge": "AKI"
     },
     {
       "codigo": 156,
       "nombre": "CONOCOTO",
-      "formato": "AKI","codref":156
+      "formato": "AKI","codref":156,"formatoLarge": "AKI"
     },
     {
       "codigo": 157,
       "nombre": "GUAMANI",
-      "formato": "AKI","codref":157
+      "formato": "AKI","codref":157,"formatoLarge": "AKI"
     },
     {
       "codigo": 158,
       "nombre": "CALDERON",
-      "formato": "AKI","codref":158
+      "formato": "AKI","codref":158,"formatoLarge": "AKI"
     },
     {
       "codigo": 159,
       "nombre": "SANGOLQUI",
-      "formato": "AKI","codref":159
+      "formato": "AKI","codref":159,"formatoLarge": "AKI"
     },
     {
       "codigo": 160,
       "nombre": "GRANADOS",
-      "formato": "GAK","codref":160
+      "formato": "GAK","codref":160,"formatoLarge": "GRAN AKI"
     },
     {
       "codigo": 161,
       "nombre": "MOLINEROS",
-      "formato": "GAK","codref":161
+      "formato": "GAK","codref":161,"formatoLarge": "GRAN AKI"
     },
     {
       "codigo": 162,
       "nombre": "GUARANDA",
-      "formato": "AKI","codref":162
+      "formato": "AKI","codref":162,"formatoLarge": "AKI"
     },
     {
       "codigo": 164,
       "nombre": "SOLANDA",
-      "formato": "GAK","codref":164
+      "formato": "GAK","codref":164,"formatoLarge": "GRAN AKI"
     },
     {
       "codigo": 165,
       "nombre": "SANTO DOMINGO",
-      "formato": "GAK","codref":165
+      "formato": "GAK","codref":165,"formatoLarge": "GRAN AKI"
     },
     {
       "codigo": 166,
       "nombre": "EL LABRADOR",
-      "formato": "SAK","codref":166
+      "formato": "SAK","codref":166,"formatoLarge": "SUPER AKI"
     },
     {
       "codigo": 173,
       "nombre": "INCA",
-      "formato": "SSA","codref":173
+      "formato": "SSA","codref":173,"formatoLarge": "SUPER SALDOS"
     },
     {
       "codigo": 174,
       "nombre": "CUMBAYA",
-      "formato": "SSA","codref":174
+      "formato": "SSA","codref":174,"formatoLarge": "SUPER SALDOS"
     },
     {
       "codigo": 175,
       "nombre": "ATAHUALPA",
-      "formato": "SSA","codref":175
+      "formato": "SSA","codref":175,"formatoLarge": "SUPER SALDOS"
     }
   ],
   "itemsoporte": {
