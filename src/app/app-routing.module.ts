@@ -10,6 +10,7 @@ import { SearchComponent } from './modules/general/searchproduct/searchproduct.c
 import { StartComponent } from './modules/general/start/start.component';
 import { AdminCtgComponent } from './modules/general/ctgs/admctgos/adminctg.component';
 import { SoporteComponent } from './modules/general/soporte/soporte.component';
+import {ImgcomparatorComponent} from './modules/general/imgs/imgcomparator/imgcomparator.component';
 
 const routes: Routes = [
   { path: '', component: StartComponent, },
@@ -59,6 +60,9 @@ const routes: Routes = [
   },
   {
     path: 'soporte', component: SoporteComponent
+  },
+  {
+    path: 'review', component: ImgcomparatorComponent
   },
 
 

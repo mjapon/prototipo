@@ -40,6 +40,10 @@ import { CtgDetailNewComponent } from './modules/general/ctgs/ctgdetailnew/ctgde
 import {GalleriaModule} from 'primeng/galleria';
 import { SoporteComponent } from './modules/general/soporte/soporte.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import {KFieldsetComponent} from "./modules/general/k-fieldset/k-fieldset.component";
+import { ImglistComponent } from './modules/general/imgs/imglist/imglist.component';
+import { ImgcomparatorComponent } from './modules/general/imgs/imgcomparator/imgcomparator.component';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 @NgModule({
@@ -64,7 +68,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     CtgDetailViewComponent,
     CtgDetailEditComponent,
     CtgDetailNewComponent,
-    SoporteComponent
+    SoporteComponent,
+    KFieldsetComponent,
+    ImglistComponent,
+    ImgcomparatorComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +90,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     FileUploadModule,
     PaginatorModule,
     GalleriaModule,
-    RadioButtonModule
+    RadioButtonModule,
+    CheckboxModule
   ],
   providers: [NodeService, MessageService,MyMsgService],
   bootstrap: [AppComponent]

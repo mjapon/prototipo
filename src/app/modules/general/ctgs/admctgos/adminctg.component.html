@@ -4,6 +4,27 @@
   <div class="alldiv">
     <section class="barra border p-3">
       <div class="me-3">
+
+
+        <k-fieldset [kFieldsetLegend]="'Estructura comercial'">
+          <div class="row marginsec">
+            <div class="col-md-12">
+
+              <p class="m-0 p-0 mt-2">Nombre:</p>
+              <div>
+                <input type="text" class="form-control form-control-sm" />
+              </div>
+
+              <p class="m-0 p-0 mt-3">
+                <span class="requerido">Tipo:</span> </p>
+              <div class="p-fluid">
+                <p-dropdown [options]="options" [(ngModel)]="selectedoption" optionLabel="name"
+                            placeholder="Elija una opcion"></p-dropdown>
+              </div>
+
+            </div>
+          </div>
+        </k-fieldset>
         <p class="textcolorcorp">Filtros de búsqueda</p>
 
         <p class="m-0 p-0 mt-2">Nombre:</p>
