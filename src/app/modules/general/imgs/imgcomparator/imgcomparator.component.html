@@ -64,11 +64,11 @@
   [style]="{ width: '70vw' }"
   header="Comparar Imágenes">
   <div *ngIf="selected.checked">
-    <div class="alert alert-success" role="alert" *ngIf="!selected.rmState">
+    <div *ngIf="!selected.rmState" class="alert alert-success" role="alert">
       Aprobada
     </div>
 
-    <div class="alert alert-danger" role="alert" *ngIf="selected.rmState">
+    <div *ngIf="selected.rmState" class="alert alert-danger" role="alert">
       Rechazada
     </div>
   </div>
@@ -96,32 +96,46 @@
       </div>
     </div>
   </div>
+  <div class="border border-secondary rounded mt-2 mb-3 p-3">
+    <div class="row">
+      <div class="col-md-4">
+        <span class="fw-light">Código de barras:</span>
+        <span>{{ selected.barcode }}</span>
+      </div>
+      <div class="col-md-4">
+        <span class="fw-light">Artículo:</span>
+        <span>{{ selected.name }}</span>
+      </div>
+      <div class="col-md">
+        <span class="fw-light">Perspectiva:</span>
+        {{ selected.description }}
+      </div>
+    </div>
+  </div>
   <div class="mt-2 d-flex justify-content-between">
     <div class="d-flex">
       <button (click)="aprobar()" class="btn btn-sm btn-outline-danger me-3">
         <i class="fa fa-check"></i>
         Aprobar
       </button>
-
       <button (click)="rechazar()" class="btn btn-sm btn-outline-danger">
         <i class="fa fa-times"></i>
         Rechazar
       </button>
     </div>
     <div>
-
-      <button (click)="back()" [disabled]="itemsAssigned.indexOf(selected)===0" class="btn btn-sm btn-outline-danger me-2">
+      <button (click)="back()" [disabled]="itemsAssigned.indexOf(selected)===0"
+              class="btn btn-sm btn-outline-danger me-2">
         <i class="fa-solid fa-chevron-left"></i>
         Anterior
       </button>
-
-      <button (click)="next()"  [disabled]="itemsAssigned.indexOf(selected)==itemsAssigned.length-1" class="btn btn-sm btn-outline-danger me-2">
+      <button (click)="next()" [disabled]="itemsAssigned.indexOf(selected)==itemsAssigned.length-1"
+              class="btn btn-sm btn-outline-danger me-2">
         Siguiente
         <i class="fa-solid fa-chevron-right"></i>
       </button>
-
       <button (click)="showModal=false;" class="btn btn-sm btn-outline-dark">
-        Cancelar
+        Cancelar <i class="fa fa-times"></i>
       </button>
     </div>
   </div>

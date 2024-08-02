@@ -26,25 +26,25 @@ export class ImgcomparatorComponent implements OnInit {
   ngOnInit(): void {
     this.itemsAssigned = [
       {
-        rmState: false, description: 'frontal', barcode: '8007898004204',
+        rmState: false, description: 'frontal', barcode: '8007898004204', name:'ANGLE ESCOBA LARGE',
         previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500421.png?generation=1649963617924934',
         url: 'https://storage.googleapis.com/cf-max-dev/items/igm/7861001246483-13.png'
       },
       {
-        rmState: false, description: 'lateral', barcode: '7861042544142',
+        rmState: false, description: 'lateral', barcode: '7861042544142',name:'PAPA SUPERCHOLA MALLA SX',
         url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676'
       },
       {
-        rmState: false, description: 'principal', barcode: '7861042500193',
+        rmState: false, description: 'principal', barcode: '7861042500193',name:'SX.FREJOL NEGRO',
         url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751'
       },
       {
-        rmState: false, description: 'derecho', barcode: '7861042500254',
+        rmState: false, description: 'derecho', barcode: '7861042500254',name:'SG SX.MAIZ MEDIANO',
         previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500407.png?generation=1649963617172273',
         url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500254.png?generation=1649963616449002'
       },
       {
-        rmState: false, description: 'principal', barcode: '62417',
+        rmState: false, description: 'principal', barcode: '62417',name:'T-LO.POLLO ENTERO',
         previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042501954.png?generation=1649963619290872',
         url: 'https://storage.googleapis.com/cf-max/items/igm/62417.png'
       }

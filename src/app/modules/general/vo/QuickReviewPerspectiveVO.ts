@@ -5,4 +5,5 @@ export class QuickReviewPerspectiveVO {
   barcode?:string
   description?:string
   checked?:boolean
+  name?:string
 }
