@@ -1,0 +1,13 @@
+<fieldset class="k-fieldset">
+  <div class="mjflex">
+    <div class="legendflex">
+  <span class="fa text-danger" [ngClass]="{'fa-solid fa-minus':!defaultCollapsed, 'fa-solid fa-plus':defaultCollapsed}"
+    (click)="defaultCollapsed = !defaultCollapsed"></span>
+    <legend class="legend">{{kFieldsetLegend}}</legend>
+    </div>
+    <span class="linea"></span>
+  </div>
+  <div class="k-fieldset-content" *ngIf="defaultCollapsed">
+    <ng-content></ng-content>
+  </div>
+</fieldset>

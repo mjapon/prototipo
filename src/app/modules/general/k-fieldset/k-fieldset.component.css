@@ -1,0 +1,38 @@
+
+em {
+  cursor: pointer;
+  font-weight: lighter;
+}
+
+.legend {
+  font-weight: bold;
+  padding:0 0 0 0;
+  margin: 0 0 0 5px;
+  border: none;
+  width: inherit;
+  display:inline;
+  font-size: 16px;
+}
+
+k-fieldset .k-fieldset-content {
+  margin-top: -10px;
+}
+
+.legendflex {
+  display: flex;
+  flex-direction: row;
+}
+
+.mjflex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.linea{
+  width: 100px;
+  height: 2px;
+  margin-left: 4px;
+  margin-top: 10px;
+  border-bottom: 2px solid #ced4da;
+}
