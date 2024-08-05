@@ -63,13 +63,20 @@
   [modal]="true"
   [style]="{ width: '70vw' }"
   header="Comparar Imágenes">
-  <div *ngIf="selected.checked">
-    <div *ngIf="!selected.rmState" class="alert alert-success" role="alert">
-      Aprobada
-    </div>
-
-    <div *ngIf="selected.rmState" class="alert alert-danger" role="alert">
-      Rechazada
+  <div class="border border-secondary rounded mt-2 mb-3 p-3">
+    <div class="row">
+      <div class="col-md-4">
+        <span class="fw-light">Código de barras:</span>
+        <span>{{ selected.barcode }}</span>
+      </div>
+      <div class="col-md-4">
+        <span class="fw-light">Artículo:</span>
+        <span>{{ selected.name }}</span>
+      </div>
+      <div class="col-md">
+        <span class="fw-light">Perspectiva:</span>
+        {{ selected.description }}
+      </div>
     </div>
   </div>
   <div style="display:flex; width: 100%">
@@ -96,22 +103,17 @@
       </div>
     </div>
   </div>
-  <div class="border border-secondary rounded mt-2 mb-3 p-3">
-    <div class="row">
-      <div class="col-md-4">
-        <span class="fw-light">Código de barras:</span>
-        <span>{{ selected.barcode }}</span>
-      </div>
-      <div class="col-md-4">
-        <span class="fw-light">Artículo:</span>
-        <span>{{ selected.name }}</span>
-      </div>
-      <div class="col-md">
-        <span class="fw-light">Perspectiva:</span>
-        {{ selected.description }}
-      </div>
+
+  <div *ngIf="selected.checked">
+    <div *ngIf="!selected.rmState" class="alert alert-success" role="alert">
+      Aprobado
+    </div>
+
+    <div *ngIf="selected.rmState" class="alert alert-danger" role="alert">
+      Rechazado
     </div>
   </div>
+
   <div class="mt-2 d-flex justify-content-between">
     <div class="d-flex">
       <button (click)="aprobar()" class="btn btn-sm btn-outline-danger me-3">

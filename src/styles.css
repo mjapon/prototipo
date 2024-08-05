@@ -1,4 +1,4 @@
-body {  
+body {
   font-family: "Roboto", sans-serif;
   height: 100vh;
 }
@@ -13,3 +13,22 @@ body {
 }
 
 .hand {cursor: pointer;}
+
+
+
+.p-dialog .p-dialog-header {
+  border-bottom: 0 none;
+  background: #e74c3c;
+  color: #343a40;
+  padding: 1.5rem;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+
+.p-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
