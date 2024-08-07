@@ -20,6 +20,11 @@ export class ImgcomparatorComponent implements OnInit {
   numPages = 0;
   showModal = false;
 
+  protected readonly Math = Math;
+  urlImages: any;
+
+  displayImage = false;
+
   constructor(private messageService: MessageService) {
   }
 
@@ -86,8 +91,6 @@ export class ImgcomparatorComponent implements OnInit {
 
   }
 
-  protected readonly Math = Math;
-
   back() {
     let index = this.itemsAssigned.indexOf(this.selected);
     if (index > 0) {
@@ -105,6 +108,11 @@ export class ImgcomparatorComponent implements OnInit {
     } else {
       alert('No hay siguiente');
     }
-
   }
+
+  showImageZoom(url:any){
+    this.urlImages = [url];
+    this.displayImage = true;
+  }
+
 }

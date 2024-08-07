@@ -86,7 +86,7 @@
           Imagen Actual
         </div>
         <div style="overflow: auto;height: 50vh; display:flex; align-items: center; justify-content: center">
-          <img *ngIf="selected?.previusUrl" [src]="selected?.previusUrl" style="height: 50vh;">
+          <img *ngIf="selected?.previusUrl" (click)="showImageZoom(selected.previusUrl)" [src]="selected?.previusUrl" style="height: 50vh;">
           <span *ngIf="!(selected?.previusUrl)" class="text-muted">Sin imagen previa</span>
         </div>
       </div>
@@ -98,7 +98,7 @@
           Nueva Imagen
         </div>
         <div style="overflow: auto;height: 50vh; display:flex; align-items: center; justify-content: center">
-          <img [src]="selected.url" style="height: 50vh;">
+          <img [src]="selected.url" (click)="showImageZoom(selected.url)" style="height: 50vh;">
         </div>
       </div>
     </div>
@@ -140,5 +140,9 @@
         Cancelar <i class="fa fa-times"></i>
       </button>
     </div>
+  </div>
+
+  <div *ngIf="urlImages">
+    <app-imageviewer [(display)]="displayImage" [images]="urlImages"></app-imageviewer>
   </div>
 </p-dialog>

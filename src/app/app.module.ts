@@ -44,6 +44,7 @@ import {KFieldsetComponent} from "./modules/general/k-fieldset/k-fieldset.compon
 import { ImglistComponent } from './modules/general/imgs/imglist/imglist.component';
 import { ImgcomparatorComponent } from './modules/general/imgs/imgcomparator/imgcomparator.component';
 import {CheckboxModule} from 'primeng/checkbox';
+import {ImageviewerComponent} from './modules/general/imageviewer/imageviewer.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     SoporteComponent,
     KFieldsetComponent,
     ImglistComponent,
-    ImgcomparatorComponent
+    ImgcomparatorComponent,
+    ImageviewerComponent
   ],
   imports: [
     BrowserModule,
