@@ -97,11 +97,12 @@ export class ImgcomparatorComponent implements OnInit {
           },
           'P3D':{
             rmState: false, name: 'Lateral',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142-1.png',
             url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676'
           },
           'PFI':{
             rmState: false, name:'tabla nutricional',
-            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751'
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676',
           },
           'PPO':{
             rmState: false, name:'Izquierdo',
@@ -119,15 +120,17 @@ export class ImgcomparatorComponent implements OnInit {
           'IGF':{
             rmState: false, name:'Frontal',
             previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500421.png?generation=1649963617924934',
-            url: 'https://storage.googleapis.com/cf-max-dev/items/igm/7861001246483-13.png'
+            url: 'https://storage.googleapis.com/cf-max-dev/items/igm/7861001246483-13.png',
+
           },
           'P3D':{
             rmState: false, name: 'Lateral',
-            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676'
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/4593.png'
           },
           'PFI':{
             rmState: false, name:'tabla nutricional',
-            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751'
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/5621.png'
           },
           'O15':{
             rmState: false, name:'Izquierdo',
@@ -150,11 +153,12 @@ export class ImgcomparatorComponent implements OnInit {
           },
           'PSE':{
             rmState: false, name: 'Lateral',
-            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676'
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/5622.png'
           },
           'PFI':{
             rmState: false, name:'tabla nutricional',
-            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751'
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/5623.png'
           },
           'O10':{
             rmState: false, name:'Izquierdo',
@@ -164,7 +168,6 @@ export class ImgcomparatorComponent implements OnInit {
           'P3I':{
             rmState: false, name:'Derecho',
             previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042501954.png?generation=1649963619290872',
-            url: 'https://storage.googleapis.com/cf-max/items/igm/62417.png'
           }
         }
       }
@@ -217,12 +220,19 @@ export class ImgcomparatorComponent implements OnInit {
 
   }
 
+  hasImage(it: QuickReviewPerspectiveVO){
+    return  it &&  (it.previusUrl || it.url);
+  }
+
   back() {
     let index = this.perspectiveTypes.indexOf(this.perspectiveSelected);
     if (index > 0) {
       this.perspectiveSelected = this.perspectiveTypes[index-1];
       console.log('perspectiveSelected', this.perspectiveSelected);
       this.selected =  this.imageRowSelected.perspectives[this.perspectiveSelected.value];
+      if (!this.hasImage(this.selected)){
+        this.back();
+      }
     } else {
       alert('No hay anterior')
     }
@@ -234,6 +244,9 @@ export class ImgcomparatorComponent implements OnInit {
     if (index < this.perspectiveTypes.length - 1) {
       this.perspectiveSelected = this.perspectiveTypes[index+1];
       this.selected =  this.imageRowSelected.perspectives[this.perspectiveSelected.value];
+      if (!this.hasImage(this.selected)){
+        this.next();
+      }
     } else {
       alert('No hay siguiente');
     }

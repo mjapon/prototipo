@@ -58,8 +58,8 @@
 
           <td *ngFor="let prop of perspectiveTypes">
             <div>
-              <div class="card">
-                <div *ngIf="itemAssigned.perspectives[prop.value]?.url" class="card-body">
+              <div class="border rounded">
+                <div *ngIf="itemAssigned.perspectives[prop.value]?.url" class="m-2">
                   <div class="col-md-12" style="text-align: end; padding-right: 0px; padding-bottom: 3px;">
                     <p-checkbox (onChange)="ver(itemAssigned)"
                                 [(ngModel)]="itemAssigned.perspectives[prop.value]['rmState']"
@@ -68,15 +68,15 @@
                   <img (click)="comparar(itemAssigned, prop)"
                        [src]="itemAssigned.perspectives[prop.value]?.url" class="imgit">
                 </div>
-                <div *ngIf="!(itemAssigned.perspectives[prop.value]?.url)" class="card-body">
+                <div *ngIf="!(itemAssigned.perspectives[prop.value]?.url)" class="m-2">
                   <div class="col-md-12" style="text-align: end; padding-right: 0px; padding-bottom: 3px;">
                     <p-checkbox [binary]="true" [disabled]="true" checkboxIcon="pi pi-times"></p-checkbox>
                   </div>
                   <img class="imgit" src="./assets/default.jpg"/>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-body">
+              <div class="border rounded">
+                <div class="m-2">
                   <img (click)="comparar(itemAssigned, prop)" *ngIf="itemAssigned.perspectives[prop.value]?.previusUrl"
                        [src]="itemAssigned.perspectives[prop.value]?.previusUrl" class="imgit">
                   <img *ngIf="!(itemAssigned.perspectives[prop.value]?.previusUrl)" class="imgit"
