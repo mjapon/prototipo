@@ -45,6 +45,7 @@ import { ImglistComponent } from './modules/general/imgs/imglist/imglist.compone
 import { ImgcomparatorComponent } from './modules/general/imgs/imgcomparator/imgcomparator.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ImageviewerComponent} from './modules/general/imageviewer/imageviewer.component';
+import {DataViewModule} from 'primeng/dataview';
 
 
 @NgModule({
@@ -93,7 +94,8 @@ import {ImageviewerComponent} from './modules/general/imageviewer/imageviewer.co
     PaginatorModule,
     GalleriaModule,
     RadioButtonModule,
-    CheckboxModule
+    CheckboxModule,
+    DataViewModule
   ],
   providers: [NodeService, MessageService,MyMsgService],
   bootstrap: [AppComponent]

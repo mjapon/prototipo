@@ -9,40 +9,90 @@
               type="button"></button>
     </div>
   </div>
-  <div style="display:flex">
-    <div *ngFor="let itemAssigned of itemsAssigned">
-      <div class="card mx-2" style="width: fit-content;">
-        <div class="card-header">
-          <label><b>Art&iacute;culo:</b>{{ itemAssigned.barcode }}</label>
-        </div>
-        <div class="card-body" style="height: 20rem; text-align: center;">
-          <div class="card" style="width: 13rem;">
-            <div class="card-body">
-              <div class="col-md-12" style="text-align: end; padding-right: 0px; padding-bottom: 3px;">
-                <p-checkbox (onChange)="ver(itemAssigned)" [(ngModel)]="itemAssigned['rmState']"
-                            [binary]="true" checkboxIcon="pi pi-times"></p-checkbox>
+
+
+  <div class="contTable">
+    <p-table
+      [paginatorPosition]="'bottom'"
+      [paginator]="true"
+      [rowHover]="true"
+      [rows]="2"
+      [totalRecords]="totalRecords"
+      [value]="itemsAssigned"
+      dataKey="articleBarcode">
+      <ng-template pTemplate="header">
+        <tr>
+          <th class="sticky-col first-col labeltit" scope="col">ARTÍCULO</th>
+          <th *ngFor="let prop of perspectiveTypes" scope="col ">
+            <div class="labeltit">{{ prop.label }}</div>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template
+        let-itemAssigned
+        let-rowIndex="rowIndex"
+        pTemplate="body"
+      >
+        <tr class="ui-selectable-row">
+          <td class="negro sticky-col first-col">
+            <div class="d-flex">
+              <div>
+                <span
+                  [title]="itemAssigned.description"
+                  class="k-ellipsis cursorhand labeltit"
+                  placement="top"
+                  triggers="mouseenter:mouseleave">
+                    {{ itemAssigned.barcode }} - {{ itemAssigned.description }}
+                  </span>
               </div>
-              <img (click)="comparar(itemAssigned)" [src]="itemAssigned.url" class="card-img-top"
-                   style="height: 100px; padding-top: 2%; cursor:pointer">
+              <div>
+                <div class="borderit">
+                  <span>Nueva</span>
+                </div>
+                <div>
+                  <span>Actual</span>
+                </div>
+              </div>
             </div>
-            <div class="card-header" style="height: 6rem; padding-top: 2%;">
-              <div [title]="itemAssigned.description">
-                <label><b>Nombre:</b> {{ itemAssigned.description | slice:0:45 }} </label></div>
-              <div [title]="itemAssigned.description">
-                <label><b>Perspectiva:</b> {{ itemAssigned.description }}</label></div>
-            </div>
-            <!--
+          </td>
+
+          <td *ngFor="let prop of perspectiveTypes">
             <div>
-              <button (click)="comparar(itemAssigned)" *ngIf="itemAssigned.previusUrl"
-                      class="btn btn-sm btn-outline-danger">Comparar
-              </button>
+              <div class="card">
+                <div *ngIf="itemAssigned.perspectives[prop.value]?.url" class="card-body">
+                  <div class="col-md-12" style="text-align: end; padding-right: 0px; padding-bottom: 3px;">
+                    <p-checkbox (onChange)="ver(itemAssigned)"
+                                [(ngModel)]="itemAssigned.perspectives[prop.value]['rmState']"
+                                [binary]="true" checkboxIcon="pi pi-times"></p-checkbox>
+                  </div>
+                  <img (click)="comparar(itemAssigned, prop)"
+                       [src]="itemAssigned.perspectives[prop.value]?.url" class="imgit">
+                </div>
+                <div *ngIf="!(itemAssigned.perspectives[prop.value]?.url)" class="card-body">
+                  <div class="col-md-12" style="text-align: end; padding-right: 0px; padding-bottom: 3px;">
+                    <p-checkbox [binary]="true" [disabled]="true" checkboxIcon="pi pi-times"></p-checkbox>
+                  </div>
+                  <img class="imgit" src="./assets/default.jpg"/>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <img (click)="comparar(itemAssigned, prop)" *ngIf="itemAssigned.perspectives[prop.value]?.previusUrl"
+                       [src]="itemAssigned.perspectives[prop.value]?.previusUrl" class="imgit">
+                  <img *ngIf="!(itemAssigned.perspectives[prop.value]?.previusUrl)" class="imgit"
+                       src="./assets/default.jpg"/>
+                </div>
+              </div>
             </div>
-            -->
-          </div>
-        </div>
-      </div>
-    </div>
+
+          </td>
+
+        </tr>
+      </ng-template>
+    </p-table>
   </div>
+
+  <!--
   <div>
     <p-paginator
       (onPageChange)="onPageChange($event)"
@@ -53,7 +103,7 @@
 
 
     </p-paginator>
-  </div>
+  </div>-->
 
 </div>
 
@@ -67,15 +117,15 @@
     <div class="row">
       <div class="col-md-4">
         <span class="fw-light">Código de barras:</span>
-        <span>{{ selected.barcode }}</span>
+        <span>{{ imageRowSelected.barcode }}</span>
       </div>
       <div class="col-md-4">
         <span class="fw-light">Artículo:</span>
-        <span>{{ selected.name }}</span>
+        <span>{{ imageRowSelected.description }}</span>
       </div>
       <div class="col-md">
         <span class="fw-light">Perspectiva:</span>
-        {{ selected.description }}
+        <span>{{ perspectiveSelected.label }}</span>
       </div>
     </div>
   </div>
@@ -86,8 +136,10 @@
           Imagen Actual
         </div>
         <div style="overflow: auto;height: 50vh; display:flex; align-items: center; justify-content: center">
-          <img *ngIf="selected?.previusUrl" (click)="showImageZoom(selected.previusUrl)" [src]="selected?.previusUrl" style="height: 50vh;">
-          <span *ngIf="!(selected?.previusUrl)" class="text-muted">Sin imagen previa</span>
+          <img (click)="showImageZoom(selected.previusUrl)" *ngIf="selected?.previusUrl" [src]="selected?.previusUrl"
+               style="height: 50vh;">
+          <img *ngIf="!(selected?.previusUrl)" src="./assets/default.jpg" style="height: 40vh;"/>
+
         </div>
       </div>
 
@@ -98,40 +150,44 @@
           Nueva Imagen
         </div>
         <div style="overflow: auto;height: 50vh; display:flex; align-items: center; justify-content: center">
-          <img [src]="selected.url" (click)="showImageZoom(selected.url)" style="height: 50vh;">
+          <img *ngIf="!(selected?.url)" src="./assets/default.jpg" style="height: 40vh;"/>
+          <img (click)="showImageZoom(selected.url)" *ngIf="selected?.url" [src]="selected.url" style="height: 50vh;">
         </div>
       </div>
     </div>
   </div>
 
-  <div *ngIf="selected.checked">
-    <div *ngIf="!selected.rmState" class="alert alert-success" role="alert">
-      Aprobado
-    </div>
+  <div *ngIf="selected">
+    <div *ngIf="selected.checked">
+      <div *ngIf="!selected.rmState" class="alert alert-success" role="alert">
+        Aprobado
+      </div>
 
-    <div *ngIf="selected.rmState" class="alert alert-danger" role="alert">
-      Rechazado
+      <div *ngIf="selected.rmState" class="alert alert-danger" role="alert">
+        Rechazado
+      </div>
     </div>
   </div>
 
+
   <div class="mt-2 d-flex justify-content-between">
     <div class="d-flex">
-      <button (click)="aprobar()" class="btn btn-sm btn-outline-danger me-3">
+      <button (click)="aprobar()" *ngIf="selected" class="btn btn-sm btn-outline-danger me-3">
         <i class="fa fa-check"></i>
         Aprobar
       </button>
-      <button (click)="rechazar()" class="btn btn-sm btn-outline-danger">
+      <button (click)="rechazar()" *ngIf="selected" class="btn btn-sm btn-outline-danger">
         <i class="fa fa-times"></i>
         Rechazar
       </button>
     </div>
     <div>
-      <button (click)="back()" [disabled]="itemsAssigned.indexOf(selected)===0"
+      <button (click)="back()" [disabled]="perspectiveTypes.indexOf(perspectiveSelected)===0"
               class="btn btn-sm btn-outline-danger me-2">
         <i class="fa-solid fa-chevron-left"></i>
         Anterior
       </button>
-      <button (click)="next()" [disabled]="itemsAssigned.indexOf(selected)==itemsAssigned.length-1"
+      <button (click)="next()" [disabled]="perspectiveTypes.indexOf(perspectiveSelected)==perspectiveTypes.length-1"
               class="btn btn-sm btn-outline-danger me-2">
         Siguiente
         <i class="fa-solid fa-chevron-right"></i>

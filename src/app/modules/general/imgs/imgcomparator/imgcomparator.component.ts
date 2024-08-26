@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {QuickReviewPerspectiveVO} from '../../vo/QuickReviewPerspectiveVO';
-import {MessageService} from 'primeng/api';
+import {MessageService, SelectItem} from 'primeng/api';
+import {ImageRowVO} from '../../vo/ImageRow';
 
 @Component({
   selector: 'app-imgcomparator',
@@ -14,8 +15,13 @@ export class ImgcomparatorComponent implements OnInit {
   value = false;
   rows = 30;
 
-  itemsAssigned: QuickReviewPerspectiveVO[] = [];
+  itemsAssigned: ImageRowVO[] = [];
+  imageRowSelected:any = {};
+  //seletedImageRowVO:ImageRowVO;
   selected: QuickReviewPerspectiveVO = {};
+
+  perspectiveTypes: SelectItem[] = [];
+  perspectiveSelected: any = {};
 
   numPages = 0;
   showModal = false;
@@ -29,38 +35,151 @@ export class ImgcomparatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.perspectiveTypes = [
+      {
+        "value": "IGF",
+        "label": "PRINCIPAL FRONTAL"
+      },
+      {
+        "value": "P3D",
+        "label": "POSTERIOR - DETRAS"
+      },
+      {
+        "value": "PFI",
+        "label": "PERSPECTIVA 3/4 IZQUIERDO"
+      },
+      {
+        "value": "PFD",
+        "label": "PERSPECTIVA 3/4 DERECHO"
+      },
+      {
+        "value": "PPO",
+        "label": "FRONTAL-LATERAL IZQUIERDO"
+      },
+      {
+        "value": "PSE",
+        "label": "FRONTAL LATERAL DERECHO"
+      },
+      {
+        "value": "OI9",
+        "label": "TEXTURA MATERIAL 1"
+      },
+      {
+        "value": "O10",
+        "label": "TEXTURA MATERIAL 2"
+      },
+      {
+        "value": "O13",
+        "label": "MECANISMO"
+      },
+      {
+        "value": "O14",
+        "label": "OTRAS IMAGENES 1"
+      },
+      {
+        "value": "O15",
+        "label": "OTRAS IMAGENES 2"
+      },
+      {
+        "value": "P3I",
+        "label": "TABLA NUTRICIONAL - O - ZOOM"
+      },
+    ];
+
     this.itemsAssigned = [
       {
-        rmState: false, description: 'frontal', barcode: '8007898004204', name:'ANGLE ESCOBA LARGE',
-        previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500421.png?generation=1649963617924934',
-        url: 'https://storage.googleapis.com/cf-max-dev/items/igm/7861001246483-13.png'
+        barcode: '8007898004204', description :'ANGLE ESCOBA LARGE', perspectives :{
+          'IGF':{
+            rmState: false, name:'Frontal',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500421.png?generation=1649963617924934',
+            url: 'https://storage.googleapis.com/cf-max-dev/items/igm/7861001246483-13.png'
+          },
+          'P3D':{
+            rmState: false, name: 'Lateral',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676'
+          },
+          'PFI':{
+            rmState: false, name:'tabla nutricional',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751'
+          },
+          'PPO':{
+            rmState: false, name:'Izquierdo',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500407.png?generation=1649963617172273',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500254.png?generation=1649963616449002'
+          },
+          'O13':{
+            rmState: false, name:'Derecho',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042501954.png?generation=1649963619290872',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/62417.png'
+          }
+      }},
+      {
+        barcode: '7861042544142', description :'PAPA SUPERCHOLA MALLA SX', perspectives :{
+          'IGF':{
+            rmState: false, name:'Frontal',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500421.png?generation=1649963617924934',
+            url: 'https://storage.googleapis.com/cf-max-dev/items/igm/7861001246483-13.png'
+          },
+          'P3D':{
+            rmState: false, name: 'Lateral',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676'
+          },
+          'PFI':{
+            rmState: false, name:'tabla nutricional',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751'
+          },
+          'O15':{
+            rmState: false, name:'Izquierdo',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500407.png?generation=1649963617172273',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500254.png?generation=1649963616449002'
+          },
+          'O14':{
+            rmState: false, name:'Derecho',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042501954.png?generation=1649963619290872',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/62417.png'
+          }
+        }
       },
       {
-        rmState: false, description: 'lateral', barcode: '7861042544142',name:'PAPA SUPERCHOLA MALLA SX',
-        url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676'
-      },
-      {
-        rmState: false, description: 'principal', barcode: '7861042500193',name:'SX.FREJOL NEGRO',
-        url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751'
-      },
-      {
-        rmState: false, description: 'derecho', barcode: '7861042500254',name:'SG SX.MAIZ MEDIANO',
-        previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500407.png?generation=1649963617172273',
-        url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500254.png?generation=1649963616449002'
-      },
-      {
-        rmState: false, description: 'principal', barcode: '62417',name:'T-LO.POLLO ENTERO',
-        previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042501954.png?generation=1649963619290872',
-        url: 'https://storage.googleapis.com/cf-max/items/igm/62417.png'
+        barcode: '7861042500193', description :'SX.FREJOL NEGRO', perspectives :{
+          'IGF':{
+            rmState: false, name:'Frontal',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500421.png?generation=1649963617924934',
+            url: 'https://storage.googleapis.com/cf-max-dev/items/igm/7861001246483-13.png'
+          },
+          'PSE':{
+            rmState: false, name: 'Lateral',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042544142.png?generation=1648746680345676'
+          },
+          'PFI':{
+            rmState: false, name:'tabla nutricional',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500193.png?generation=1649963615311751'
+          },
+          'O10':{
+            rmState: false, name:'Izquierdo',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042500407.png?generation=1649963617172273',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/7861042500254.png?generation=1649963616449002'
+          },
+          'P3I':{
+            rmState: false, name:'Derecho',
+            previusUrl: 'https://storage.googleapis.com/cf-max/items/igm/7861042501954.png?generation=1649963619290872',
+            url: 'https://storage.googleapis.com/cf-max/items/igm/62417.png'
+          }
+        }
       }
+
+
+
     ];
 
 
   }
 
-  ver(imageSelected: QuickReviewPerspectiveVO) {
+  ver(imageSelected: ImageRowVO) {
     console.log('revisado');
     console.log(imageSelected);
+    //this.imageRowSelected = imageSelected;
   }
 
   updateImages() {
@@ -69,22 +188,29 @@ export class ImgcomparatorComponent implements OnInit {
     this.messageService.add({severity: 'info', summary: 'Lógica para actualización de imágenes', detail: ''});
   }
 
-  comparar(row: QuickReviewPerspectiveVO) {
-    this.selected = row;
-    console.log('Valor de selected', this.selected);
+  comparar(row: ImageRowVO, perspective:any) {
+    //this.selected = row;
+    console.log('Valor de selected', row);
+    this.imageRowSelected = row;
+    this.perspectiveSelected = perspective;
+    this.selected =  this.imageRowSelected.perspectives[this.perspectiveSelected.value];
     this.showModal = true;
   }
 
   aprobar() {
-    this.selected.rmState = false;
-    this.selected.checked = true;
-    this.messageService.add({severity: 'success', summary: 'Aprobada', detail: ''});
+    if (this.selected){
+      this.selected.rmState = false;
+      this.selected.checked = true;
+      this.messageService.add({severity: 'success', summary: 'Aprobada', detail: ''});
+    }
   }
 
   rechazar() {
-    this.selected.rmState = true;
-    this.selected.checked = true;
-    this.messageService.add({severity: 'info', summary: 'Rechazada', detail: ''});
+    if (this.selected){
+      this.selected.rmState = true;
+      this.selected.checked = true;
+      this.messageService.add({severity: 'info', summary: 'Rechazada', detail: ''});
+    }
   }
 
   onPageChange($event: any) {
@@ -92,19 +218,22 @@ export class ImgcomparatorComponent implements OnInit {
   }
 
   back() {
-    let index = this.itemsAssigned.indexOf(this.selected);
+    let index = this.perspectiveTypes.indexOf(this.perspectiveSelected);
     if (index > 0) {
-      this.selected = this.itemsAssigned[index - 1];
+      this.perspectiveSelected = this.perspectiveTypes[index-1];
+      console.log('perspectiveSelected', this.perspectiveSelected);
+      this.selected =  this.imageRowSelected.perspectives[this.perspectiveSelected.value];
     } else {
       alert('No hay anterior')
     }
   }
 
   next() {
-    let index = this.itemsAssigned.indexOf(this.selected);
-    console.log('next:', index, this.itemsAssigned.length);
-    if (index < this.itemsAssigned.length - 1) {
-      this.selected = this.itemsAssigned[index + 1];
+    let index = this.perspectiveTypes.indexOf(this.perspectiveSelected);
+    console.log('next:', index, this.perspectiveTypes.length);//
+    if (index < this.perspectiveTypes.length - 1) {
+      this.perspectiveSelected = this.perspectiveTypes[index+1];
+      this.selected =  this.imageRowSelected.perspectives[this.perspectiveSelected.value];
     } else {
       alert('No hay siguiente');
     }

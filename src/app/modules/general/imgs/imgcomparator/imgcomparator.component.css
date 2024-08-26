@@ -4,3 +4,37 @@
   color:red;
 }
 
+.contTable {
+  width: 100%;
+  overflow: auto;
+}
+
+.sticky-col {
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: white;
+}
+
+
+.first-col {
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  left: 0px;
+}
+
+.labeltit {
+  font-size: 0.8rem;
+}
+
+.borderit{
+  border-bottom: 1px solid #9a9a9a
+}
+
+.imgit{
+  height: 90px; width: 90px; cursor:pointer;
+}
+
+.sinimagen{
+  height: 90px; width: 90px; cursor:pointer;
+}
