@@ -9,8 +9,6 @@
               type="button"></button>
     </div>
   </div>
-
-
   <div class="contTable">
     <p-table
       [paginatorPosition]="'bottom'"
@@ -31,8 +29,7 @@
       <ng-template
         let-itemAssigned
         let-rowIndex="rowIndex"
-        pTemplate="body"
-      >
+        pTemplate="body">
         <tr class="ui-selectable-row">
           <td class="negro sticky-col first-col">
             <div class="d-flex">
@@ -70,7 +67,7 @@
                 </div>
                 <div *ngIf="!(itemAssigned.perspectives[prop.value]?.url)" class="m-2">
                   <div class="col-md-12" style="text-align: end; padding-right: 0px; padding-bottom: 3px;">
-                    <p-checkbox [binary]="true" [disabled]="true" checkboxIcon="pi pi-times"></p-checkbox>
+                    <p-checkbox [binary]="true" [disabled]="!(itemAssigned.perspectives[prop.value]?.previusUrl)" checkboxIcon="pi pi-times"></p-checkbox>
                   </div>
                   <img class="imgit" src="./assets/default.jpg"/>
                 </div>
@@ -91,20 +88,6 @@
       </ng-template>
     </p-table>
   </div>
-
-  <!--
-  <div>
-    <p-paginator
-      (onPageChange)="onPageChange($event)"
-      [first]="first"
-      [rowsPerPageOptions]="[10, 20, 30]"
-      [rows]="rows"
-      [totalRecords]="120">
-
-
-    </p-paginator>
-  </div>-->
-
 </div>
 
 <p-dialog
@@ -171,7 +154,7 @@
 
 
   <div class="mt-2 d-flex justify-content-between">
-    <div class="d-flex">
+    <div class="d-flex" *ngIf="!hasPreviusDontHasCurrentImage(selected)">
       <button (click)="aprobar()" *ngIf="selected" class="btn btn-sm btn-outline-danger me-3">
         <i class="fa fa-check"></i>
         Aprobar
@@ -181,13 +164,23 @@
         Rechazar
       </button>
     </div>
+    <div *ngIf="hasPreviusDontHasCurrentImage(selected)">
+      <button (click)="aprobar()" *ngIf="selected" class="btn btn-sm btn-outline-danger me-3">
+        <i class="fa fa-check"></i>
+        Conservar
+      </button>
+      <button (click)="rechazar()" *ngIf="selected" class="btn btn-sm btn-outline-danger">
+        <i class="fa fa-times"></i>
+        Eliminar
+      </button>
+    </div>
     <div>
-      <button (click)="back()" [disabled]="perspectiveTypes.indexOf(perspectiveSelected)===0"
+      <button (click)="back(true)" [disabled]="perspectiveTypes.indexOf(perspectiveSelected)===0"
               class="btn btn-sm btn-outline-danger me-2">
         <i class="fa-solid fa-chevron-left"></i>
         Anterior
       </button>
-      <button (click)="next()" [disabled]="perspectiveTypes.indexOf(perspectiveSelected)==perspectiveTypes.length-1"
+      <button (click)="next()" [disabled]="endImagesIterate"
               class="btn btn-sm btn-outline-danger me-2">
         Siguiente
         <i class="fa-solid fa-chevron-right"></i>
