@@ -36,4 +36,7 @@ export class StartComponent {
     this.router.navigate(['soporte'], {});
   }
 
+  gotoCoupons() {
+    this.router.navigate(['coupons'], {});
+  }
 }

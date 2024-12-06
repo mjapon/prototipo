@@ -1,8 +1,9 @@
-import { animate } from '@angular/animations';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {animate} from '@angular/animations';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 
-import { TreeNode } from 'primeng/api';
+import {TreeNode} from 'primeng/api';
+import {lastValueFrom} from 'rxjs';
 
 interface Articulo {
   codbarra: String,
@@ -13,7 +14,8 @@ interface Articulo {
 @Injectable()
 export class NodeService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getFiles() {
     return this.http.get<any>('assets/files.json')
@@ -72,6 +74,17 @@ export class NodeService {
     return this.http.get<any>('assets/deliveries.json')
       .toPromise()
       .then(res => <[]>res.deliveries);
+  }
+
+  getBusinessFormats() {
+    return lastValueFrom(this.http.get<any>('assets/coupons.json'))
+      .then(res => res.businessformats as any[]);
+  }
+
+  getCoupons(){
+    return lastValueFrom(this.http.get<any>('assets/coupons.json'))
+      .then(res => res.coupons as any[]);
+
   }
 
   getItemSoporte() {

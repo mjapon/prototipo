@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row w-100">
       <div class="col-md-3">
-        <span class="h3 textcolorcorp ">CAPED</span>
+        <span class="h3 textcolorcorp ">Cupones</span>
       </div>
       <div class="col-md">
         <div class="d-flex flex-row">
@@ -54,7 +54,7 @@
               <i class="fa fa-download"></i> Descarga Plantilla
             </a>
           </div>
-          <div *ngIf="pantalla==='articulos'">
+          <div *ngIf="pantalla==='cupones'">
             <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="nothing()">
               <i class="fa-solid fa-file-excel"></i> Descarga Listado
             </a>
@@ -67,7 +67,7 @@
             </a>
           </div>
 
-          <div>
+          <div *ngIf="pantalla==='cia'">
             <a  class="hand ms-2 btn btn-sm btn-outline-danger" title="Agregar" (click)="showRevisionRapida()">
               <i class="fa fa-eye"></i> Revisión Rápida
             </a>

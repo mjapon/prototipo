@@ -46,6 +46,7 @@ import { ImgcomparatorComponent } from './modules/general/imgs/imgcomparator/img
 import {CheckboxModule} from 'primeng/checkbox';
 import {ImageviewerComponent} from './modules/general/imageviewer/imageviewer.component';
 import {DataViewModule} from 'primeng/dataview';
+import { CouponsmainComponent } from './modules/general/cupones/couponsmain/couponsmain.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import {DataViewModule} from 'primeng/dataview';
     KFieldsetComponent,
     ImglistComponent,
     ImgcomparatorComponent,
-    ImageviewerComponent
+    ImageviewerComponent,
+    CouponsmainComponent
   ],
   imports: [
     BrowserModule,

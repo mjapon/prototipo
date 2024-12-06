@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   pantalla = 'start';
   level = -1;
 
-  titulo = 'Gestión Características';
+  titulo = 'Gestión de cupones personalizados';
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,

@@ -1,0 +1,265 @@
+<div class="container mt-3">
+  <p-toast></p-toast>
+
+  <div class="alldiv">
+    <section class="barra border p-3">
+      <div class="me-3">
+        <p class="textcolorcorp">Filtros de búsqueda</p>
+        <p class="mt-1">Formato de negocio:</p>
+        <div class="p-fluid">
+          <p-dropdown
+            [(ngModel)]="selectedFormat"
+            [options]="businessFormats"
+            optionLabel="nombre"
+            placeholder="Seleccionar"></p-dropdown>
+        </div>
+
+        <p class="bloquefiltro">Código de barras:</p>
+        <div>
+          <input
+            class="form-control form-control-sm"
+            type="text"
+          />
+        </div>
+
+        <p class="bloquefiltro">Artículo:</p>
+        <div>
+          <input
+            class="form-control form-control-sm"
+            type="text"
+          />
+        </div>
+
+        <p class="bloquefiltro">Nro de identificación:</p>
+        <div>
+          <input
+            class="form-control form-control-sm"
+            type="text"/>
+        </div>
+
+        <div class="btncoupon d-flex flex-row-reverse bloquefiltro">
+          <button (click)="doSearch()" class="btn btn-danger">
+            <i class="fa fa-search"></i>
+            Buscar</button>
+        </div>
+
+      </div>
+    </section>
+    <section class="main ps-2">
+
+
+      <ul
+        class="nav nav-tabs border-top-0 border-start-0 border-end-0 border border-danger">
+        <li class="nav-item border border-danger rounded-top border-bottom-0">
+          <a
+            aria-current="page"
+            class="nav-link hand active">Resultados</a>
+        </li>
+
+      </ul>
+
+      <div class="w-100 border-top-0 border border-danger rounded-bottom">
+        <div class="p-2">
+
+          <p-table
+            [paginator]="true"
+            [rows]="5"
+            [value]="resultData"
+            tableStyleClass="table table-sm table-hover table-bordered fusay-table"
+            paginatorPosition="top"
+            responsiveLayout="scroll">
+            <ng-template #paginatorleft let-state pTemplate="paginatorleft">
+              Pág. {{ totalRecords > 0 ? Math.floor(first / rowsByPage) + 1 : 0 }}
+              de {{ Math.ceil(totalRecords / rowsByPage) }}
+            </ng-template>
+            <ng-template #paginatorright let-state pTemplate="paginatorright">
+              Total Reg: {{ totalRecords }}
+            </ng-template>
+
+            <ng-template let-state pTemplate="paginatorright" style="padding-right: 2%;">
+              Total registros: {{ state.totalRecords }}
+            </ng-template>
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Cédula</th>
+                <th>Código de barra</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Porcentaje de descuento</th>
+                <th>Formato de negocio</th>
+                <th></th>
+              </tr>
+            </ng-template>
+            <ng-template let-row pTemplate="body">
+              <tr>
+                <td class="celda">{{ row.clientid }}</td>
+                <td class="celda">
+                    <span>
+                      {{ row.barcode }}
+                    </span>
+                </td>
+                <td class="celda">{{ row.article }}</td>
+                <td class="celda">{{ row.quantity }}</td>
+                <td class="celda">{{ row.discountPercentage }}%</td>
+                <td class="celda">{{ row.businessFormat }}</td>
+                <td>
+                  <button (click)="showModal(row)" class="btn btn-outline-danger btn-sm">
+                    <span class="fa fa-eye"></span>
+                  </button>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+
+          <div *ngIf="totalRecords===0" class="empty-message">
+            <p>Seleccione un criterio de búsqueda.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+
+<p-dialog header="Detalles del cupón" [modal]="true" [(visible)]="isShowDetails" [style]="{ width: '80vw' }">
+ <div class="row">
+    <div class="col-md">
+      <div class="row">
+        <div class="col-md-5">
+          <span class="fw-bold">Nro:</span>
+        </div>
+        <div class="col-md">
+          <span class="fw-semibold">{{selectedRow?.code}}</span>
+        </div>
+      </div>
+      <div class="mt-1 row">
+        <div class="col-md-5">
+          <span class="fw-bold">Nro Identificación:</span>
+        </div>
+        <div class="col-md">
+          <span class="fw-semibold">{{selectedRow?.clientid}}</span>
+        </div>
+      </div>
+      <div class="mt-1 row">
+        <div class="col-md-5">
+          <span class="fw-bold">Código de barras:</span>
+        </div>
+        <div class="col-md">
+          <span class="fw-semibold">{{selectedRow?.barcode}}</span>
+        </div>
+      </div>
+      <div class="mt-1 row">
+        <div class="col-md-5">
+          <span class="fw-bold">Descripción:</span>
+        </div>
+        <div class="col-md">
+          <span class="fw-semibold">{{selectedRow?.article}}</span>
+        </div>
+      </div>
+      <div class="mt-1 row">
+        <div class="col-md-5">
+          <span class="fw-bold">Formato de negocio:</span>
+        </div>
+        <div class="col-md">
+          <span class="fw-semibold">{{selectedRow?.businessFormat}}</span>
+        </div>
+      </div>
+
+    </div>
+   <div class="col-md">
+     <div class="row">
+       <div class="col-md-5">
+         <span class="fw-bold">Cantidad:</span>
+       </div>
+       <div class="col-md">
+         <span class="fw-semibold">{{selectedRow?.quantity}}</span>
+       </div>
+     </div>
+     <div class="mt-1 row">
+       <div class="col-md-5">
+         <span class="fw-bold">Porcentaje de descuento:</span>
+       </div>
+       <div class="col-md">
+         <span class="fw-semibold">{{selectedRow?.discountPercentage}}%</span>
+       </div>
+     </div>
+     <div class="mt-1 row">
+       <div class="col-md-5">
+         <span class="fw-bold">Vigencia del cupon:</span>
+       </div>
+       <div class="col-md">
+         <span class="fw-semibold">Del {{selectedRow?.startDate}} al {{selectedRow?.endDate}} </span>
+       </div>
+     </div>
+     <div class="row mt-1">
+       <div class="col-md-5">
+         <span class="fw-bold">Actualizado por:</span>
+       </div>
+       <div class="col-md">
+         <span class="fw-semibold">{{selectedRow?.updatedByUser}} </span>
+       </div>
+     </div>
+     <div class="row mt-1">
+       <div class="col-md-5">
+         <span class="fw-bold">Fecha de actualización:</span>
+       </div>
+       <div class="col-md">
+         <span class="fw-semibold">{{selectedRow?.updatedDate}} </span>
+       </div>
+     </div>
+
+   </div>
+ </div>
+  <div class="mt-2 border">
+    <p-table
+      [paginator]="true"
+      [rows]="5"
+      [value]="historyData"
+      paginatorPosition="top"
+      tableStyleClass="table table-sm table-hover table-bordered fusay-table"
+      responsiveLayout="scroll">
+      <ng-template pTemplate="caption">Historial de uso</ng-template>
+      <ng-template #paginatorleft let-state pTemplate="paginatorleft">
+        Pág. {{ totalHistoryRecords > 0 ? Math.floor(first / rowsByPage) + 1 : 0 }}
+        de {{ Math.ceil(totalHistoryRecords / rowsByPage) }}
+      </ng-template>
+      <ng-template #paginatorright let-state pTemplate="paginatorright">
+        Total Reg: {{ totalHistoryRecords }}
+      </ng-template>
+
+      <ng-template let-state pTemplate="paginatorright" style="padding-right: 2%;">
+        Total registros: {{ state.totalRecords }}
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Fecha</th>
+          <th>Cantidad de uso</th>
+          <th>Cupones restantes</th>
+          <th>Usuario que registra</th>
+        </tr>
+      </ng-template>
+      <ng-template let-row pTemplate="body">
+        <tr>
+          <td class="celda">{{ row.createdDate }}</td>
+          <td class="celda">{{ row.quantity }}</td>
+          <td class="celda">{{ row.available }}</td>
+          <td class="celda">{{ row.updatedByUser }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+    <div *ngIf="totalHistoryRecords===0" class="empty-message">
+      <p>No existen registros de uso del cupón.</p>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="mt-4 flex flex-row flex-row-reverse">
+      <button class="btn btn-outline-danger" (click)="isShowDetails = false">
+        <span class="fa fa-times"></span>
+        Cerrar</button>
+    </div>
+  </ng-template>
+
+</p-dialog>

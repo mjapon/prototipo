@@ -320,4 +320,7 @@ export class ImgcomparatorComponent implements OnInit {
     this.displayImage = true;
   }
 
+  conservar() {
+    console.log('conservar');
+  }
 }

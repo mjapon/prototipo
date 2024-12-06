@@ -1,0 +1,208 @@
+{
+  "businessformats": [
+    {
+      "codigo": "TTN",
+      "nombre": "TITAN"
+    },
+    {
+      "codigo": "SUP",
+      "nombre": "SUPERMAXI"
+    },
+    {
+      "codigo": "MEG",
+      "nombre": "MEGAMAXI"
+    },
+    {
+      "codigo": "AKI",
+      "nombre": "AKI"
+    },
+    {
+      "codigo": "GAK",
+      "nombre": "GRAN AKI"
+    }
+  ],
+  "coupons": [
+    {
+      "code": 1,
+      "clientid":"0750025900",
+      "barcode": "62370",
+      "article": "T-ALAS DE POLLO",
+      "quantity": 120,
+      "discountPercentage": 2.0,
+      "businessFormat": "TITAN",
+      "startDate": "01/12/2024",
+      "endDate": "31/12/2024",
+      "createdByUser": "FRM0",
+      "createdDate": "01/12/2024 08:00:00",
+      "updatedByUser": "FRM0",
+      "updatedDate": "05/12/2024 17:00:00",
+      "history": [
+        {
+          "createdDate": "01/12/2024",
+          "quantity": 2,
+          "available": 118,
+          "updatedByUser": "FRM0"
+        },
+        {
+          "createdDate": "02/12/2024",
+          "quantity": 4,
+          "available": 112,
+          "updatedByUser": "FRM0"
+        },
+        {
+          "createdDate": "03/12/2024",
+          "quantity": 7,
+          "available": 105,
+          "updatedByUser": "FRM0"
+        }
+      ]
+    },
+    {
+      "code": 2,
+      "clientid":"0750025900",
+      "barcode": "62378",
+      "article": "T-V.CHULETA PIERNA CERDO",
+      "quantity": 120,
+      "discountPercentage": 2.0,
+      "businessFormat": "TITAN",
+      "startDate": "01/12/2024",
+      "endDate": "31/12/2024",
+      "createdByUser": "FRM0",
+      "createdDate": "01/12/2024 08:00:00",
+      "updatedByUser": "FRM0",
+      "updatedDate": "05/12/2024 17:00:00",
+      "history": [
+        {
+          "createdDate": "01/12/2024",
+          "quantity": 2,
+          "available": 118,
+          "updatedByUser": "FRM0"
+        }
+      ]
+
+    },
+    {
+      "code": 3,
+      "clientid":"1709936338",
+      "barcode": "62403",
+      "article": "T-B.PULPA REDONDA RES",
+      "quantity": 120,
+      "discountPercentage": 2.0,
+      "businessFormat": "TITAN",
+      "startDate": "01/12/2024",
+      "endDate": "31/12/2024",
+      "createdByUser": "FRM0",
+      "createdDate": "01/12/2024 08:00:00",
+      "updatedByUser": "FRM0",
+      "updatedDate": "05/12/2024 17:00:00",
+      "history": [
+        {
+          "createdDate": "01/12/2024",
+          "quantity": 2,
+          "available": 118,
+          "updatedByUser": "FRM0"
+        },
+        {
+          "createdDate": "02/12/2024",
+          "quantity": 4,
+          "available": 112,
+          "updatedByUser": "FRM0"
+        }
+      ]
+    },
+    {
+      "code": 4,
+      "clientid":"0601870066",
+      "barcode": "62404",
+      "article": "T-PATAS DE RES",
+      "quantity": 120,
+      "discountPercentage": 2.0,
+      "businessFormat": "TITAN",
+      "startDate": "01/12/2024",
+      "endDate": "31/12/2024",
+      "createdByUser": "FRM0",
+      "createdDate": "01/12/2024 08:00:00",
+      "updatedByUser": "FRM0",
+      "updatedDate": "05/12/2024 17:00:00",
+      "history": [
+              ]
+    },
+    {
+      "code": 4,
+      "clientid":"1720583812",
+      "barcode": "62405",
+      "article": "T-FRITADA LOMO S/HUESO CERDO",
+      "quantity": 120,
+      "discountPercentage": 2.0,
+      "businessFormat": "TITAN",
+      "startDate": "01/12/2024",
+      "endDate": "31/12/2024",
+      "createdByUser": "FRM0",
+      "createdDate": "01/12/2024 08:00:00",
+      "updatedByUser": "FRM0",
+      "updatedDate": "05/12/2024 17:00:00",
+      "history": [
+        {
+          "createdDate": "01/12/2024",
+          "quantity": 2,
+          "available": 118,
+          "updatedByUser": "FRM0"
+        },
+        {
+          "createdDate": "02/12/2024",
+          "quantity": 4,
+          "available": 112,
+          "updatedByUser": "FRM0"
+        },
+        {
+          "createdDate": "03/12/2024",
+          "quantity": 7,
+          "available": 105,
+          "updatedByUser": "FRM0"
+        }
+      ]
+    },
+    {
+      "code": 5,
+      "clientid":"1703787034",
+      "barcode": "62379",
+      "article": "T-V.CHULETA BRAZO C/CUERO CERDO",
+      "quantity": 120,
+      "discountPercentage": 2.0,
+      "businessFormat": "TITAN",
+      "startDate": "01/12/2024",
+      "endDate": "31/12/2024",
+      "createdByUser": "FRM0",
+      "createdDate": "01/12/2024 08:00:00",
+      "updatedByUser": "FRM0",
+      "updatedDate": "05/12/2024 17:00:00",
+      "history": [
+
+        {
+          "createdDate": "03/12/2024",
+          "quantity": 7,
+          "available": 105,
+          "updatedByUser": "FRM0"
+        }
+      ]
+    },
+    {
+      "code": 6,
+      "clientid":"1714231113",
+      "barcode": "7750670244954",
+      "article": "CIELO AGUA SIN GAS",
+      "quantity": 120,
+      "discountPercentage": 2.0,
+      "businessFormat": "TITAN",
+      "startDate": "01/12/2024",
+      "endDate": "31/12/2024",
+      "createdByUser": "FRM0",
+      "createdDate": "01/12/2024 08:00:00",
+      "updatedByUser": "FRM0",
+      "updatedDate": "05/12/2024 17:00:00",
+      "history": [
+
+      ]
+    }
+  ]
+}

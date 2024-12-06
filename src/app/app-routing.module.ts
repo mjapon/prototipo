@@ -1,24 +1,25 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CatalogosComponent } from './modules/general/catalogos/catalogos.component';
-import { FeaturesComponent } from './modules/general/features/features.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {CatalogosComponent} from './modules/general/catalogos/catalogos.component';
+import {FeaturesComponent} from './modules/general/features/features.component';
 
-import { HomeComponent } from './modules/general/home/home.component';
-import { NivelesComponent } from './modules/general/niveles/niveles.component';
-import { NotFoundComponent } from './modules/general/not-found/not-found.component';
-import { SearchComponent } from './modules/general/searchproduct/searchproduct.component';
-import { StartComponent } from './modules/general/start/start.component';
-import { AdminCtgComponent } from './modules/general/ctgs/admctgos/adminctg.component';
-import { SoporteComponent } from './modules/general/soporte/soporte.component';
+import {HomeComponent} from './modules/general/home/home.component';
+import {NivelesComponent} from './modules/general/niveles/niveles.component';
+import {NotFoundComponent} from './modules/general/not-found/not-found.component';
+import {SearchComponent} from './modules/general/searchproduct/searchproduct.component';
+import {StartComponent} from './modules/general/start/start.component';
+import {AdminCtgComponent} from './modules/general/ctgs/admctgos/adminctg.component';
+import {SoporteComponent} from './modules/general/soporte/soporte.component';
 import {ImgcomparatorComponent} from './modules/general/imgs/imgcomparator/imgcomparator.component';
+import {CouponsmainComponent} from './modules/general/cupones/couponsmain/couponsmain.component';
 
 const routes: Routes = [
-  { path: '', component: StartComponent, },
+  {path: '', component: StartComponent,},
   {
-    path: 'niveles', component:NivelesComponent,
+    path: 'niveles', component: NivelesComponent,
   },
   {
-    path: 'home', component:HomeComponent,
+    path: 'home', component: HomeComponent,
   },
   {
     path: 'about',
@@ -64,9 +65,12 @@ const routes: Routes = [
   {
     path: 'review', component: ImgcomparatorComponent
   },
+  {
+    path: 'coupons', component: CouponsmainComponent
+  },
 
 
-  { path: '**', component: NotFoundComponent }
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -74,4 +78,5 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
